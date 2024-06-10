@@ -26,8 +26,8 @@ def hsl_to_rgb(h, s, l):
 
 # Define the HSL color saturation and lightness values
 colors = {
-    'First Color': (69, 61),
-    'First Color Alt': (57, 53),
+    'First Color': (35, 61),
+    'First Color Alt': (27, 57),
     'First Color Lighter': (92, 85),
     'Title Color': (8, 15),
     'Text Color': (8, 45),
@@ -39,7 +39,7 @@ colors = {
 }
 
 # Hue value
-hue = 250
+hue = 168
 
 # Plotting
 fig, ax = plt.subplots(figsize=(10, 5))
