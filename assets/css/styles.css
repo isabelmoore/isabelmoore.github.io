@@ -604,6 +604,19 @@ img {
   transform: translate(6px, -7px);
 }
 
+.qualification__line.qualification__arrow::after {
+  content: "";
+  position: absolute;
+  top: calc(100% - 1px); /* Adjusts the position to align right at the end of the line */
+  left: -5px; /* Centers the arrow */
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 8px solid var(--first-color); /* Uses the variable for color consistency */
+  transform: translateY(1px); /* Slightly adjust if needed */
+}
+
 .qualification [data-content] {
   display: none;
 }
