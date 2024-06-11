@@ -70,14 +70,6 @@ body.dark-theme {
   --scroll-bar-color: hsl(var(--hue-color), 12%, 48%);
   --scroll-thumb-color: hsl(var(--hue-color), 12%, 36%);
 }
-body.dark-theme .portfolio__content {
-  background-color: var(--container-color);
-  color: var(--text-color);
-}
-
-body.dark-theme .portfolio__title {
-  color: var(--title-color);
-}
 
 /*========== Button Dark/Light ==========*/
 .nav__btns {
@@ -95,6 +87,20 @@ body.dark-theme .portfolio__title {
 .change-theme:hover {
   color: var(--first-color);
 }
+
+body.dark-theme .portfolio__content {
+  background-color: var(--container-color);
+  color: var(--text-color);
+}
+
+body.dark-theme .portfolio__title, body.dark-theme .portfolio__description {
+  color: var(--title-color);
+}
+
+body.dark-theme img.portfolio__img {
+  filter: brightness(0.8);  // Adjust brightness for images if needed
+}
+
 
 /*==================== BASE ====================*/
 * {
