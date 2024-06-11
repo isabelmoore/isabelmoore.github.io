@@ -39,7 +39,7 @@ colors = {
 }
 
 # Hue value
-hue = 8
+hue = 18
 
 # Plotting
 fig, ax = plt.subplots(figsize=(10, 5))
