@@ -88,19 +88,6 @@ body.dark-theme {
   color: var(--first-color);
 }
 
-body.dark-theme .portfolio__content {
-  background-color: var(--container-color);
-  color: var(--text-color);
-}
-
-body.dark-theme .portfolio__title, body.dark-theme .portfolio__description {
-  color: var(--title-color);
-}
-
-body.dark-theme img.portfolio__img {
-  filter: brightness(0.8);  
-}
-
 
 /*==================== BASE ====================*/
 * {
@@ -732,7 +719,7 @@ img {
 }
 
 /*==================== PORTFOLIO ====================*/
-.portfolio__container {
+/* .portfolio__container {
   overflow: initial;
 }
 
@@ -789,6 +776,68 @@ img {
 .swiper-button-next,
 .swiper-pagination-bullet {
   outline: none;
+} */
+/*==================== PORTFOLIO ====================*/
+.portfolio__container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(265px, 1fr)); /* Responsive grid setup */
+  padding: 1.5rem;
+}
+
+.portfolio__content {
+  position: relative;
+  background-color: var(--container-color);
+  padding: 1.5rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: 0.3s;
+}
+
+.portfolio__content:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio__img {
+  width: 100%; /* Make image responsive within the container */
+  border-radius: 0.5rem;
+  margin-bottom: var(--mb-1);
+}
+
+.portfolio__title {
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  color: var(--title-color);
+  margin-bottom: var(--mb-0-75);
+}
+
+.portfolio__description {
+  margin-bottom: var(--mb-1);
+  color: var(--text-color);
+}
+
+.portfolio__button {
+  display: block;
+  cursor: pointer;
+  font-size: var(--small-font-size);
+  transition: color 0.3s;
+}
+
+.portfolio__button:hover .button__icon {
+  transform: translateX(0.25rem);
+}
+
+/* Responsive grid columns for different viewports */
+@media (max-width: 768px) {
+  .portfolio__container {
+    grid-template-columns: 1fr; /* Single column for smaller screens */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .portfolio__container {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+  }
 }
 
 /*==================== PROJECT IN MIND ====================*/
