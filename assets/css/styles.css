@@ -98,7 +98,7 @@ body.dark-theme .portfolio__title, body.dark-theme .portfolio__description {
 }
 
 body.dark-theme img.portfolio__img {
-  filter: brightness(0.8);  // Adjust brightness for images if needed
+  filter: brightness(0.8);  
 }
 
 
