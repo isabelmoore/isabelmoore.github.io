@@ -1,13 +1,21 @@
-# Responsive Portfolio Website Alexa
-## [Watch it on youtube](https://youtu.be/27JtRAI3QO8)
-### Responsive Portfolio Website Alexa
+# Isabel Moore Portfolio 
 
-- Responsive Personal Portfolio Website Using HTML CSS & JavaScript
-- Smooth scrolling in each section.
-- Includes a light and dark mode.
-- Developed first with the Mobile First methodology, then for desktop.
-- Compatible with all mobile devices and with a beautiful and pleasant user interface.
+## Overview
+This website is dedicated to showcasing the professional services and accomplishments of Isabel Moore in the fields of Robotics & Automation, Cybersecurity & Cyber-Physical Systems, and Embedded Systems & IoT. The site features detailed sections on each service area, highlighting key projects, achievements, and Isabel's expertise.
 
-💙 Join the channel to see more videos like this. [Bedimcode](https://www.youtube.com/c/Bedimcode)
+## Features
+- **Robotics & Automation**: Includes detailed case studies on contributions to the AutoDrive competition, development of advanced vehicle control systems, and integration of autonomous vehicle technologies.
+- **Cybersecurity & Cyber-Physical Systems**: Focuses on advanced GPS security protocols, incident response strategies, and comprehensive system vulnerability assessments.
+- **Embedded Systems & IoT**: Offers insights into the development of real-time cooperative autonomy systems, custom embedded solutions, and integration of microturbine systems for UAVs.
 
-![preview img](/preview.png)
+## Technologies Used
+- **HTML/CSS/JavaScript**: For structuring and styling the website.
+- **Font Awesome Icons**: To visually enhance the informational content.
+- **Bootstrap**: For responsive design elements.
+
+## Setup
+To get a local copy up and running follow these simple example steps.
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourUsername/yourRepository.git
