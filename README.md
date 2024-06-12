@@ -10,8 +10,9 @@ This website is dedicated to showcasing the professional services and accomplish
 
 ## Technologies Used
 - **HTML/CSS/JavaScript**: For structuring and styling the website.
-- **Font Awesome Icons**: To visually enhance the informational content.
-- **Bootstrap**: For responsive design elements.
+- **Google Font**: To visually enhance the informational content.
+- **Google Analytics**: Integrated to track and analyze website traffic.
+- **Unicons from Iconscout**: Utilized scalable icons across the website to enhance the user interface and user experience.
 
 ## Setup
 To get a local copy up and running follow these simple example steps.
