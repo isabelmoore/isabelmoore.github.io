@@ -995,6 +995,21 @@ img {
   background-color: var(--text-color-light);
 }
 
+/* Existing styles... */
+
+/* Game container */
+.game-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.start-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
 /* Game styling */
 .game {
   width: 600px;
@@ -1006,7 +1021,7 @@ img {
 #dino {
   width: 50px;
   height: 50px;
-  background-image: url('/isabelmoore.github.io/assets/img/trex.png');
+  background-image: url('./assets/img/trex.png');
   background-size: 50px 50px;
   position: relative;
   top: 150px;
@@ -1020,19 +1035,15 @@ img {
   0% {
     top: 150px;
   }
-
   30% {
     top: 130px;
   }
-
   50% {
     top: 80px;
   }
-
   80% {
     top: 130px;
   }
-
   100% {
     top: 150px;
   }
@@ -1044,7 +1055,7 @@ img {
   position: relative;
   top: 110px;
   left: 580px;
-  background-image: url('/isabelmoore.github.io/assets/img/cactus.png');
+  background-image: url('./assets/img/cactus.png');
   background-size: 20px 40px;
   animation: block 1s infinite linear;
 }
@@ -1053,7 +1064,6 @@ img {
   0% {
     left: 580px;
   }
-
   100% {
     left: -20px;
   }
