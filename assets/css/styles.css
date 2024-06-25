@@ -1021,7 +1021,7 @@ img {
 #dino {
   width: 50px;
   height: 50px;
-  background-image: url('./assets/img/trex.png');
+  background-image: url('/isabelmoore.github.io/assets/img/trex.png');
   background-size: 50px 50px;
   position: relative;
   top: 150px;
@@ -1055,7 +1055,7 @@ img {
   position: relative;
   top: 110px;
   left: 580px;
-  background-image: url('./assets/img/cactus.png');
+  background-image: url('/isabelmoore.github.io/assets/img/cactus.png');
   background-size: 20px 40px;
   animation: block 1s infinite linear;
 }
