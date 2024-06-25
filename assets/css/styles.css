@@ -995,21 +995,6 @@ img {
   background-color: var(--text-color-light);
 }
 
-/* Existing styles... */
-
-/* Game container */
-.game-container {
-  text-align: center;
-  margin: 2rem 0;
-}
-
-.start-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 1rem;
-}
-
 /* Game styling */
 .game {
   width: 600px;
