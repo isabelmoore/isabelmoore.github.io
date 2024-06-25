@@ -998,6 +998,19 @@ img {
 /* Existing styles... */
 
 /* Game container */
+.game-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.start-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+/* Game styling */
 .game {
   width: 600px;
   height: 200px;
@@ -1005,7 +1018,6 @@ img {
   margin: auto;
 }
 
-/* Dino styling */
 #dino {
   width: 50px;
   height: 50px;
@@ -1037,7 +1049,6 @@ img {
   }
 }
 
-/* Cactus styling */
 #cactus {
   width: 20px;
   height: 40px;
