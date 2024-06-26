@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(function () {
                 dino.classList.remove("jump");
-            }, 300);
+            }, 600);
         }
     }
 
@@ -30,8 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
 
             // detect collision
-            if (cactusLeft < 100 && cactusLeft > 0 && dinoTop >= 130) {
-                // collision
+            if (cactusLeft < 90 && cactusLeft > 0 && dinoTop >= 120) {
                 alert("Game Over!");
                 clearInterval(isAlive);
                 gameContainer.style.display = "none";
