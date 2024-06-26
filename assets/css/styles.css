@@ -1000,7 +1000,7 @@ img {
 /* Game container */
 .game-container {
   text-align: center;
-  margin: 2rem 0;
+  margin: 2rem 2rem;
 }
 
 
@@ -1018,13 +1018,13 @@ img {
 
 /* Game styling */
 .game {
-  width: 600px;
-  height: 200px;
+  height: 200px; */
   border: 1px solid black;
   margin: auto;
   background-color: white; /* Set the background color for the game */
   position: relative; /* Ensure that child elements are positioned relative to the game container */
   overflow: hidden; /* Hide overflow to keep the elements within the game boundaries */
+  border-radius: 15px; /* Add rounded corners to the game borders */
 }
 
 #dino {
@@ -1062,11 +1062,11 @@ img {
 
 #cactus {
   width: 40px;
-  height: 40px;
+  height: 50px;
   background-image: url('/assets/img/cactus.png'); /* Ensure the path is correct */
-  background-size: 40px 40px;
+  background-size: 40px 50px;
   position: absolute; /* Position absolutely within the game container */
-  top: 155px;
+  top: 150px;
   left: 580px;
   z-index: 0; /* Ensure cactus is below dino */
   animation: block 2s infinite linear;
