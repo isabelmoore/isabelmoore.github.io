@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const startButton = document.getElementById("start-button");
+    const jumpButton = document.getElementById("jump-button");
     const gameContainer = document.querySelector(".game");
     const dino = document.getElementById("dino");
     const cactus = document.getElementById("cactus");
@@ -19,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function startGame() {
         gameContainer.style.display = "block";
         startButton.style.display = "none";
+        jumpButton.style.display = "inline-block"; // Show the jump button
 
         isAlive = setInterval(function () {
             // get current dino Y position
@@ -34,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 clearInterval(isAlive);
                 gameContainer.style.display = "none";
                 startButton.style.display = "inline-block";
+                jumpButton.style.display = "none"; // Hide the jump button
             }
         }, 10);
 
@@ -42,6 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 jump();
             }
         });
+
+        jumpButton.addEventListener("click", jump);
     }
 
     startButton.addEventListener("click", startGame);
