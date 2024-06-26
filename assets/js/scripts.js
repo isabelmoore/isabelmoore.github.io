@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(function () {
                 dino.classList.remove("jump");
-            }, 900); // Match the jump animation duration
+            }, 600); // Match the jump animation duration
         }
     }
 
@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
         gameContainer.style.display = "block";
         startButton.style.display = "none";
         jumpButton.style.display = "inline-flex";
+
+        // Show cactus immediately
+        cactus.style.display = "block";
 
         isAlive = setInterval(function () {
             // get current dino Y position
@@ -37,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 gameContainer.style.display = "none";
                 startButton.style.display = "inline-flex";
                 jumpButton.style.display = "none";
+                cactus.style.display = "none"; // Hide the cactus again
             }
         }, 10);
     }
