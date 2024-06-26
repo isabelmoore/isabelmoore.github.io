@@ -1000,7 +1000,7 @@ img {
 /* Game container */
 .game-container {
   text-align: center;
-  margin: 2rem 2rem;
+  margin: 2rem 1rem;
 }
 
 
@@ -1018,7 +1018,7 @@ img {
 
 /* Game styling */
 .game {
-  height: 200px; */
+  height: 200px; 
   border: 1px solid black;
   margin: auto;
   background-color: white; /* Set the background color for the game */
@@ -1030,7 +1030,7 @@ img {
 #dino {
   width: 50px;
   height: 50px;
-  background-image: url('/assets/img/trex.png'); /* Ensure the path is correct */
+  background-image: url('/assets/img/trex-p.png'); /* Ensure the path is correct */
   background-size: 50px 50px;
   position: absolute; /* Position absolutely within the game container */
   top: 150px;
@@ -1063,7 +1063,7 @@ img {
 #cactus {
   width: 40px;
   height: 50px;
-  background-image: url('/assets/img/cactus.png'); /* Ensure the path is correct */
+  background-image: url('/assets/img/cactus-p.png'); /* Ensure the path is correct */
   background-size: 40px 50px;
   position: absolute; /* Position absolutely within the game container */
   top: 150px;
