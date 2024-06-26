@@ -997,10 +997,10 @@ img {
 
 /* Existing styles... */
 
-/* Game container */
 .game-container {
-  text-align: center;
-  margin: 2rem 1rem;
+    text-align: center;
+    margin: 0rem 1rem;
+    padding-bottom: 2rem;
 }
 
 
