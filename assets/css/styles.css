@@ -995,14 +995,11 @@ img {
   background-color: var(--text-color-light);
 }
 
-/* Existing styles... */
-
 /* Game container */
 .game-container {
   text-align: center;
-  margin: 2rem 1rem;
+  margin: 2rem 0;
 }
-
 
 .game-buttons {
   display: flex;
@@ -1016,25 +1013,26 @@ img {
   margin-top: 1rem; /* Adjust the value as needed for more/less gap */
 }
 
-/* Game styling */
 .game {
-  height: 200px; 
+  width: 1200px; /* Double the width to accommodate multiple cacti */
+  height: 200px;
   border: 1px solid black;
   margin: auto;
-  background-color: white; /* Set the background color for the game */
+  background-color: #e0f7fa; /* Set the background color for the game */
   position: relative; /* Ensure that child elements are positioned relative to the game container */
-  overflow: hidden; /* Hide overflow to keep the elements within the game boundaries */
+  overflow: hidden; /* Ensure elements are not cut off */
   border-radius: 15px; /* Add rounded corners to the game borders */
+  padding: 10px 20px; /* Add padding to create a gap between the walls, 20px for left and right */
 }
 
 #dino {
   width: 50px;
   height: 50px;
-  background-image: url('/assets/img/trex-p.png'); /* Ensure the path is correct */
+  background-image: url('./assets/img/trex.png'); /* Ensure the path is correct */
   background-size: 50px 50px;
   position: absolute; /* Position absolutely within the game container */
-  top: 148px;
-  left: 50px;
+  top: 140px; /* Adjust for padding */
+  left: 50px; /* Adjust for padding */
   z-index: 1; /* Ensure dino is on top */
 }
 
@@ -1044,40 +1042,38 @@ img {
 
 @keyframes jump {
   0% {
-    top: 150px;
+    top: 140px; /* Adjust for padding */
   }
   30% {
-    top: 70px; /* Higher jump */
+    top: 60px; /* Higher jump */
   }
   50% {
-    top: 30px; /* Higher jump */
+    top: 20px; /* Higher jump */
   }
   70% {
-    top: 70px; /* Higher jump */
+    top: 60px; /* Higher jump */
   }
   100% {
-    top: 150px;
+    top: 140px; /* Adjust for padding */
   }
 }
 
-#cactus {
+.cactus {
   width: 40px;
-  height: 50px;
-  background-image: url('/assets/img/cactus-p.png'); /* Ensure the path is correct */
-  background-size: 40px 50px;
+  height: 40px;
+  background-image: url('./assets/img/fire.webp'); /* Ensure the path is correct */
+  background-size: 40px 40px;
   position: absolute; /* Position absolutely within the game container */
-  top: 148px;
-  left: 580px;
+  top: 145px; /* Adjust for padding */
   z-index: 0; /* Ensure cactus is below dino */
-  animation: block 2s infinite linear;
+  animation: block 3s infinite linear; /* Slowed down animation */
 }
 
 @keyframes block {
   0% {
-    left: 580px;
+    left: 1200px; /* Start just outside the right edge */
   }
   100% {
-    left: -20px;
+    left: -40px; /* Move to the left edge */
   }
 }
-
