@@ -1011,6 +1011,11 @@ img {
   margin-bottom: 1rem;
 }
 
+/* Add margin to create a gap between the game and the jump button */
+.jump-button-container {
+  margin-top: 1rem; /* Adjust the value as needed for more/less gap */
+}
+
 /* Game styling */
 .game {
   width: 600px;
