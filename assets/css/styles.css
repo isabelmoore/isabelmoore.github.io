@@ -1003,12 +1003,12 @@ img {
   margin: 2rem 0;
 }
 
+
 .start-button, .jump-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 1rem;
+  border: 2px solid var(--first-color);
+  margin: 0.5rem; /* Add some margin for better spacing */
 }
+
 
 /* Game styling */
 .game {
