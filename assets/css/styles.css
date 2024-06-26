@@ -1016,15 +1016,20 @@ img {
   height: 200px;
   border: 1px solid black;
   margin: auto;
+  background-color: #e0f7fa; /* Set the background color for the game */
+  position: relative; /* Ensure that child elements are positioned relative to the game container */
+  overflow: hidden; /* Hide overflow to keep the elements within the game boundaries */
 }
 
 #dino {
   width: 50px;
   height: 50px;
-  background-image: url('/isabelmoore.github.io/assets/img/trex.png');
+  background-image: url('./assets/img/trex.png'); /* Ensure the path is correct */
   background-size: 50px 50px;
-  position: relative;
+  position: absolute; /* Position absolutely within the game container */
   top: 150px;
+  left: 50px;
+  z-index: 1; /* Ensure dino is on top */
 }
 
 .jump {
@@ -1052,11 +1057,12 @@ img {
 #cactus {
   width: 20px;
   height: 40px;
-  position: relative;
-  top: 110px;
-  left: 580px;
-  background-image: url('/isabelmoore.github.io/assets/img/cactus.png');
+  background-image: url('./assets/img/cactus.png'); /* Ensure the path is correct */
   background-size: 20px 40px;
+  position: absolute; /* Position absolutely within the game container */
+  top: 150px;
+  left: 580px;
+  z-index: 0; /* Ensure cactus is below dino */
   animation: block 1s infinite linear;
 }
 

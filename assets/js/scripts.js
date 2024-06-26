@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let cactusLeft = parseInt(window.getComputedStyle(cactus).getPropertyValue("left"));
 
             // detect collision
-            if (cactusLeft < 50 && cactusLeft > 0 && dinoTop >= 140) {
+            if (cactusLeft < 100 && cactusLeft > 0 && dinoTop >= 130) {
                 // collision
                 alert("Game Over!");
                 clearInterval(isAlive);
