@@ -1018,10 +1018,11 @@ img {
 
 /* Game styling */
 .game {
+  max-width: 600px; 
   height: 200px; 
   border: 1px solid black;
   margin: auto;
-  background-color: white; /* Set the background color for the game */
+  background-color: white; 
   position: relative; /* Ensure that child elements are positioned relative to the game container */
   overflow: hidden; /* Hide overflow to keep the elements within the game boundaries */
   border-radius: 15px; /* Add rounded corners to the game borders */
