@@ -1020,7 +1020,7 @@ img {
 .game {
   max-width: 600px; 
   height: 200px; 
-  border: 1px solid black;
+  border: 1px solid var(--first-color-alt);
   margin: auto;
   background-color: white; 
   position: relative; /* Ensure that child elements are positioned relative to the game container */
