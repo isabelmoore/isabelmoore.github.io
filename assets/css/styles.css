@@ -1033,7 +1033,7 @@ img {
   background-image: url('/assets/img/trex-p.png'); /* Ensure the path is correct */
   background-size: 50px 50px;
   position: absolute; /* Position absolutely within the game container */
-  top: 150px;
+  top: 148px;
   left: 50px;
   z-index: 1; /* Ensure dino is on top */
 }
@@ -1066,7 +1066,7 @@ img {
   background-image: url('/assets/img/cactus-p.png'); /* Ensure the path is correct */
   background-size: 40px 50px;
   position: absolute; /* Position absolutely within the game container */
-  top: 150px;
+  top: 148px;
   left: 580px;
   z-index: 0; /* Ensure cactus is below dino */
   animation: block 2s infinite linear;
