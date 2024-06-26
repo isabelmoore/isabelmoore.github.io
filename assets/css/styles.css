@@ -1004,11 +1004,12 @@ img {
 }
 
 
-.start-button, .jump-button {
-  border: 2px solid var(--first-color);
-  margin: 0.5rem; /* Add some margin for better spacing */
+.game-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
-
 
 /* Game styling */
 .game {

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(function () {
                 dino.classList.remove("jump");
-            }, 600);
+            }, 900); // Match the jump animation duration
         }
     }
 
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function startGame() {
         gameContainer.style.display = "block";
         startButton.style.display = "none";
-        jumpButton.style.display = "inline-block"; // Show the jump button
+        jumpButton.style.display = "inline-flex";
 
         isAlive = setInterval(function () {
             // get current dino Y position
@@ -31,22 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // detect collision
             if (cactusLeft < 90 && cactusLeft > 0 && dinoTop >= 120) {
+                // collision
                 alert("Game Over!");
                 clearInterval(isAlive);
                 gameContainer.style.display = "none";
-                startButton.style.display = "inline-block";
-                jumpButton.style.display = "none"; // Hide the jump button
+                startButton.style.display = "inline-flex";
+                jumpButton.style.display = "none";
             }
         }, 10);
-
-        document.addEventListener("keydown", function (event) {
-            if (event.code === "Space") {
-                jump();
-            }
-        });
-
-        jumpButton.addEventListener("click", jump);
     }
 
     startButton.addEventListener("click", startGame);
+    jumpButton.addEventListener("click", jump);
+
+    document.addEventListener("keydown", function (event) {
+        if (event.code === "Space") {
+            jump();
+        }
+    });
 });
