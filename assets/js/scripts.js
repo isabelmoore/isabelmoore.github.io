@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // detect collision
             if (cactusLeft < 90 && cactusLeft > 0 && dinoTop >= 120) {
                 // collision
-                alert("Game Over!");
+                alert("Game Over, Sowwy!");
                 clearInterval(isAlive);
                 gameContainer.style.display = "none";
                 startButton.style.display = "inline-flex";
