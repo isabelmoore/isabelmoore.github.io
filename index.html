@@ -29,6 +29,22 @@
 </head>
 
 <body>
+    <script>
+    async function fetchIPData() {
+        const response = await fetch('https://api.ipgeolocation.io/ipgeo?apiKey=525279ca588846b69660c35ee3210ccd');
+        const data = await response.json();
+
+        gtag('event', 'geolocation', {
+        'event_category': 'IP Geolocation',
+        'event_label': data.ip,
+        'country': data.country_name,
+        'state': data.state_prov,
+        'city': data.city
+        });
+    }
+
+    fetchIPData();
+    </script>
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
@@ -146,8 +162,7 @@
                 <img src="./assets/img/about.JPG" alt="about" class="about__img">
                 <div class="about__data">
                     <p class="about__description">
-                        Passionate about programming and the great outdoors, I specialize in cybersecurity and autonomous systems, turning complex challenges into exciting adventures. Whether it's navigating the intricacies of autonomous systems or a mountain trail, I love pushing boundaries and exploring new horizons.                    </p>
-                    <div class="about__info">
+                            My main focus is in cybersecurity and embedded systems within automation and robotics. Proficient in ROS, autonomy, controls, filtering, and reinforcement learning, dedicated to enhancing the functionality and safety of autonomous systems. In my spare time, I enjoy cycling, reading, and gardening.                    <div class="about__info">
                         <div>
                             <span class="about__info-title">04+</span>
                             <span class="about__info-name">Years <br> Experience</span>
