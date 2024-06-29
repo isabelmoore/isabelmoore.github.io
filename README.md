@@ -11,8 +11,4 @@ This website is dedicated to showcasing the professional services and accomplish
 - **Unicons from Iconscout**: Utilized scalable icons across the website to enhance the user interface and user experience.
 
 ## Setup
-To get a local copy up and running follow these simple example steps.
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/yourUsername/yourRepository.git
+If you have any questions on my setup, please feel free to reach out via email at isabelmoore717@gamil.com!
