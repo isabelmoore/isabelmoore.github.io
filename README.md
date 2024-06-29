@@ -1,7 +1,7 @@
 # Isabel Moore Portfolio 
 
 ## Overview
-This website is dedicated to showcasing the professional services and accomplishments of Isabel Moore in the fields of Robotics & Automation, Cybersecurity & Cyber-Physical Systems, and Embedded Systems & IoT. The site features detailed sections on each service area, highlighting key projects, achievements, and Isabel's expertise.
+This website is dedicated to showcasing my professional services and accomplishments.
 
 ## Technologies Used
 - **HTML/CSS/JavaScript**: For structuring and styling the website.
@@ -11,4 +11,4 @@ This website is dedicated to showcasing the professional services and accomplish
 - **Unicons from Iconscout**: Utilized scalable icons across the website to enhance the user interface and user experience.
 
 ## Setup
-If you have any questions on my setup, please feel free to reach out via email at isabelmoore717@gamil.com!
+If you have any questions about my setup, please feel free to reach out via email at isabelmoore717@gamil.com!
