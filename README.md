@@ -11,4 +11,4 @@ This website is dedicated to showcasing my professional services and accomplishm
 - **Unicons from Iconscout**: Utilized scalable icons across the website to enhance the user interface and user experience.
 
 ## Setup
-If you have any questions about my setup, please feel free to reach out via email at isabelmoore717@gamil.com!
+If you have any questions about my setup, please feel free to reach out via email at isabelmoore717@gmail.com!
