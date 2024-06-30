@@ -21,10 +21,10 @@ let bird = document.getElementById('bird');
 let cactus = document.getElementById('cactus');
 
 const cactusTextures = [
-    { src: '/assets/cacti/cactus2.png', width: 40, height: 60 },
-    { src: '/assets/cacti/cactus3.png', width: 40, height: 60 },
-    { src: '/assets/cacti/doubleCactus.png', width: 60, height: 50 },
-    { src: '/assets/cacti/tripleCactus.png', width: 60, height: 50 }
+    { src: '/assets/cacti/cactus2.png', width: 40, height: 50 },
+    { src: '/assets/cacti/cactus3.png', width: 40, height: 50 },
+    { src: '/assets/cacti/doubleCactus.png', width: 80, height: 50 },
+    { src: '/assets/cacti/tripleCactus.png', width: 120, height: 50 }
 ];
 
 const doggoTextures = [
@@ -69,17 +69,11 @@ function updateGame() {
     score++;
     document.getElementById('score').innerText = 'Score: ' + Math.floor(score / 10);
 
-    // Check if the cactus is out of frame and reset
-    let cactusRect = cactus.getBoundingClientRect();
-    if (cactusRect.right < 0) {
-        resetCactus();
+    // Randomly change cactus texture every other frame
+    if (score % 2 === 0) {
+        cactusIndex = Math.floor(Math.random() * cactusTextures.length);
+        setCactusTexture();
     }
-}
-
-function resetCactus() {
-    cactusIndex = Math.floor(Math.random() * cactusTextures.length);
-    setCactusTexture();
-    cactus.style.left = '580px';
 }
 
 function setCactusTexture() {
