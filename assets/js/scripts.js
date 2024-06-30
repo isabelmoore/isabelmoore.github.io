@@ -19,10 +19,10 @@ let tree = document.getElementById('tree');
 let moon = document.getElementById('moon');
 
 const cactusTextures = [
-    { src: '/assets/cacti/cactus2.png', width: 40, height: 50 },
-    { src: '/assets/cacti/cactus3.png', width: 40, height: 50 },
-    { src: '/assets/cacti/doubleCactus.png', width: 80, height: 50 },
-    { src: '/assets/cacti/tripleCactus.png', width: 120, height: 50 }
+    { src: '/assets/cacti/cactus2.png', width: 20, height: 30 },
+    { src: '/assets/cacti/cactus3.png', width: 20, height: 30 },
+    { src: '/assets/cacti/doubleCactus.png', width: 30, height: 25 },
+    { src: '/assets/cacti/tripleCactus.png', width: 30, height: 25 }
 ];
 
 const doggoTextures = [
