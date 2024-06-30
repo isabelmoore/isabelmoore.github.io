@@ -69,11 +69,17 @@ function updateGame() {
     score++;
     document.getElementById('score').innerText = 'Score: ' + Math.floor(score / 10);
 
-    // Randomly change cactus texture every other frame
-    if (score % 2 === 0) {
-        cactusIndex = Math.floor(Math.random() * cactusTextures.length);
-        setCactusTexture();
+    // Check if the cactus is out of frame and reset
+    let cactusRect = cactus.getBoundingClientRect();
+    if (cactusRect.right < 0) {
+        resetCactus();
     }
+}
+
+function resetCactus() {
+    cactusIndex = Math.floor(Math.random() * cactusTextures.length);
+    setCactusTexture();
+    cactus.style.left = '580px';
 }
 
 function setCactusTexture() {
