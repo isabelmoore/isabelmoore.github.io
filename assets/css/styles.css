@@ -1104,7 +1104,7 @@ img {
 
 #cloud {
     width: 60px;
-    height: 30px;
+    height: 60px;
     background-image: url('/assets/landscape/cloud.png');
     background-size: cover;
     position: absolute;
