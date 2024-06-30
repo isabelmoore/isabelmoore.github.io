@@ -17,6 +17,7 @@ let ground = document.getElementById('ground');
 let cloud = document.getElementById('cloud');
 let tree = document.getElementById('tree');
 let moon = document.getElementById('moon');
+let bird = document.getElementById('bird');
 
 const cactusTextures = [
     { src: '/assets/cacti/cactus2.png', width: 40, height: 50 },
@@ -36,18 +37,26 @@ const doggoTextures = [
     '/assets/doggo/dogEight.png'
 ];
 
+const birdTextures = [
+    '/assets/doggo/flyer1.png',
+    '/assets/doggo/flyer2.png'
+];
+
 let doggoTextureIndex = 0;
 let cactus = document.getElementById('cactus');
 let cactusIndex = 0;
+let birdTextureIndex = 0;
 
 function startGame() {
     score = 0;
     setCactusTexture();
+    setBirdTexture();
     cactus.style.animation = 'block 2s infinite linear';
     ground.style.animation = 'moveGround 5s linear infinite';
     cloud.style.animation = 'moveCloud 10s linear infinite';
     tree.style.animation = 'moveTree 8s linear infinite';
     moon.style.animation = 'moveMoon 20s linear infinite';
+    bird.style.animation = 'moveBird 5s linear infinite';
     updateGame();
 }
 
@@ -56,6 +65,7 @@ function updateGame() {
     requestAnimationFrame(updateGame);
     checkCollisions();
     animateDoggo();
+    animateBird();
     score++;
     document.getElementById('score').innerText = 'Score: ' + Math.floor(score / 10);
 

@@ -1164,4 +1164,23 @@ img {
     }
 }
 
+#bird {
+  width: 40px;
+  height: 30px;
+  background-image: url('/assets/doggo/flyer1.png');
+  background-size: contain;
+  position: absolute;
+  top: 80px;
+  left: 580px;
+  z-index: 0;
+  animation: moveBird 5s linear infinite;
+}
 
+@keyframes moveBird {
+  0% {
+      left: 600px;
+  }
+  100% {
+      left: -40px;
+  }
+}
