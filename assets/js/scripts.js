@@ -15,6 +15,7 @@ let gameActive = false;
 let doggo = document.getElementById('doggo');
 let ground = document.getElementById('ground');
 let cloud = document.getElementById('cloud');
+let cloud2 = document.getElementById('cloud2'); // New cloud
 let tree = document.getElementById('tree');
 let moon = document.getElementById('moon');
 let bird = document.getElementById('bird');
@@ -23,8 +24,8 @@ let cactus = document.getElementById('cactus');
 const cactusTextures = [
     { src: '/assets/cacti/cactus2.png', width: 20, height: 30 },
     { src: '/assets/cacti/cactus3.png', width: 20, height: 30 },
-    { src: '/assets/cacti/doubleCactus.png', width: 30, height: 25 },
-    { src: '/assets/cacti/tripleCactus.png', width: 30, height: 25 }
+    { src: '/assets/cacti/doubleCactus.png', width: 40, height: 30 },
+    { src: '/assets/cacti/tripleCactus.png', width: 40, height: 30 }
 ];
 
 const doggoTextures = [
@@ -57,6 +58,7 @@ function startGame() {
     cactus.style.animation = 'block 2s infinite linear';
     ground.style.animation = 'moveGround 5s linear infinite';
     cloud.style.animation = 'moveCloud 10s linear infinite';
+    cloud2.style.animation = 'moveCloud2 12s linear infinite';
     tree.style.animation = 'moveTree 8s linear infinite';
     moon.style.animation = 'moveMoon 20s linear infinite';
     bird.style.animation = 'moveBird 5s linear infinite';
@@ -79,7 +81,7 @@ function updateGame() {
     //     resetCactus();
     // }
     // Randomly change cactus texture every other frame
-    if (score % 150 === 0) {
+    if (score % 120 === 0) {
         cactusIndex = Math.floor(Math.random() * cactusTextures.length);
         setCactusTexture();
     }
@@ -120,6 +122,28 @@ function checkCollisions() {
     let cactusRect = cactus.getBoundingClientRect();
     let birdRect = bird.getBoundingClientRect();
 
+    // Adjust the rectangles by subtracting 10 pixels from width and height
+    doggoRect = {
+        x: doggoRect.x,
+        y: doggoRect.y,
+        width: doggoRect.width - 10,
+        height: doggoRect.height - 10
+    };
+
+    cactusRect = {
+        x: cactusRect.x,
+        y: cactusRect.y,
+        width: cactusRect.width - 10,
+        height: cactusRect.height - 10
+    };
+
+    birdRect = {
+        x: birdRect.x,
+        y: birdRect.y,
+        width: birdRect.width - 15,
+        height: birdRect.height - 15
+    };
+
     if (
         (doggoRect.x < cactusRect.x + cactusRect.width &&
         doggoRect.x + doggoRect.width > cactusRect.x &&
@@ -133,6 +157,7 @@ function checkCollisions() {
         gameOver();
     }
 }
+
 
 function gameOver() {
     gameActive = false;
@@ -149,6 +174,7 @@ function resetAnimations() {
     cactus.style.animation = 'none';
     ground.style.animation = 'none';
     cloud.style.animation = 'none';
+    cloud2.style.animation = 'none';
     tree.style.animation = 'none';
     moon.style.animation = 'none';
     bird.style.animation = 'none';

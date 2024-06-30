@@ -339,6 +339,8 @@ img {
   padding: 1rem;
   border-radius: 0.5rem;
   font-weight: var(--font-medium);
+  width: 200px; /* Set a consistent width */
+  text-align: center; /* Center text inside the button */
 }
 
 .button:hover {
@@ -1027,12 +1029,12 @@ img {
 }
 
 #doggo {
-    width: 50px;
-    height: 35px;
+    width: 60px;
+    height: 45px;
     background-image: url('/assets/doggo/dogOne.png');
-    background-size: 50px 35px;
+    background-size: 60px 45px;
     position: absolute;
-    top: 148px;
+    top: 142px;
     left: 50px;
     z-index: 1;
 }
@@ -1046,13 +1048,13 @@ img {
         top: 150px;
     }
     30% {
-        top: 80px;
+        top: 70px;
     }
     50% {
         top: 50px;
     }
     70% {
-        top: 80px;
+        top: 70px;
     }
     100% {
         top: 150px;
@@ -1106,7 +1108,19 @@ img {
     top: 40px;
     left: 580px;
     z-index: 0;
-    animation: moveCloud 10s linear infinite;
+    animation: moveCloud 8s linear infinite;
+}
+
+#cloud2 {
+  width: 60px;
+  height: 60px;
+  background-image: url('/assets/landscape/cloud.png');
+  background-size: cover;
+  position: absolute;
+  top: 5px; /* Positioned a little bit above the existing cloud */
+  left: 580px;
+  z-index: 0;
+  animation: moveCloud2 12s linear infinite; /* Different animation timing */
 }
 
 @keyframes moveCloud {
@@ -1118,6 +1132,14 @@ img {
     }
 }
 
+@keyframes moveCloud2 {
+  0% {
+      left: 600px;
+  }
+  100% {
+      left: -60px;
+  }
+}
 #tree {
     width: 50px;
     height: 100px;
@@ -1144,7 +1166,7 @@ img {
     background-image: url('/assets/landscape/moon.png');
     background-size: cover;
     position: absolute;
-    top: 10px;
+    top: 20px;
     left: 500px;
     z-index: 0;
     animation: moveMoon 20s linear infinite;
@@ -1165,7 +1187,7 @@ img {
   background-image: url('/assets/doggo/flyer1.png');
   background-size: contain;
   position: absolute;
-  top: 40px;
+  top: 50px;
   left: 580px;
   z-index: 0;
   animation: moveBird 5s linear infinite;
