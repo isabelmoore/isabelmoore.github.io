@@ -1165,7 +1165,7 @@ img {
   background-image: url('/assets/doggo/flyer1.png');
   background-size: contain;
   position: absolute;
-  top: 80px;
+  top: 40px;
   left: 580px;
   z-index: 0;
   animation: moveBird 5s linear infinite;

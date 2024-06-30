@@ -21,10 +21,10 @@ let bird = document.getElementById('bird');
 let cactus = document.getElementById('cactus');
 
 const cactusTextures = [
-    { src: '/assets/cacti/cactus2.png', width: 40, height: 60 },
-    { src: '/assets/cacti/cactus3.png', width: 40, height: 60 },
-    { src: '/assets/cacti/doubleCactus.png', width: 60, height: 50 },
-    { src: '/assets/cacti/tripleCactus.png', width: 60, height: 50 }
+    { src: '/assets/cacti/cactus2.png', width: 20, height: 30 },
+    { src: '/assets/cacti/cactus3.png', width: 20, height: 30 },
+    { src: '/assets/cacti/doubleCactus.png', width: 30, height: 25 },
+    { src: '/assets/cacti/tripleCactus.png', width: 30, height: 25 }
 ];
 
 const doggoTextures = [
@@ -46,6 +46,7 @@ const birdTextures = [
 let doggoTextureIndex = 0;
 let cactusIndex = 0;
 let birdTextureIndex = 0;
+let cactusInView = false;
 
 function startGame() {
     score = 0;
@@ -69,19 +70,26 @@ function updateGame() {
     score++;
     document.getElementById('score').innerText = 'Score: ' + Math.floor(score / 10);
 
-    // Randomly change cactus texture every other frame
-    if (score % 300 === 0) {
-        cactusIndex = Math.floor(Math.random() * cactusTextures.length);
-        setCactusTexture();
+    // Check if the cactus is in view and count frames
+    let cactusRect = cactus.getBoundingClientRect();
+    if (cactusRect.right > 0 && cactusRect.left < window.innerWidth) {
+        if (!cactusInView) {
+            cactusInView = true;
+            cactusFramesVisible = 0;
+        }
+        cactusFramesVisible++;
+    } else if (cactusInView) {
+        cactusInView = false;
+        console.log('Cactus was in view for:', cactusFramesVisible, 'frames');
+        resetCactus();
     }
 }
 
-function setCactusTexture() {
-    const texture = cactusTextures[cactusIndex];
-    cactus.style.backgroundImage = `url(${texture.src})`;
-    cactus.style.width = `${texture.width}px`;
-    cactus.style.height = `${texture.height}px`;
-    cactus.style.backgroundSize = `${texture.width}px ${texture.height}px`;
+function resetCactus() {
+    cactusIndex = Math.floor(Math.random() * cactusTextures.length);
+    setCactusTexture();
+    cactus.style.left = '580px';
+    cactusFramesVisible = 0;
 }
 
 function setBirdTexture() {
