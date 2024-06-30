@@ -997,88 +997,169 @@ img {
 
 /* Existing styles... */
 
+/* styles.css */
 .game-container {
     text-align: center;
     margin: 0rem 1rem;
     padding-bottom: 2rem;
 }
 
-
 .game-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
-/* Add margin to create a gap between the game and the jump button */
 .jump-button-container {
-  margin-top: 1rem; /* Adjust the value as needed for more/less gap */
+    margin-top: 1rem;
 }
 
-/* Game styling */
 .game {
-  max-width: 600px; 
-  height: 200px; 
-  border: 1px solid var(--first-color-alt);
-  margin: auto;
-  background-color: white; 
-  position: relative; /* Ensure that child elements are positioned relative to the game container */
-  overflow: hidden; /* Hide overflow to keep the elements within the game boundaries */
-  border-radius: 15px; /* Add rounded corners to the game borders */
+    max-width: 600px;
+    height: 200px;
+    border: 1px solid var(--first-color-alt);
+    margin: auto;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
 }
 
-#dino {
-  width: 50px;
-  height: 50px;
-  background-image: url('/assets/img/trex-p.png'); /* Ensure the path is correct */
-  background-size: 50px 50px;
-  position: absolute; /* Position absolutely within the game container */
-  top: 148px;
-  left: 50px;
-  z-index: 1; /* Ensure dino is on top */
+#doggo {
+    width: 50px;
+    height: 50px;
+    background-image: url('/assets/doggo/dogOne.png');
+    background-size: 50px 50px;
+    position: absolute;
+    top: 148px;
+    left: 50px;
+    z-index: 1;
 }
 
 .jump {
-  animation: jump 0.9s ease-out; /* Adjust duration and easing for a wider jump */
+    animation: jump 0.9s ease-out;
 }
 
 @keyframes jump {
-  0% {
-    top: 150px;
-  }
-  30% {
-    top: 70px; /* Higher jump */
-  }
-  50% {
-    top: 30px; /* Higher jump */
-  }
-  70% {
-    top: 70px; /* Higher jump */
-  }
-  100% {
-    top: 150px;
-  }
+    0% {
+        top: 150px;
+    }
+    30% {
+        top: 70px;
+    }
+    50% {
+        top: 30px;
+    }
+    70% {
+        top: 70px;
+    }
+    100% {
+        top: 150px;
+    }
+}
+
+#ground {
+    width: 100%;
+    height: 50px;
+    background-image: url('/assets/landscape/ground.png');
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    animation: moveGround 5s linear infinite;
+}
+
+@keyframes moveGround {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -600px 0;
+    }
 }
 
 #cactus {
-  width: 40px;
-  height: 50px;
-  background-image: url('/assets/img/cactus-p.png'); /* Ensure the path is correct */
-  background-size: 40px 50px;
-  position: absolute; /* Position absolutely within the game container */
-  top: 148px;
-  left: 580px;
-  z-index: 0; /* Ensure cactus is below dino */
-  animation: block 2s infinite linear;
+    width: 40px;
+    height: 50px;
+    background-size: 40px 50px;
+    position: absolute;
+    top: 148px;
+    left: 580px;
+    z-index: 0;
+    animation: block 2s infinite linear;
 }
 
 @keyframes block {
-  0% {
-    left: 580px;
-  }
-  100% {
-    left: -20px;
-  }
+    0% {
+        left: 580px;
+    }
+    100% {
+        left: -20px;
+    }
 }
+
+#cloud {
+    width: 60px;
+    height: 30px;
+    background-image: url('/assets/landscape/cloud.png');
+    background-size: cover;
+    position: absolute;
+    top: 20px;
+    left: 580px;
+    z-index: 0;
+    animation: moveCloud 10s linear infinite;
+}
+
+@keyframes moveCloud {
+    0% {
+        left: 600px;
+    }
+    100% {
+        left: -60px;
+    }
+}
+
+#tree {
+    width: 50px;
+    height: 100px;
+    background-size: cover;
+    position: absolute;
+    bottom: 50px;
+    left: 580px;
+    z-index: 0;
+    animation: moveTree 8s linear infinite;
+}
+
+@keyframes moveTree {
+    0% {
+        left: 600px;
+    }
+    100% {
+        left: -50px;
+    }
+}
+
+#moon {
+    width: 40px;
+    height: 40px;
+    background-image: url('/assets/landscape/moon.png');
+    background-size: cover;
+    position: absolute;
+    top: 10px;
+    left: 500px;
+    z-index: 0;
+    animation: moveMoon 20s linear infinite;
+}
+
+@keyframes moveMoon {
+    0% {
+        left: 600px;
+    }
+    100% {
+        left: -40px;
+    }
+}
+
 
