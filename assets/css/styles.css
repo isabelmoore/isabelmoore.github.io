@@ -1028,9 +1028,9 @@ img {
 
 #doggo {
     width: 50px;
-    height: 50px;
+    height: 35px;
     background-image: url('/assets/doggo/dogOne.png');
-    background-size: 50px 50px;
+    background-size: 50px 35px;
     position: absolute;
     top: 148px;
     left: 50px;
@@ -1081,15 +1081,17 @@ img {
 }
 
 #cactus {
-    width: 40px;
-    height: 50px;
-    background-size: 40px 50px;
-    position: absolute;
-    top: 148px;
-    left: 580px;
-    z-index: 0;
-    animation: block 2s infinite linear;
+  width: 40px;
+  height: 50px;
+  background-image: url('/assets/cacti/cactus2.png');
+  background-size: 40px 50px;
+  position: absolute;
+  top: 148px;
+  left: 580px;
+  z-index: 0;
+  animation: block 2s infinite linear;
 }
+
 
 @keyframes block {
     0% {

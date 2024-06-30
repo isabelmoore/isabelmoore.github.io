@@ -19,10 +19,10 @@ let tree = document.getElementById('tree');
 let moon = document.getElementById('moon');
 
 const cactusTextures = [
-    '/assets/cacti/cactus2.png',
-    '/assets/cacti/cactus3.png',
-    '/assets/cacti/doubleCactus.png',
-    '/assets/cacti/tripleCactus.png'
+    { src: '/assets/cacti/cactus2.png', width: 40, height: 50 },
+    { src: '/assets/cacti/cactus3.png', width: 40, height: 50 },
+    { src: '/assets/cacti/doubleCactus.png', width: 80, height: 50 },
+    { src: '/assets/cacti/tripleCactus.png', width: 120, height: 50 }
 ];
 
 const doggoTextures = [
@@ -42,6 +42,7 @@ let cactusIndex = 0;
 
 function startGame() {
     score = 0;
+    setCactusTexture();
     cactus.style.animation = 'block 2s infinite linear';
     ground.style.animation = 'moveGround 5s linear infinite';
     cloud.style.animation = 'moveCloud 10s linear infinite';
@@ -61,8 +62,15 @@ function updateGame() {
     // Change cactus texture
     if (score % 500 === 0) {
         cactusIndex = (cactusIndex + 1) % cactusTextures.length;
-        cactus.style.backgroundImage = `url(${cactusTextures[cactusIndex]})`;
+        setCactusTexture();
     }
+}
+
+function setCactusTexture() {
+    const texture = cactusTextures[cactusIndex];
+    cactus.style.backgroundImage = `url(${texture.src})`;
+    cactus.style.width = `${texture.width}px`;
+    cactus.style.height = `${texture.height}px`;
 }
 
 function jump() {
