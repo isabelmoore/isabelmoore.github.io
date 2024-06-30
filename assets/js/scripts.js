@@ -17,12 +17,14 @@ let ground = document.getElementById('ground');
 let cloud = document.getElementById('cloud');
 let tree = document.getElementById('tree');
 let moon = document.getElementById('moon');
+let bird = document.getElementById('bird');
+let cactus = document.getElementById('cactus');
 
 const cactusTextures = [
-    { src: '/assets/cacti/cactus2.png', width: 20, height: 30 },
-    { src: '/assets/cacti/cactus3.png', width: 20, height: 30 },
-    { src: '/assets/cacti/doubleCactus.png', width: 30, height: 25 },
-    { src: '/assets/cacti/tripleCactus.png', width: 30, height: 25 }
+    { src: '/assets/cacti/cactus2.png', width: 40, height: 60 },
+    { src: '/assets/cacti/cactus3.png', width: 40, height: 60 },
+    { src: '/assets/cacti/doubleCactus.png', width: 60, height: 50 },
+    { src: '/assets/cacti/tripleCactus.png', width: 60, height: 50 }
 ];
 
 const doggoTextures = [
@@ -36,18 +38,25 @@ const doggoTextures = [
     '/assets/doggo/dogEight.png'
 ];
 
+const birdTextures = [
+    '/assets/doggo/flyer1.png',
+    '/assets/doggo/flyer2.png'
+];
+
 let doggoTextureIndex = 0;
-let cactus = document.getElementById('cactus');
 let cactusIndex = 0;
+let birdTextureIndex = 0;
 
 function startGame() {
     score = 0;
     setCactusTexture();
+    setBirdTexture();
     cactus.style.animation = 'block 2s infinite linear';
     ground.style.animation = 'moveGround 5s linear infinite';
     cloud.style.animation = 'moveCloud 10s linear infinite';
     tree.style.animation = 'moveTree 8s linear infinite';
     moon.style.animation = 'moveMoon 20s linear infinite';
+    bird.style.animation = 'moveBird 5s linear infinite';
     updateGame();
 }
 
@@ -56,12 +65,13 @@ function updateGame() {
     requestAnimationFrame(updateGame);
     checkCollisions();
     animateDoggo();
+    animateBird();
     score++;
     document.getElementById('score').innerText = 'Score: ' + Math.floor(score / 10);
 
-    // Change cactus texture
-    if (score % 500 === 0) {
-        cactusIndex = (cactusIndex + 1) % cactusTextures.length;
+    // Randomly change cactus texture every other frame
+    if (score % 2 === 0) {
+        cactusIndex = Math.floor(Math.random() * cactusTextures.length);
         setCactusTexture();
     }
 }
@@ -72,6 +82,11 @@ function setCactusTexture() {
     cactus.style.width = `${texture.width}px`;
     cactus.style.height = `${texture.height}px`;
     cactus.style.backgroundSize = `${texture.width}px ${texture.height}px`;
+}
+
+function setBirdTexture() {
+    birdTextureIndex = (birdTextureIndex + 1) % birdTextures.length;
+    bird.style.backgroundImage = `url(${birdTextures[birdTextureIndex]})`;
 }
 
 function jump() {
@@ -87,12 +102,17 @@ function jump() {
 function checkCollisions() {
     let doggoRect = doggo.getBoundingClientRect();
     let cactusRect = cactus.getBoundingClientRect();
+    let birdRect = bird.getBoundingClientRect();
 
     if (
-        doggoRect.x < cactusRect.x + cactusRect.width &&
+        (doggoRect.x < cactusRect.x + cactusRect.width &&
         doggoRect.x + doggoRect.width > cactusRect.x &&
         doggoRect.y < cactusRect.y + cactusRect.height &&
-        doggoRect.y + doggoRect.height > cactusRect.y
+        doggoRect.y + doggoRect.height > cactusRect.y) ||
+        (doggoRect.x < birdRect.x + birdRect.width &&
+        doggoRect.x + doggoRect.width > birdRect.x &&
+        doggoRect.y < birdRect.y + birdRect.height &&
+        doggoRect.y + doggoRect.height > birdRect.y)
     ) {
         gameOver();
     }
@@ -115,12 +135,19 @@ function resetAnimations() {
     cloud.style.animation = 'none';
     tree.style.animation = 'none';
     moon.style.animation = 'none';
+    bird.style.animation = 'none';
 }
 
 function animateDoggo() {
     if (score % 5 === 0) { // Change doggo animation frame every few frames
         doggoTextureIndex = (doggoTextureIndex + 1) % doggoTextures.length;
         doggo.style.backgroundImage = `url(${doggoTextures[doggoTextureIndex]})`;
+    }
+}
+
+function animateBird() {
+    if (score % 20 === 0) { // Change bird animation frame every few frames
+        setBirdTexture();
     }
 }
 
