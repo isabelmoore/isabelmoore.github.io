@@ -46,7 +46,9 @@ const birdTextures = [
 let doggoTextureIndex = 0;
 let cactusIndex = 0;
 let birdTextureIndex = 0;
+let cactusFramesVisible = 0;
 let cactusInView = false;
+let startFrame = 0;
 
 function startGame() {
     score = 0;
@@ -69,19 +71,17 @@ function updateGame() {
     animateBird();
     score++;
     document.getElementById('score').innerText = 'Score: ' + Math.floor(score / 10);
+    console.log('Cactus was in view for:', score, 'frames');
 
-    // Check if the cactus is in view and count frames
-    let cactusRect = cactus.getBoundingClientRect();
-    if (cactusRect.right > 0 && cactusRect.left < window.innerWidth) {
-        if (!cactusInView) {
-            cactusInView = true;
-            cactusFramesVisible = 0;
-        }
-        cactusFramesVisible++;
-    } else if (cactusInView) {
-        cactusInView = false;
-        console.log('Cactus was in view for:', cactusFramesVisible, 'frames');
-        resetCactus();
+    // Check if the cactus is out of frame and reset
+    // let cactusRect = cactus.getBoundingClientRect();
+    // if (cactusRect.right < 0) {
+    //     resetCactus();
+    // }
+    // Randomly change cactus texture every other frame
+    if (score % 150 === 0) {
+        cactusIndex = Math.floor(Math.random() * cactusTextures.length);
+        setCactusTexture();
     }
 }
 
@@ -90,6 +90,14 @@ function resetCactus() {
     setCactusTexture();
     cactus.style.left = '580px';
     cactusFramesVisible = 0;
+}
+
+function setCactusTexture() {
+    const texture = cactusTextures[cactusIndex];
+    cactus.style.backgroundImage = `url(${texture.src})`;
+    cactus.style.width = `${texture.width}px`;
+    cactus.style.height = `${texture.height}px`;
+    cactus.style.backgroundSize = `${texture.width}px ${texture.height}px`;
 }
 
 function setBirdTexture() {

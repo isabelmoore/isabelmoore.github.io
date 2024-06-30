@@ -1046,13 +1046,13 @@ img {
         top: 150px;
     }
     30% {
-        top: 70px;
+        top: 80px;
     }
     50% {
-        top: 30px;
+        top: 50px;
     }
     70% {
-        top: 70px;
+        top: 80px;
     }
     100% {
         top: 150px;
@@ -1103,7 +1103,7 @@ img {
     background-image: url('/assets/landscape/cloud.png');
     background-size: cover;
     position: absolute;
-    top: 20px;
+    top: 40px;
     left: 580px;
     z-index: 0;
     animation: moveCloud 10s linear infinite;
