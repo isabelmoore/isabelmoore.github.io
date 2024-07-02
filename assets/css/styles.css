@@ -339,8 +339,6 @@ img {
   padding: 1rem;
   border-radius: 0.5rem;
   font-weight: var(--font-medium);
-  width: 200px; /* Set a consistent width */
-  text-align: center; /* Center text inside the button */
 }
 
 .button:hover {
