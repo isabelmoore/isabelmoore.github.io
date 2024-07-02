@@ -1086,7 +1086,7 @@ img {
     top: 148px;
     left: 580px;
     z-index: 0;
-    animation: block 2s linear infinite;
+    animation: block 4s linear infinite;
 }
 
 @keyframes block {
@@ -1198,5 +1198,26 @@ img {
   }
   100% {
       left: -40px;
+  }
+}
+
+#tumbleweed {
+  width: 25px;
+  height: 25px;
+  background-image: url('/assets/tumbleweed/tumble1.png');
+  background-size: cover;
+  position: absolute;
+  top: 155px;
+  left: 580px;
+  z-index: 0;
+  animation: moveTumbleweed 1s linear infinite;
+}
+
+@keyframes moveTumbleweed {
+  0% {
+      left: 600px;
+  }
+  100% {
+      left: -50px;
   }
 }

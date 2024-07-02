@@ -20,6 +20,7 @@ let tree = document.getElementById('tree');
 let moon = document.getElementById('moon');
 let bird = document.getElementById('bird');
 let cactus = document.getElementById('cactus');
+let tumbleweed = document.getElementById('tumbleweed');
 
 const cactusTextures = [
     { src: '/assets/cacti/cactus2.png', width: 20, height: 30 },
@@ -39,6 +40,21 @@ const doggoTextures = [
     '/assets/doggo/dogEight.png'
 ];
 
+
+const tumbleTextures = [
+    '/assets/tumbleweed/tumble1.png',
+    '/assets/tumbleweed/tumble2.png',
+    '/assets/tumbleweed/tumble3.png',
+    '/assets/tumbleweed/tumble4.png',
+    '/assets/tumbleweed/tumble5.png',
+    '/assets/tumbleweed/tumble6.png',
+    '/assets/tumbleweed/tumble7.png',
+    '/assets/tumbleweed/tumble8.png',
+    '/assets/tumbleweed/tumble9.png',
+    '/assets/tumbleweed/tumble10.png',
+    '/assets/tumbleweed/tumble11.png'
+];
+
 const birdTextures = [
     '/assets/doggo/flyer1.png',
     '/assets/doggo/flyer2.png'
@@ -50,18 +66,21 @@ let birdTextureIndex = 0;
 let cactusFramesVisible = 0;
 let cactusInView = false;
 let startFrame = 0;
+let tumbleTextureIndex = 0;
 
 function startGame() {
     score = 0;
     setCactusTexture();
     setBirdTexture();
-    cactus.style.animation = 'block 2s infinite linear';
+    setTumbleweedTexture();
+    cactus.style.animation = 'block 4s infinite linear';
     ground.style.animation = 'moveGround 5s linear infinite';
     cloud.style.animation = 'moveCloud 10s linear infinite';
     cloud2.style.animation = 'moveCloud2 12s linear infinite';
     tree.style.animation = 'moveTree 8s linear infinite';
     moon.style.animation = 'moveMoon 20s linear infinite';
     bird.style.animation = 'moveBird 5s linear infinite';
+    tumbleweed.style.animation = 'moveTumbleweed 2s linear infinite';
     updateGame();
 }
 
@@ -71,6 +90,7 @@ function updateGame() {
     checkCollisions();
     animateDoggo();
     animateBird();
+    animateTumbleweed();
     score++;
     document.getElementById('score').innerText = 'Score: ' + Math.floor(score / 10);
     console.log('Cactus was in view for:', score, 'frames');
@@ -101,6 +121,11 @@ function setBirdTexture() {
     bird.style.backgroundImage = `url(${birdTextures[birdTextureIndex]})`;
 }
 
+function setTumbleweedTexture() {
+    tumbleTextureIndex = (tumbleTextureIndex + 1) % tumbleTextures.length;
+    tumbleweed.style.backgroundImage = `url(${tumbleTextures[tumbleTextureIndex]})`;
+}
+
 function jump() {
     if (!doggo.classList.contains('jump')) {
         doggo.classList.add('jump');
@@ -115,6 +140,7 @@ function checkCollisions() {
     let doggoRect = doggo.getBoundingClientRect();
     let cactusRect = cactus.getBoundingClientRect();
     let birdRect = bird.getBoundingClientRect();
+    let tumbleweedRect = tumbleweed.getBoundingClientRect();
 
     // Adjust the rectangles by subtracting 10 pixels from width and height
     doggoRect = {
@@ -138,15 +164,28 @@ function checkCollisions() {
         height: birdRect.height - 15
     };
 
+    tumbleweedRect = {
+        x: tumbleweedRect.x,
+        y: tumbleweedRect.y,
+        width: tumbleweedRect.width - 10,
+        height: tumbleweedRect.height - 10
+    };
+
     if (
         (doggoRect.x < cactusRect.x + cactusRect.width &&
         doggoRect.x + doggoRect.width > cactusRect.x &&
         doggoRect.y < cactusRect.y + cactusRect.height &&
         doggoRect.y + doggoRect.height > cactusRect.y) ||
+
         (doggoRect.x < birdRect.x + birdRect.width &&
         doggoRect.x + doggoRect.width > birdRect.x &&
         doggoRect.y < birdRect.y + birdRect.height &&
-        doggoRect.y + doggoRect.height > birdRect.y)
+        doggoRect.y + doggoRect.height > birdRect.y) ||
+
+        (doggoRect.x < tumbleweedRect.x + tumbleweedRect.width &&
+        doggoRect.x + doggoRect.width > tumbleweedRect.x &&
+        doggoRect.y < tumbleweedRect.y + tumbleweedRect.height &&
+        doggoRect.y + doggoRect.height > tumbleweedRect.y)
     ) {
         gameOver();
     }
@@ -172,6 +211,7 @@ function resetAnimations() {
     tree.style.animation = 'none';
     moon.style.animation = 'none';
     bird.style.animation = 'none';
+    tumbleweed.style.animation = 'none';
 }
 
 function animateDoggo() {
@@ -184,6 +224,12 @@ function animateDoggo() {
 function animateBird() {
     if (score % 20 === 0) { // Change bird animation frame every few frames
         setBirdTexture();
+    }
+}
+
+function animateTumbleweed() {
+    if (score % 5 === 0) { // Change bird animation frame every few frames
+        setTumbleweedTexture();
     }
 }
 
