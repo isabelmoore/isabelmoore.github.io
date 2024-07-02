@@ -156,7 +156,7 @@ function checkCollisions() {
 function gameOver() {
     gameActive = false;
     playSound('die.wav');
-    alert('Game Over! Your score was: ' + Math.floor(score / 10));
+    alert('Game Over, Sowwy! Your score was: ' + Math.floor(score / 10));
     document.getElementById('start-button').style.display = 'block';
     document.getElementById('jump-button').style.display = 'none';
     document.querySelector('.game').style.display = 'none';
