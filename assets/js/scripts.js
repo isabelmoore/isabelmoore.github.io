@@ -75,12 +75,6 @@ function updateGame() {
     document.getElementById('score').innerText = 'Score: ' + Math.floor(score / 10);
     console.log('Cactus was in view for:', score, 'frames');
 
-    // Check if the cactus is out of frame and reset
-    // let cactusRect = cactus.getBoundingClientRect();
-    // if (cactusRect.right < 0) {
-    //     resetCactus();
-    // }
-    // Randomly change cactus texture every other frame
     if (score % 120 === 0) {
         cactusIndex = Math.floor(Math.random() * cactusTextures.length);
         setCactusTexture();

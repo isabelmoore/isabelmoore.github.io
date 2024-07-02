@@ -1012,6 +1012,7 @@ img {
 }
 
 .jump-button-container {
+    display: inline-block;
     margin-top: 1rem;
 }
 
@@ -1085,7 +1086,7 @@ img {
     top: 148px;
     left: 580px;
     z-index: 0;
-    animation: block 2s infinite linear;
+    animation: block 2s linear infinite;
 }
 
 @keyframes block {
