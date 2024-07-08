@@ -42,17 +42,17 @@ const doggoTextures = [
 
 
 const tumbleTextures = [
-    '/assets/tumbleweed/tumble1.png',
-    '/assets/tumbleweed/tumble2.png',
-    '/assets/tumbleweed/tumble3.png',
-    '/assets/tumbleweed/tumble4.png',
-    '/assets/tumbleweed/tumble5.png',
-    '/assets/tumbleweed/tumble6.png',
-    '/assets/tumbleweed/tumble7.png',
-    '/assets/tumbleweed/tumble8.png',
-    '/assets/tumbleweed/tumble9.png',
+    '/assets/tumbleweed/tumble11.png',
     '/assets/tumbleweed/tumble10.png',
-    '/assets/tumbleweed/tumble11.png'
+    '/assets/tumbleweed/tumble9.png',
+    '/assets/tumbleweed/tumble8.png',
+    '/assets/tumbleweed/tumble7.png',
+    '/assets/tumbleweed/tumble6.png',
+    '/assets/tumbleweed/tumble5.png',
+    '/assets/tumbleweed/tumble4.png',
+    '/assets/tumbleweed/tumble3.png',
+    '/assets/tumbleweed/tumble2.png',
+    '/assets/tumbleweed/tumble1.png'
 ];
 
 const birdTextures = [
