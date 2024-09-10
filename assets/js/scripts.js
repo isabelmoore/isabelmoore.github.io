@@ -79,7 +79,7 @@ function startGame() {
     cloud2.style.animation = 'moveCloud2 12s linear infinite';
     tree.style.animation = 'moveTree 8s linear infinite';
     moon.style.animation = 'moveMoon 20s linear infinite';
-    bird.style.animation = 'moveBird 5s linear infinite';
+    bird.style.animation = 'moveBird 6s linear infinite';
     tumbleweed.style.animation = 'moveTumbleweed 2s linear infinite';
     updateGame();
 }
