@@ -316,7 +316,7 @@
         column-gap: 5rem;
     }
 
-    .swiper-portfolio-icon {
+    /* .swiper-portfolio-icon {
         font-size: 3.5rem;
     }
 
@@ -330,7 +330,7 @@
 
     .swiper-container-horizontal>.swiper-pagination-bullets {
         bottom: -4.5rem;
-    }
+    } */
 
     .contact__form {
         width: 460px;

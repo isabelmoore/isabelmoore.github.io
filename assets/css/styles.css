@@ -745,7 +745,7 @@ img {
 .portfolio__button:hover .button__icon {
   transform: translateX(0.25rem);
 }
-
+/* 
 .swiper-button-prev::after,
 .swiper-button-next::after {
   content: "";
@@ -776,7 +776,7 @@ img {
 .swiper-button-next,
 .swiper-pagination-bullet {
   outline: none;
-}
+} */
 
 /*==================== PROJECT IN MIND ====================*/
 .project {
@@ -843,9 +843,9 @@ img {
   color: var(--first-color);
 }
 
-.swiper-container .swiper-pagination-testimonial {
+/* .swiper-container .swiper-pagination-testimonial {
   bottom: 0;
-}
+} */
 
 /*==================== CONTACT ME ====================*/
 .contact__container {
