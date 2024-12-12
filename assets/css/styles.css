@@ -905,7 +905,8 @@ img {
 }
 
 .footer__bg {
-  background-color: var(--first-color-second);
+  /* background-color: var(--first-color-second); */
+  background-color: var(--text-color);
   padding: 2rem 0 3rem;
 }
 
