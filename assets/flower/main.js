@@ -1,20 +1,18 @@
-// onload = () => {
-//     const c = setTimeout(() => {
-//       document.body.classList.remove("not-loaded");
-//       clearTimeout(c);
-//     }, 1000);
-//   };
+onload = () => {
+    const c = setTimeout(() => {
+      document.body.classList.remove("not-loaded");
+      clearTimeout(c);
+    }, 1000);
+  };
 
-window.onload = () => {
-  const flowerContainer = document.querySelector(".flower-container");
+// function loadFlowerStyles() {
+//   const link = document.createElement("link");
+//   link.rel = "stylesheet";
+//   link.href = "./assets/flower/style.css";
+//   document.head.appendChild(link);
+// }
 
-  if (flowerContainer) {
-      const c = setTimeout(() => {
-          document.body.classList.remove("not-loaded");
-          clearTimeout(c);
-      }, 1000);
-  }
-
-  // Other website-specific onload actions
-  console.log("Website loaded");
-};
+// // Load the flower styles dynamically
+// window.onload = () => {
+//   loadFlowerStyles();
+// };

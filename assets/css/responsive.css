@@ -89,6 +89,9 @@
     .testimonial__description {
         text-align: center;
     }
+    .flower-animation {
+        height: 40vh; 
+    }
 }
 
 /* For medium devices */
@@ -119,6 +122,9 @@
         display: grid;
         grid-template-columns: 0.6fr;
         justify-content: center;
+    }
+    .flower-animation {
+        height: 65vh; 
     }
 }
 
@@ -288,6 +294,9 @@
     .footer__copy {
         margin-top: 4.5rem;
     }
+    .flower-animation {
+        height: 65vh; 
+    }
 }
 
 /* For large devices */
@@ -316,7 +325,7 @@
         column-gap: 5rem;
     }
 
-    /* .swiper-portfolio-icon {
+    .swiper-portfolio-icon {
         font-size: 3.5rem;
     }
 
@@ -330,7 +339,7 @@
 
     .swiper-container-horizontal>.swiper-pagination-bullets {
         bottom: -4.5rem;
-    } */
+    }
 
     .contact__form {
         width: 460px;
@@ -338,6 +347,9 @@
 
     .contact__inputs {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .flower-animation {
+        height: 50vh; 
     }
 }
 
@@ -356,6 +368,9 @@
     .footer__copy {
         margin-right: 20px;
     }
+    .flower-animation {
+        height: 30vh; 
+    }
 }
 
 /* TABLET DEVICES  */
@@ -368,11 +383,17 @@
         display: flex;
         justify-content: center;
     }
+    .flower-animation {
+        height: 50vh; 
+    }
 }
 
 /* LAPTOP DEVICES  */
 @media (min-width:769px) and (max-width:1023px) {
     .home__content {
         padding-top: 0px;
+    }
+    .flower-animation {
+        height: 65vh; 
     }
 }
