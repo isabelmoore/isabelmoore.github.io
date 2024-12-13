@@ -4,6 +4,7 @@
   max-width: 700px;
   text-align: center;
   position: relative;
+  margin-bottom: 3rem; /* Adjust this value as needed */
 }
 
 .flower-animation {
@@ -20,7 +21,7 @@
 .flower-container *,
 .flower-container *::after,
 .flower-container *::before {
-  padding: 0;
+  padding: 10;
   margin: 0;
   border-radius: 10px;
   box-sizing: border-box; }
