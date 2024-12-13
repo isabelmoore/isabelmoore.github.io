@@ -11,7 +11,7 @@
 
   /* HSL color mode */
   --first-color: hsl(var(--hue-color), 69%, 61%);
-  --first-color-second: hsl(var(--hue-color), 35%, 61%);
+  --first-color-second: hsl(var(--hue-color), 55%, 61%);
   --first-color-alt: hsl(var(--hue-color), 27%, 57%);
   --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
   --title-color: hsl(var(--hue-color), 8%, 15%);
@@ -745,7 +745,7 @@ img {
 .portfolio__button:hover .button__icon {
   transform: translateX(0.25rem);
 }
-
+/* 
 .swiper-button-prev::after,
 .swiper-button-next::after {
   content: "";
@@ -777,7 +777,7 @@ img {
 .swiper-pagination-bullet {
   outline: none;
 }
-
+ */
 /*==================== PROJECT IN MIND ====================*/
 .project {
   text-align: center;
@@ -940,7 +940,7 @@ img {
 .footer__copy {
   font-size: var(--smaller-font-size);
   text-align: center;
-  color: var(--first-color);
+  color: #fff;
   margin-top: var(--mb-3);
 }
 
