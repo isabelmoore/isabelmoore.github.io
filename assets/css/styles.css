@@ -742,6 +742,10 @@ img {
   margin-bottom: var(--mb-0-75);
 }
 
+.portfolio__status {
+  margin-bottom: var(--mb-0-75);
+}
+
 .portfolio__button:hover .button__icon {
   transform: translateX(0.25rem);
 }
@@ -794,6 +798,11 @@ img {
 }
 
 .project__description {
+  margin-bottom: var(--mb-1-5);
+}
+
+.project__status {
+  color: var(--first-color);
   margin-bottom: var(--mb-1-5);
 }
 
