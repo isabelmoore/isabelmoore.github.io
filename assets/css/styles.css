@@ -1010,6 +1010,7 @@ img {
 .game-container {
     text-align: center;
     margin: 0rem 1rem;
+    bottom: 10vmin;
 }
 
 .game-buttons {
