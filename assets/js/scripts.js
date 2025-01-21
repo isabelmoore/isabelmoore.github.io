@@ -146,8 +146,8 @@ function checkCollisions() {
     doggoRect = {
         x: doggoRect.x,
         y: doggoRect.y,
-        width: doggoRect.width - 10,
-        height: doggoRect.height - 10
+        width: doggoRect.width - 15,
+        height: doggoRect.height - 15
     };
 
     cactusRect = {
@@ -160,8 +160,8 @@ function checkCollisions() {
     birdRect = {
         x: birdRect.x,
         y: birdRect.y,
-        width: birdRect.width - 15,
-        height: birdRect.height - 15
+        width: birdRect.width - 20,
+        height: birdRect.height - 20
     };
 
     tumbleweedRect = {
