@@ -749,6 +749,11 @@ img {
 .portfolio__button:hover .button__icon {
   transform: translateX(0.25rem);
 }
+.portfolio__divider {
+  border: 0;               /* Remove default hr styling */
+  border-top: 1px solid #ccc;
+  margin: 1rem 0;        /* Spacing above/below the line */
+}
 /* 
 .swiper-button-prev::after,
 .swiper-button-next::after {
