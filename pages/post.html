@@ -8,13 +8,20 @@
     <!--==================== UNICONS ====================-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
+    <!--==================== SWIPER CSS ====================-->
+    <!-- <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css"> -->
+
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="/assets/css/styles.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
 
+    <!--==================== Code Formatting ================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    
     <title>Blog Post</title>
     <style>
-        /* Make the page take the full height of the viewport */
+        /* General Styling */
         html, body {
         height: 100%;
         margin: 0;
@@ -34,43 +41,93 @@
         margin-top: auto; /* Push the footer to the bottom */
         }
 
+        /* Apply styles only within the main element */
+        main h1, main h2, main h3 {
+            color: var(--title-color);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        main p {
+            margin-bottom: 1.5rem;
+        }
+        
+        main ul, main ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+        
+        main li {
+            margin-bottom: 0.8rem;
+        }
+        
+        /* Preformatted Code Block Styling only inside main */
+        main pre {
+            background-color: var(--code-color);
+            color: hsl(var(--hue-color), 8%, 70%); 
+            padding: 1rem;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        }
+        
+        main code {
+            background-color: var(--code-color-light);
+            color: hsl(var(--hue-color), 8%, 70%);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+        }
 
-        /* Style for the "Back to Blog" link */
+        /* Back to Blog Link */
+        .button {
+            display: inline-block;
+            background-color: var(--first-color);
+            color: #fff;
+            /* padding: 1rem; */
+            font-weight: var(--font-medium);
+        }
+
+        .button:hover {
+        background-color: var(--first-color-alt);
+        }
+
+        .button__icon {
+        font-size: 1.25rem;
+        margin-left: var(--mb-0-5);
+        transition: 0.3s;
+        }
+
+        .button--white {
+        background-color: #fff;
+        color: var(--first-color);
+        }
+
+        .button--white:hover {
+        background-color: #fff;
+        }
+
+        .button--flex {
+        display: inline-flex;
+        align-items: center;
+        }
+
+        .button--small {
+        padding: 0.75rem 1rem;
+        }
+
         .button--link {
-        font-size: 1.2rem; /* Make the font size bigger */
-        font-weight: bold; /* Make it bold */
-        color: var(--first-color); /* Adjust color as needed */
-        margin-bottom: 1.5rem; /* Add more spacing below the link */
-        display: inline-block; /* Ensure it's treated as a block to allow spacing */
-        text-decoration: none; /* Remove underline (optional) */
+        padding: 0;
+        background-color: transparent;
+        color: var(--first-color);
         }
 
         .button--link:hover {
-        text-decoration: underline; /* Add underline on hover (optional) */
+        background-color: transparent;
+        color: var(--first-color-alt);
         }
-
-        /* Add spacing for headings and paragraphs */
-        .section__title,
-        .section__content h1, 
-        .section__content h2, 
-        .section__content h3 {
-        margin-top: 2rem; /* Add space above headings */
-        margin-bottom: 1rem; /* Add space below headings */
-        }
-
-        .section__content p {
-        margin-bottom: 1.5rem; /* Add spacing below paragraphs */
-        }
-
-        .section__content ul, 
-        .section__content ol {
-        margin: 1.5rem 0; /* Add vertical spacing around lists */
-        }
-
-        .section__content li {
-        margin-bottom: 0.8rem; /* Add spacing between list items */
-        }
-
+        
     </style>
 </head>
 <body>
@@ -90,6 +147,11 @@
                             <i class="uil uil-user nav__icon"></i> About
                         </a>
                     </li>
+                    <!-- <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li> -->
                     <li class="nav__item">
                         <a href="/#services" class="nav__link">
                             <i class="uil uil-briefcase-alt nav__icon"></i> Services
@@ -114,7 +176,10 @@
                 <i class="uil uil-times nav__close" id="nav-close"></i>
             </div>
             <div class="nav__btns">
+
+                <!-- theme change button  -->
                 <i class="uil uil-moon change-theme" id="theme-button"></i>
+
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="uil uil-apps"></i>
                 </div>
@@ -123,47 +188,51 @@
     </header>
 
     <!--==================== MAIN ====================-->
+        <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
     <main class="main">
         <section class="blog section" id="post">
             <div class="container">
-                <a href="/pages/blog.html" class="button button--link">&larr; Back to Blog</a>
+                <a href="/pages/blog.html" class="button button--link">
+                    <i class="uil uil-arrow-left"></i> Back to Blog
+                </a>
                 <h1 id="post-title" class="section__title"></h1>
                 <div id="post-content" class="section__content"></div>
             </div>
         </section>
-    </main>
+    </main>    
 
-    <!--==================== FOOTER ====================-->
-    <footer class="footer">
-        <div class="footer__bg">
-            <div class="footer__container container grid">
-                <div>
-                    <h1 class="footer__title">Isabel</h1>
-                    <span class="footer__subtitle">Thank you for visiting my website.</span>
-                </div>
-                <ul class="footer__links">
-                    <li>
-                        <a href="/#services" class="footer__link">Services</a>
-                    </li>
-                    <li>
-                        <a href="/#portfolio" class="footer__link">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="/#contact" class="footer__link">Contact Me</a>
-                    </li>
-                </ul>
-                <div class="footer__socials">
-                    <a href="https://www.linkedin.com/in/isabel-moore/" aria-label="footer__social" target="_blank" class="footer__social">
-                        <i class="uil uil-linkedin-alt"></i>
-                    </a>
-                </div>
-            </div>
-            <p class="footer__copy">&#169; isabelmoore.github. All right reserved</p>
-        </div>
-    </footer>
 
-    <!-- Showdown.js Markdown Library -->
-    <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const file = params.get("file"); // Get the file parameter
+    
+            if (file) {
+                fetch(file) // Fetch the post content
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error("Failed to load post content.");
+                        }
+                        return response.text(); // Parse as text
+                    })
+                    .then(html => {
+                        // Insert the content into the #post-content div
+                        document.getElementById("post-content").innerHTML = html;
+                    })
+                    .catch(error => {
+                        document.getElementById("post-content").innerHTML = `
+                            <p style="color: red;">Error: ${error.message}</p>`;
+                    });
+            } else {
+                document.getElementById("post-content").innerHTML = `
+                    <p style="color: red;">No post specified.</p>`;
+            }
+        });
+    </script>
+
+
+    <!-- <script src="https://cdn.jsdelivr.net/npm/showdown/dist/showdown.min.js"></script>
     <script>
         const params = new URLSearchParams(window.location.search);
         const file = params.get("file");
@@ -192,6 +261,61 @@
         } else {
             document.getElementById("post-content").innerHTML = `<p style="color: red;">No file specified.</p>`;
         }
-    </script>
+    </script> -->
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Isabel</h1>
+                    <span class="footer__subtitle">Thank you for visiting my website.</span>
+                </div>
+                <ul class="footer__links">
+                    <li>
+                        <a href="/#services" class="footer__link">Services</a>
+                    </li>
+                    <li>
+                        <a href="/#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="/#contact" class="footer__link">ContactMe</a>
+                    </li>
+                </ul>
+                <div class="footer__socials">
+                    <a href="https://www.linkedin.com/in/isabel-moore/" aria-label="footer__social" target="_blank"
+                        class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                    <!-- <a href="https://www.instagram.com/" aria-label="footer__social" target="_blank"
+                        class="footer__social">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/" aria-label="footer__social" target="_blank" class="footer__social">
+                        <i class="uil uil-twitter-alt"></i>
+                    </a> -->
+                </div>
+            </div>
+            <p class="footer__copy">&#169; isabelmoore.github. All right reserved</p>
+        </div>
+    </footer>
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="#" aria-label="scroll-up" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <!-- <script src="./assets/js/swiper-bundle.min.js"></script> -->
+
+    <!--==================== MAIN JS ====================-->
+    <script src="/assets/js/main.js"></script>
+
+    <!--==================== GAME SCRIPT ====================-->
+    <script src="/assets/js/scripts.js"></script>
+
+    <!--==================== FLOWER SCRIPT ====================-->        
+    <link rel="stylesheet" href="/assets/flower/style.css">
+    <script src="/assets/flower/main.js" type="text/javascript"></script>
 </body>
+
 </html>
