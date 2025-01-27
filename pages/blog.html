@@ -25,10 +25,12 @@
         display: flex;
         flex-direction: column;
         }
-
+        
+        
         /* Ensure the main content expands to fill available space */
         .main {
         flex: 1;
+        padding: 2rem 0 4rem;      
         }
 
         /* Footer styles */
@@ -37,6 +39,33 @@
         padding: 2rem 0 3rem;
         margin-top: auto; /* Push the footer to the bottom */
         }
+
+        /* Blog Section Headings */
+        .blog .section__title {
+            font-size: var(--big-font-size);
+            font-weight: var(--font-bold, 700);
+            color: var(--title-color);
+            margin-bottom: var(--mb-1, 1rem);
+            margin-top: var(--mb-1, 1rem);
+
+        }
+
+        .blog .section__subtitle {
+            font-size: var(--h3-font-size);
+            font-weight: var(--font-medium, 500);
+            color: var(--text-color);
+            margin-bottom: var(--mb-2, 1.5rem);
+        }
+
+        /* Blog Post Title (h3) */
+        .blog__title {
+            font-size: var(--h3-font-size);
+            font-weight: var(--font-medium);
+            color: var(--title-color);
+            margin-bottom: var(--mb-1, 1rem);
+            
+        }
+                
     </style>
 </head>
 <body>
@@ -99,7 +128,7 @@
     <!--==================== MAIN ====================-->
     <main class="main">
         <section class="blog section" id="blog">
-            <h2 class="section__title">Blog Posts</h2>
+            <h1 class="section__title">Blog Posts (Under Construction)</h1>
             <span class="section__subtitle">My Research Rabbit Holes</span>
             <ul id="posts-container" class="blog__container container grid">
                 <!-- Blog posts will be dynamically loaded here -->
@@ -119,9 +148,9 @@
         // List of blog posts
         const posts = [
             { 
-                title: "Blog Post Number 1", 
-                date: "2012-08-14", 
-                file: "posts/2012-08-14-blog-post-1.html" 
+                title: "Linux DJ Software with Spotify Integration", 
+                date: "2025-01-27", 
+                file: "posts/linux-dj.html" 
             },
             // { 
             //     title: "Blog Post Number 2", 
@@ -157,7 +186,7 @@
                 <h3 class="blog__title">
                     <a href="/pages/post.html?file=${encodeURIComponent(post.file)}">${post.title}</a>
                 </h3>
-                <span class="blog__date">${post.date}</span>
+                <span class="blog__date">Published: ${post.date}</span>
             `;
             container.appendChild(listItem);
         });
