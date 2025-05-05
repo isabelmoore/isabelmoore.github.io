@@ -1,7 +1,7 @@
 # Isabel Moore Portfolio 
 
 ## Overview
-This website is dedicated to showcasing my professional services and accomplishments.
+This website is dedicated to showcasing my professional expereinces.
 
 ## Technologies Used
 - **HTML/CSS/JavaScript**: For structuring and styling the website.
@@ -10,5 +10,22 @@ This website is dedicated to showcasing my professional services and accomplishm
 - **ipgeolocation.io**: Monitor the geolocation from user IP addresses.
 - **Unicons from Iconscout**: Utilized scalable icons across the website to enhance the user interface and user experience.
 
-## Setup
-If you have any questions about my setup, please feel free to reach out via email at isabelmoore717@gmail.com!
+## Getting Started
+
+To run this site locally and preview your changes, follow these steps:
+
+1. Clone the repository
+    ```bash
+    git@github.com:isabelmoore/isabelmoore.github.io.git
+    cd isabelmoore.github.io/
+    ```
+2. Launch a local server
+    ```bash
+    python3 -m http.server 8008
+    ```
+3. Open in your browser  
+    Navigate to `http://localhost:8008/` in your preferred browser (Chrome, Firefox, Edge) to view updates in real time.
+
+## Questions?
+Feel free to reach out at `isabelmoore717@gmail.com` if you have any questions about the setup or want to collaborate on a project!
+

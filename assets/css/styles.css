@@ -744,20 +744,25 @@ img {
 }
 
 .portfolio__description {
-  margin-bottom: var(--mb-0-75);
+  margin-bottom: var(--mb-0-25);
 }
 
 .portfolio__status {
-  margin-bottom: var(--mb-0-75);
+  margin-bottom: var(--mb-0-25);
 }
 
-.portfolio__button:hover .button__icon {
-  transform: translateX(0.25rem);
+.portfolio__button {
+  margin-bottom: 0.5rem;   /* space below every button */
+}
+
+/* but remove the extra gap after the last one */
+.portfolio__button:last-child {
+  margin-bottom: 0;
 }
 .portfolio__divider {
   border: 0;               /* Remove default hr styling */
   border-top: 1px solid #ccc;
-  margin: 1rem 0;        /* Spacing above/below the line */
+  margin: 0.5rem 0;        /* Spacing above/below the line */
 }
 /* 
 .swiper-button-prev::after,
