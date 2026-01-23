@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!--==================== SWIPER CSS ====================-->
+    <!-- <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css"> -->
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/blog_styles.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+
+    <title>Isabel Moore Blog</title>
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Isabel</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="/#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/#about" class="nav__link">
+                            <i class="uil uil-user nav__icon"></i> About
+                        </a>
+                    </li>
+                    <!-- <li class="nav__item">
+                        <a href="#skills" class="nav__link">
+                            <i class="uil uil-file-alt nav__icon"></i> Skills
+                        </a>
+                    </li> -->
+                    <li class="nav__item">
+                        <a href="/#services" class="nav__link">
+                            <i class="uil uil-briefcase-alt nav__icon"></i> Services
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/#contact" class="nav__link">
+                            <i class="uil uil-message nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/assets/blog.html" class="nav__link active-link">
+                            <i class="uil uil-edit nav__icon"></i> Blog
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+            <div class="nav__btns">
+
+                <!-- theme change button  -->
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <section class="blog section" id="blog">
+            <div class="container blog__layout">
+                <!-- Sidebar -->
+                <aside class="blog__sidebar">
+                    <div class="sidebar__profile">
+                        <div class="sidebar__blob-container"
+                            style="display: flex; justify-content: center; margin-bottom: 1rem;">
+                            <svg class="home__blob" viewbox="0 0 200 187" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <mask id="mask1" mask-type="alpha">
+                                    <path
+                                        d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                                </mask>
+                                <g mask="url(#mask1)">
+                                    <path
+                                        d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z" />
+                                    <image class="home__blob-img" x="12" y="18" width="200" height="187"
+                                        href="/assets/img/file.png" />
+                                </g>
+                            </svg>
+                        </div>
+                        <h2 class="sidebar__name">Isabel Moore</h2>
+                        <!-- <span class="sidebar__title">Computer Engineer</span> -->
+                    </div>
+
+                    <p class="sidebar__bio">
+                        Computer Engineer passionate about autonomous systems, embedded security, and robotics.
+                        Currently pursuing my M.S. at Texas A&M.
+                    </p>
+
+                    <span class="sidebar__subtitle">Connect</span>
+                    <div class="sidebar__list">
+                        <a href="https://www.linkedin.com/in/isabel-moore/" target="_blank" class="sidebar__link">
+                            <i class="uil uil-linkedin-alt sidebar__icon"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/isabelmoore" target="_blank" class="sidebar__link">
+                            <i class="uil uil-github-alt sidebar__icon"></i> GitHub
+                        </a>
+                        <!-- <a href="mailto:isabelmoore717@gmail.com" class="sidebar__link">
+                            <i class="uil uil-envelope sidebar__icon"></i> Email
+                        </a> -->
+                        <a href="/assets/pdf/Isabel-Moore-Resume.pdf" target="_blank" class="sidebar__link">
+                            <i class="uil uil-file-alt sidebar__icon"></i> Resume
+                        </a>
+                    </div>
+
+                    <span class="sidebar__subtitle">Research Areas</span>
+                    <div class="sidebar__list">
+                        <a href="#" class="sidebar__link"><i class="uil uil-robot sidebar__icon"></i> Robotics</a>
+                        <a href="#" class="sidebar__link"><i class="uil uil-shield-check sidebar__icon"></i>
+                            Security</a>
+                        <a href="#" class="sidebar__link"><i class="uil uil-circuit sidebar__icon"></i> Embedded</a>
+                    </div>
+
+                </aside>
+
+                <!-- Main Content -->
+                <div class="blog__main">
+                    <h1 class="section__title blog__main-title">Blog</h1>
+                    <!-- <span class="section__subtitle" style="text-align: left;">Thoughts, tutorials, and research notes.</span> -->
+
+                    <div id="posts-container" class="blog__container">
+                        <!-- Blog posts will be dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== SCROLL TOP ====================-->
+    <!-- <a href="#" aria-label="scroll-up" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a> -->
+
+    <!--==================== MAIN JS ====================-->
+    <script src="/assets/js/main.js"></script>
+    <!--==================== BLOG DATA ====================-->
+    <script src="/assets/js/blog-data.js"></script>
+
+    <script>
+        // Reference to the container
+        const container = document.getElementById("posts-container");
+
+        // Dynamically create list of posts with links
+        blogPosts.forEach(post => {
+            const article = document.createElement("article");
+            article.className = "blog__post";
+
+            // Create tags HTML
+            const tagsHtml = post.tags ? post.tags.map(tag => `<span class="blog__tag">${tag}</span>`).join('') : '';
+
+            // Format date nicely
+            const dateObj = new Date(post.date + 'T12:00:00'); // Ensure logical date parsing
+            const dateStr = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            article.innerHTML = `
+                <h2 class="blog__title">
+                    <a href="/assets/post.html?file=${encodeURIComponent(post.file)}">${post.title}</a>
+                </h2>
+                <div class="blog__meta">
+                    <span class="blog__meta-item"><i class="uil uil-calendar-alt"></i> ${dateStr}</span>
+                    <span class="blog__meta-item"><i class="uil uil-clock"></i> ${post.readTime || '5 min read'}</span>
+                </div>
+                <p class="blog__description">${post.description || ''}</p>
+                <div class="blog__tags">${tagsHtml}</div>
+            `;
+            container.appendChild(article);
+        });
+    </script>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Isabel</h1>
+                    <span class="footer__subtitle">Thank you for visiting my website.</span>
+                </div>
+                <ul class="footer__links">
+                    <li>
+                        <a href="/#services" class="footer__link">Services</a>
+                    </li>
+                    <li>
+                        <a href="/#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="/#contact" class="footer__link">ContactMe</a>
+                    </li>
+                </ul>
+                <div class="footer__socials">
+                    <a href="https://www.linkedin.com/in/isabel-moore/" aria-label="footer__social" target="_blank"
+                        class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                    <!-- <a href="https://www.instagram.com/" aria-label="footer__social" target="_blank"
+                        class="footer__social">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/" aria-label="footer__social" target="_blank" class="footer__social">
+                        <i class="uil uil-twitter-alt"></i>
+                    </a> -->
+                </div>
+            </div>
+            <p class="footer__copy">&#169; isabelmoore.github. All right reserved</p>
+        </div>
+    </footer>
+
+    <!--==================== SCROLL TOP ====================-->
+    <a href="#" aria-label="scroll-up" class="scrollup" id="scroll-up">
+        <i class="uil uil-arrow-up scrollup__icon"></i>
+    </a>
+
+    <!--==================== SWIPER JS ====================-->
+    <!-- <script src="./assets/js/swiper-bundle.min.js"></script> -->
+
+    <!--==================== MAIN JS ====================-->
+    <script src="/assets/js/main.js"></script>
+
+    <!--==================== GAME SCRIPT ====================-->
+    <script src="/assets/js/scripts.js"></script>
+
+    <!--==================== FLOWER SCRIPT ====================-->
+    <link rel="stylesheet" href="/assets/flower/style.css">
+    <script src="/assets/flower/main.js" type="text/javascript"></script>
+</body>
+
+</html>

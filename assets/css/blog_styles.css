@@ -1,0 +1,214 @@
+/* Blog styles */
+/* Layout Grid */
+.blog__layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+    /* ensure sidebar is properly constrained */
+}
+
+@media screen and (min-width: 768px) {
+    .blog__layout {
+        grid-template-columns: 250px 1fr;
+        /* Sidebar fixed width, content flexible */
+        align-items: start;
+        /* Prevent sidebar from stretching */
+    }
+}
+
+/* Sidebar Styles */
+.blog__sidebar {
+    position: relative;
+    padding-right: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+    .blog__sidebar {
+        position: sticky;
+        top: 6rem;
+        /* Sticky sidebar on desktop */
+    }
+}
+
+.sidebar__profile {
+    text-align: center;
+    /* Center everything in profile section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Ensure image is centered */
+    margin-bottom: 2rem;
+}
+
+
+
+.sidebar__blob-container svg {
+    width: 230px;
+    height: 215px;
+    fill: var(--first-color);
+}
+
+.sidebar__blob-container img {
+    width: 200px;
+    /* Match home page blob image size */
+}
+
+.sidebar__name {
+    font-size: 1.25rem;
+    /* Explicit size */
+    font-weight: 600;
+    color: var(--title-color);
+    margin-bottom: .25rem;
+    width: 100%;
+}
+
+.sidebar__bio {
+    font-size: var(--normal-font-size);
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-align: left;
+    line-height: 1.5;
+}
+
+.sidebar__subtitle {
+    font-size: var(--normal-font-size);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: .75rem;
+    color: var(--title-color);
+    text-align: left;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.sidebar__list {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.sidebar__link {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: var(--normal-font-size);
+    /* Increased for readability */
+    color: var(--title-color);
+    /* Better contrast than text-color */
+    transition: .3s;
+    text-decoration: none !important;
+    /* Force no underline initially */
+}
+
+.sidebar__icon {
+    font-size: 1.25rem;
+    color: var(--first-color);
+    /* Icon takes the accent color */
+}
+
+.sidebar__link:hover {
+    color: var(--first-color);
+    transform: translateX(.25rem);
+}
+
+
+/* Main Content - List Styles */
+.blog__main-title {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    font-size: var(--h1-font-size);
+    color: var(--title-color);
+}
+
+.blog__container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.blog__post {
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    /* Subtle divider */
+}
+
+.dark-theme .blog__post {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog__post:last-child {
+    border-bottom: none;
+}
+
+.blog__title {
+    font-size: 1.75rem;
+    margin-bottom: .5rem;
+    color: var(--title-color);
+    font-weight: 600;
+}
+
+.blog__title a {
+    color: var(--title-color);
+    transition: .3s;
+    text-decoration: none;
+}
+
+.blog__title a:hover {
+    color: var(--first-color);
+    /* Highlight color on hover */
+}
+
+.blog__meta {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    /* ~14px */
+    color: var(--text-color-light);
+    /* Lighter text for meta */
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.blog__meta-item {
+    display: flex;
+    align-items: center;
+    gap: .35rem;
+}
+
+.blog__meta-item i {
+    font-size: 1rem;
+}
+
+.blog__description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    /* Better readability */
+}
+
+.blog__tags {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+.blog__tag {
+    font-size: .75rem;
+    background-color: var(--container-color);
+    border: 1px solid var(--first-color-lighter);
+    color: var(--first-color);
+    padding: .25rem .75rem;
+    border-radius: 2rem;
+    /* Pill shape */
+    font-weight: 500;
+}
+
+.dark-theme .blog__tag {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}

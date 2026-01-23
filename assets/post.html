@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+
+    <!--==================== UNICONS ====================-->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!--==================== CSS ====================-->
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/blog_styles.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
+
+    <!--==================== Code Formatting ================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+
+    <title>Blog Post</title>
+
+    <style>
+        /* Post Specific Overrides */
+        /* Center content layout */
+        .blog__layout-post {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* "Off-color" background for code blocks */
+        /* Using a derived color from the theme variables */
+        :root {
+            --code-bg-light: #f5f0ed;
+            /* Light mode off-white/brownish */
+            --code-bg-dark: #2a221f;
+            /* Dark mode off-background */
+        }
+
+        body.dark-theme {
+            --code-bg: var(--code-bg-dark);
+        }
+
+        body:not(.dark-theme) {
+            --code-bg: var(--code-bg-light);
+        }
+
+        /* Override highlight.js background and text color */
+        pre code.hljs {
+            background-color: var(--code-bg) !important;
+            color: var(--text-color) !important;
+            /* Use theme text color */
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        /* Ensure specific code tokens are visible in dark mode if needed
+           This might need more specific overrides depending on the hljs theme, 
+           but setting the base color helps. 
+           For better dark mode support, we might want to swap the hljs stylesheet based on theme,
+           but for now, let's try to adjust the base contrast or use a neutral theme.
+        */
+        body.dark-theme pre code.hljs {
+            color: #e0e0e0 !important;
+        }
+
+        /* Back to Blog Button Animation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--first-color);
+            font-weight: 500;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+            /* Soft move left */
+            color: var(--first-color-alt);
+        }
+
+        .blog__content-text img {
+            border-radius: 0.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* Headers in post content */
+        .blog__content-text h2 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: var(--title-color);
+        }
+    </style>
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">Isabel</a>
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list grid">
+                    <li class="nav__item">
+                        <a href="/#home" class="nav__link">
+                            <i class="uil uil-estate nav__icon"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/#about" class="nav__link">
+                            <i class="uil uil-user nav__icon"></i> About
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/#services" class="nav__link">
+                            <i class="uil uil-briefcase-alt nav__icon"></i> Services
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/#portfolio" class="nav__link">
+                            <i class="uil uil-scenery nav__icon"></i> Portfolio
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/#contact" class="nav__link">
+                            <i class="uil uil-message nav__icon"></i> Contact Me
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/assets/blog.html" class="nav__link active-link">
+                            <i class="uil uil-edit nav__icon"></i> Blog
+                        </a>
+                    </li>
+                </ul>
+                <i class="uil uil-times nav__close" id="nav-close"></i>
+            </div>
+            <div class="nav__btns">
+                <i class="uil uil-moon change-theme" id="theme-button"></i>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="uil uil-apps"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <section class="blog section" id="blog">
+            <div class="container blog__layout-post">
+                <!-- No Sidebar, just main content centered -->
+                <div class="blog__main">
+                    <!-- Post Header -->
+                    <a href="/assets/blog.html" class="back-link">
+                        <i class="uil uil-arrow-left"></i> Back to Blog
+                    </a>
+                    <h1 id="post-title" class="blog__post-title">Loading...</h1>
+
+                    <div class="blog__meta" style="margin-bottom: 2rem;">
+                        <span class="blog__meta-item" id="post-read-time"><i class="uil uil-clock"></i> </span>
+                        <span class="blog__meta-item" id="post-date"><i class="uil uil-calendar-alt"></i> </span>
+                    </div>
+
+                    <!-- Tags (Moved Top) -->
+                    <div id="post-tags" class="blog__tags" style="margin-bottom: 2rem;"></div>
+
+                    <!-- Share Buttons (Moved Top, Icons Only) -->
+
+
+                    <!-- Post Description -->
+                    <p id="post-description" class="blog__description"
+                        style="font-size: 1.1rem; margin-bottom: 2rem; font-style: italic; opacity: 0.9;"></p>
+
+                    <hr style="margin: 2rem 0; border: 0; border-top: 2px solid var(--text-color); opacity: 0.5;">
+
+                    <!-- Post Content -->
+                    <div id="post-content" class="blog__content-text">
+                        <!-- Content loaded dynamically -->
+                    </div>
+
+                    <hr style="margin: 3rem 0; border: 0; border-top: 1px solid var(--text-color-light);">
+
+                    <!-- Share Buttons (Bottom) -->
+                    <div class="blog__share"
+                        style="margin-bottom: 3rem; display: flex; align-items: center; gap: 1rem;">
+                        <span style="font-weight: 600; margin-right: 0.5rem;">SHARE ON</span>
+                        <a href="#" class="button button--small"
+                            style="background-color: #0077b5; width: 40px; height: 40px; padding: 0; display: flex; justify-content: center; align-items: center; border-radius: 8px;"
+                            title="LinkedIn"><i class="uil uil-linkedin" style="font-size: 1.5rem; margin: 0;"></i></a>
+                        <a href="#" class="button button--small"
+                            style="background-color: #1DA1F2; width: 40px; height: 40px; padding: 0; display: flex; justify-content: center; align-items: center; border-radius: 8px;"
+                            title="Twitter"><i class="uil uil-twitter" style="font-size: 1.5rem; margin: 0;"></i></a>
+                        <a href="#" class="button button--small"
+                            style="background-color: #EA4335; width: 40px; height: 40px; padding: 0; display: flex; justify-content: center; align-items: center; border-radius: 8px;"
+                            title="Email"><i class="uil uil-envelope" style="font-size: 1.5rem; margin: 0;"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer">
+        <div class="footer__bg">
+            <div class="footer__container container grid">
+                <div>
+                    <h1 class="footer__title">Isabel</h1>
+                    <span class="footer__subtitle">Thank you for visiting my website.</span>
+                </div>
+                <ul class="footer__links">
+                    <li>
+                        <a href="/#services" class="footer__link">Services</a>
+                    </li>
+                    <li>
+                        <a href="/#portfolio" class="footer__link">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="/#contact" class="footer__link">ContactMe</a>
+                    </li>
+                </ul>
+                <div class="footer__socials">
+                    <a href="https://www.linkedin.com/in/isabel-moore/" aria-label="footer__social" target="_blank"
+                        class="footer__social">
+                        <i class="uil uil-linkedin-alt"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="footer__copy">&#169; isabelmoore.github. All right reserved</p>
+        </div>
+    </footer>
+
+    <!--==================== MAIN JS ====================-->
+    <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/blog-data.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const params = new URLSearchParams(window.location.search);
+            const fileName = params.get("file");
+
+            if (!fileName) {
+                document.getElementById("post-content").innerHTML = "<p>No post specified.</p>";
+                return;
+            }
+
+            // Find post data
+            const post = blogPosts.find(p => p.file === fileName || p.file.endsWith(fileName));
+
+            if (post) {
+                document.title = post.title + " - Isabel Moore";
+                document.getElementById("post-title").textContent = post.title;
+                document.getElementById("post-read-time").innerHTML = `<i class="uil uil-clock"></i> ${post.readTime || '5 min read'}`;
+
+                const dateObj = new Date(post.date + 'T12:00:00');
+                const dateStr = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+                document.getElementById("post-date").innerHTML = `<i class="uil uil-calendar-alt"></i> Published: ${dateStr}`;
+
+                if (post.description) {
+                    document.getElementById("post-description").textContent = post.description;
+                }
+
+                if (post.tags) {
+                    document.getElementById("post-tags").innerHTML = post.tags.map(tag => `<span class="blog__tag">${tag}</span>`).join('');
+                }
+            }
+
+            // Fetch Content
+            fetch(fileName)
+                .then(response => {
+                    if (!response.ok) throw new Error("Failed to load content");
+                    return response.text();
+                })
+                .then(html => {
+                    document.getElementById("post-content").innerHTML = html;
+                    hljs.highlightAll();
+                })
+                .catch(err => {
+                    document.getElementById("post-content").innerHTML = `<p>Error loading post: ${err.message}</p>`;
+                });
+        });
+    </script>
+</body>
+
+</html>

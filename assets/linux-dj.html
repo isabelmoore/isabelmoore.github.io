@@ -1,0 +1,39 @@
+<h1>SpotDL and Mixxx Installation Guide</h1>
+<ol>
+    <li>
+        <h2>Install SpotDL</h2>
+        <pre><code>python3 -m pip install spotdl</code></pre>
+        <p>This installs the SpotDL package (Spotify downloader) into your Python environment.</p>
+    </li>
+    <li>
+        <h2>Create a Directory for Downloads</h2>
+        <pre><code>
+mkdir dj_songs
+cd dj_songs/
+        </code></pre>
+        <p>Create a new directory called <strong>dj_songs</strong> and navigate into it to organize your downloads.</p>
+    </li>
+    <li>
+        <h2>Install Mixxx</h2>
+        <pre><code>sudo apt install mixxx</code></pre>
+        <p>This command installs Mixxx, a DJ software, and its dependencies.</p>
+    </li>
+    <li>
+        <h2>Attempt to Download a Spotify Playlist</h2>
+        <pre><code>python3 -m spotdl &lt;Spotify Playlist URL&gt;</code></pre>
+        <p>You attempt to download songs from the playlist, but an error occurs because FFmpeg is not installed:</p>
+        <pre><code>FFmpegError: FFmpeg is not installed.</code></pre>
+    </li>
+    <li>
+        <h2>Download FFmpeg Using SpotDL</h2>
+        <pre><code>spotdl --download-ffmpeg</code></pre>
+        <p>This downloads and installs FFmpeg, which is required for SpotDL to work.</p>
+    </li>
+    <li>
+        <h2>Retry Downloading the Spotify Playlist</h2>
+        <pre><code>python3 -m spotdl &lt;Spotify Playlist URL&gt;</code></pre>
+        <p>SpotDL processes the playlist URL, finds the songs, and downloads them as audio files.</p>
+    </li>
+</ol>
+<h2>Final Output</h2>
+<p>The downloaded songs are saved in the <strong>dj_songs</strong> directory, ready for use in Mixxx or any other media player.</p>
