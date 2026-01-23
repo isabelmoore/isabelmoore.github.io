@@ -22,10 +22,40 @@
 </head>
 
 <body>
+    <!--==================== PARALLAX BACKGROUND ====================-->
+    <div class="parallax-bg">
+        <!-- Layer 1: Furthest (Hidden) -->
+        <div class="parallax-layer" data-speed="0.1">
+            <svg class="mountain-svg" viewBox="0 0 1440 2000" preserveAspectRatio="xMidYMin slice"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-opacity="1" d="M0,120 C 480,20 960,220 1440,120 L 1440,1950 C 960,1850 480,2050 0,1950 Z">
+                </path>
+            </svg>
+        </div>
+        <!-- Layer 2: Middle -->
+        <div class="parallax-layer" data-speed="0.2">
+            <svg class="mountain-svg" viewBox="0 0 1440 2000" preserveAspectRatio="xMidYMin slice"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-opacity="1"
+                    d="M0,200 C 300,200 600,500 900,300 C 1200,100 1300,400 1440,300 L 1440,1600 C 1300,1500 1200,1800 900,1600 C 600,1400 300,1700 0,1600 Z">
+                </path>
+            </svg>
+        </div>
+        <!-- Layer 3: Closest -->
+        <div class="parallax-layer" data-speed="0.5">
+            <svg class="mountain-svg" viewBox="0 0 1440 2000" preserveAspectRatio="xMidYMin slice"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-opacity="1"
+                    d="M0,900 C 250,700 500,1000 750,850 C 1000,700 1250,950 1440,850 L 1440,1600 C 1250,1500 1000,1750 750,1600 C 500,1450 250,1750 0,1600 Z">
+                </path>
+            </svg>
+        </div>
+    </div>
+
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Isabel</a>
+            <a href="/" class="nav__logo">Isabel</a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list grid">
                     <li class="nav__item">
@@ -111,18 +141,23 @@
 
                     <span class="sidebar__subtitle">Connect</span>
                     <div class="sidebar__list">
-                        <a href="https://www.linkedin.com/in/isabel-moore/" target="_blank" class="sidebar__link">
-                            <i class="uil uil-linkedin-alt sidebar__icon"></i> LinkedIn
+                        <a href="https://www.linkedin.com/in/isabel-moore/" target="_blank" class="sidebar__link"
+                            title="LinkedIn">
+                            <i class="uil uil-linkedin-alt sidebar__icon"></i>
                         </a>
-                        <a href="https://github.com/isabelmoore" target="_blank" class="sidebar__link">
-                            <i class="uil uil-github-alt sidebar__icon"></i> GitHub
+                        <a href="https://github.com/isabelmoore" target="_blank" class="sidebar__link" title="GitHub">
+                            <i class="uil uil-github-alt sidebar__icon"></i>
                         </a>
-                        <!-- <a href="mailto:isabelmoore717@gmail.com" class="sidebar__link">
-                            <i class="uil uil-envelope sidebar__icon"></i> Email
+                        <a href="mailto:isabelmoore717@gmail.com" class="sidebar__link" title="Email">
+                            <i class="uil uil-envelope sidebar__icon"></i>
+                        </a>
+                        <a href="/assets/pdf/Isabel-Moore-Resume.pdf" target="_blank" class="sidebar__link"
+                            title="Resume">
+                            <i class="uil uil-file-alt sidebar__icon"></i>
+                        </a>
+                        <!-- <a href="https://www.goodreads.com/" target="_blank" class="sidebar__link" title="Goodreads">
+                            <i class="uil uil-book-open sidebar__icon"></i>
                         </a> -->
-                        <a href="/assets/pdf/Isabel-Moore-Resume.pdf" target="_blank" class="sidebar__link">
-                            <i class="uil uil-file-alt sidebar__icon"></i> Resume
-                        </a>
                     </div>
 
 
@@ -199,22 +234,22 @@
                         <a href="/#portfolio" class="footer__link">Portfolio</a>
                     </li>
                     <li>
-                        <a href="/#contact" class="footer__link">ContactMe</a>
+                        <a href="/#contact" class="footer__link">Contact Me</a>
                     </li>
                 </ul>
-                <div class="footer__socials">
+                <!-- <div class="footer__socials">
                     <a href="https://www.linkedin.com/in/isabel-moore/" aria-label="footer__social" target="_blank"
                         class="footer__social">
                         <i class="uil uil-linkedin-alt"></i>
-                    </a>
-                    <!-- <a href="https://www.instagram.com/" aria-label="footer__social" target="_blank"
+                    </a> -->
+                <!-- <a href="https://www.instagram.com/" aria-label="footer__social" target="_blank"
                         class="footer__social">
                         <i class="uil uil-instagram"></i>
                     </a>
                     <a href="https://twitter.com/" aria-label="footer__social" target="_blank" class="footer__social">
                         <i class="uil uil-twitter-alt"></i>
                     </a> -->
-                </div>
+                <!-- </div> -->
             </div>
             <p class="footer__copy">&#169; isabelmoore.github. All right reserved</p>
         </div>

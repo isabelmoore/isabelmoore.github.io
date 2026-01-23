@@ -73,7 +73,7 @@ tabs.forEach((tab) => {
 
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll(".services__modal"),
-    modalBtns = document.querySelectorAll(".services__button"),
+    modalBtns = document.querySelectorAll(".services__content"),
     modalCloses = document.querySelectorAll(".services__modal-close");
 
 let modal = function (modalClick) {
@@ -154,7 +154,7 @@ window.addEventListener("scroll", scrollActive);
 /*==================== CHANGE BACKGROUND HEADER ====================*/
 function scrollHeader() {
     const nav = document.getElementById("header");
-    if (this.verticalScrollPosition >= 80) nav.classList.add("scroll-header");
+    if (window.scrollY >= 80) nav.classList.add("scroll-header");
     else nav.classList.remove("scroll-header");
 }
 
@@ -163,7 +163,7 @@ window.addEventListener("scroll", scrollHeader);
 /*==================== SHOW SCROLL UP ====================*/
 function scrollUp() {
     const scrollUp = document.getElementById("scroll-up");
-    if (this.verticalScrollPosition >= 560) scrollUp.classList.add("show-scroll");
+    if (window.scrollY >= 560) scrollUp.classList.add("show-scroll");
     else scrollUp.classList.remove("show-scroll");
 }
 
@@ -201,5 +201,25 @@ themeButton.addEventListener("click", () => {
     localStorage.setItem("selected-theme", getCurrentTheme());
     localStorage.setItem("selected-icon", getCurrentIcon());
 });
+
+/*==================== PARALLAX BACKGROUND LOGIC ====================*/
+const parallaxLayers = document.querySelectorAll('.parallax-layer');
+
+if (parallaxLayers.length > 0) {
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY; // Use window.scrollY for reliability
+        window.requestAnimationFrame(() => {
+            parallaxLayers.forEach(layer => {
+                const speed = parseFloat(layer.getAttribute('data-speed'));
+                // Create a noticeable parallax effect
+                // speed 0 = fixed (distant)
+                // speed 1 = moves with content (static relative to DOM)
+                // we move the layer UP as we scroll DOWN. 
+                const yPos = -(scrollY * speed);
+                layer.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+    });
+}
 
 

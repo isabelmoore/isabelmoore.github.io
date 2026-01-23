@@ -48,6 +48,36 @@
 
         fetchIPData();
     </script>
+    <!--==================== PARALLAX BACKGROUND ====================-->
+    <div class="parallax-bg">
+        <!-- Layer 1: Furthest (Hidden) -->
+        <div class="parallax-layer" data-speed="0.1">
+            <svg class="mountain-svg" viewBox="0 0 1440 2000" preserveAspectRatio="xMidYMin slice"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-opacity="1" d="M0,120 C 480,20 960,220 1440,120 L 1440,1950 C 960,1850 480,2050 0,1950 Z">
+                </path>
+            </svg>
+        </div>
+        <!-- Layer 2: Middle -->
+        <div class="parallax-layer" data-speed="0.2">
+            <svg class="mountain-svg" viewBox="0 0 1440 2000" preserveAspectRatio="xMidYMin slice"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-opacity="1"
+                    d="M0,200 C 300,200 600,500 900,300 C 1200,100 1300,400 1440,300 L 1440,1600 C 1300,1500 1200,1800 900,1600 C 600,1400 300,1700 0,1600 Z">
+                </path>
+            </svg>
+        </div>
+        <!-- Layer 3: Closest -->
+        <div class="parallax-layer" data-speed="0.5">
+            <svg class="mountain-svg" viewBox="0 0 1440 2000" preserveAspectRatio="xMidYMin slice"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-opacity="1"
+                    d="M0,900 C 250,700 500,1000 750,850 C 1000,700 1250,950 1440,850 L 1440,1600 C 1250,1500 1000,1750 750,1600 C 500,1450 250,1750 0,1600 Z">
+                </path>
+            </svg>
+        </div>
+    </div>
+
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
@@ -113,18 +143,25 @@
             <div class="home__container container grid">
                 <div class="home__content grid">
                     <div class="home__social">
-                        <a href="https://www.linkedin.com/in/isabel-moore/" aria-label="home__social-icon"
-                            target="_blank" class="home__social-icon">
+                        <a href="https://www.linkedin.com/in/isabel-moore/" aria-label="LinkedIn" target="_blank"
+                            class="home__social-icon">
                             <i class="uil uil-linkedin-alt"></i>
                         </a>
-                        <!-- <a href="https://dribbble.com/" aria-label="home__social-icon" target="_blank"
-                            class="home__social-icon">
-                            <i class="uil uil-dribbble"></i>
-                        </a> -->
-                        <a href="https://github.com/isabelmoore" aria-label="home__social-icon" target="_blank"
+                        <a href="https://github.com/isabelmoore" aria-label="GitHub" target="_blank"
                             class="home__social-icon">
                             <i class="uil uil-github-alt"></i>
                         </a>
+                        <a href="mailto:isabelmoore717@gmail.com" aria-label="Email" class="home__social-icon">
+                            <i class="uil uil-envelope"></i>
+                        </a>
+                        <a href="/assets/pdf/Isabel-Moore-Resume.pdf" aria-label="Resume" target="_blank"
+                            class="home__social-icon">
+                            <i class="uil uil-file-alt"></i>
+                        </a>
+                        <!-- <a href="https://www.goodreads.com/" aria-label="Goodreads" target="_blank"
+                            class="home__social-icon">
+                            <i class="uil uil-book-open"></i>
+                        </a> -->
                     </div>
 
                     <div class="home__img">
@@ -178,7 +215,7 @@
                         I started my journey with a Bachelor's in Mechanical Engineering to then pursue a Master's in
                         Computer Engineering. My focus is on making autonomous systems and embedded systems more secure
                         and efficient. I’m skilled in ROS and reinforcement learning, constantly pushing myself in
-                        robotics. Off the clock, I love to unwind by cycling, hiking, or working on my motorcycle.
+                        robotics. Off the clock, I love to unwind by cycling, hiking, or reading.
                     <div class="about__info">
                         <div>
                             <span class="about__info-title">04+</span>
@@ -558,32 +595,6 @@
                         View More
                         <i class="uil uil-arrow-right button__icon"></i>
                     </span>
-
-                    <div class="services__modal">
-                        <div class="services__modal-content">
-                            <h4 class="services__modal-title">Robotics & Automation</h4>
-                            <i class="uil uil-times services__modal-close"></i>
-
-                            <ul class="services__modal-services grid">
-                                <li class="services__modal-service">
-                                    <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>GM-SAE AutoDrive Challenge™ II Success: Improved vehicle stability and
-                                        maneuverability, achieving a 75% reduction in radial lateral error, securing
-                                        second place.</p>
-                                </li>
-                                <li class="services__modal-service">
-                                    <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Developed Stanley, Pure-Pursuit, and Feedback algorithms, enhancing autonomous
-                                        systems' accuracy and reliability.</p>
-                                </li>
-                                <li class="services__modal-service">
-                                    <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Led the integration of advanced sensors and actuators for competition-level
-                                        performance.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="services__content">
@@ -596,31 +607,6 @@
                         View More
                         <i class="uil uil-arrow-right button__icon"></i>
                     </span>
-
-                    <div class="services__modal">
-                        <div class="services__modal-content">
-                            <h4 class="services__modal-title">Cybersecurity & Cyber-Physical Systems</h4>
-                            <i class="uil uil-times services__modal-close"></i>
-
-                            <ul class="services__modal-services grid">
-                                <li class="services__modal-service">
-                                    <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Developed countermeasures against GPS spoofing, enhancing navigation system
-                                        security, leading to significant publications and presentations.</p>
-                                </li>
-                                <li class="services__modal-service">
-                                    <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Actively monitored and mitigated campus network threats, substantially reducing
-                                        security risks.</p>
-                                </li>
-                                <li class="services__modal-service">
-                                    <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Enhanced system defenses, reducing vulnerabilities by over 40% through targeted
-                                        assessments and strategic mitigation.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="services__content">
@@ -633,33 +619,85 @@
                         View More
                         <i class="uil uil-arrow-right button__icon"></i>
                     </span>
-
-                    <div class="services__modal">
-                        <div class="services__modal-content">
-                            <h4 class="services__modal-title">Embedded Systems & IoT</h4>
-                            <i class="uil uil-times services__modal-close"></i>
-
-                            <ul class="services__modal-services grid">
-                                <li class="services__modal-service">
-                                    <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Improved autonomous coordination and efficiency in off-road environments through
-                                        a real-time data exchange system.</p>
-                                </li>
-                                <li class="services__modal-service">
-                                    <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p></p>Boosted operational efficiency and reliability with tailored embedded systems
-                                    for various industries.</p>
-                                </li>
-                                <li class="services__modal-service">
-                                    <i class="uil uil-check-circle services__modal-icon"></i>
-                                    <p>Enhanced UAV fuel performance and reliability, showcased at the UTSR and Advanced
-                                        Turbines Program Review Meeting.</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                 </div>
 
+            </div>
+
+            <!-- Services Modals -->
+            <div class="services__modal">
+                <div class="services__modal-content">
+                    <h4 class="services__modal-title">Robotics & Automation</h4>
+                    <i class="uil uil-times services__modal-close"></i>
+
+                    <ul class="services__modal-services grid">
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p>GM-SAE AutoDrive Challenge™ II Success: Improved vehicle stability and
+                                maneuverability, achieving a 75% reduction in radial lateral error, securing
+                                second place.</p>
+                        </li>
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p>Developed Stanley, Pure-Pursuit, and Feedback algorithms, enhancing autonomous
+                                systems' accuracy and reliability.</p>
+                        </li>
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p>Led the integration of advanced sensors and actuators for competition-level
+                                performance.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="services__modal">
+                <div class="services__modal-content">
+                    <h4 class="services__modal-title">Cybersecurity & Cyber-Physical Systems</h4>
+                    <i class="uil uil-times services__modal-close"></i>
+
+                    <ul class="services__modal-services grid">
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p>Developed countermeasures against GPS spoofing, enhancing navigation system
+                                security, leading to significant publications and presentations.</p>
+                        </li>
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p>Actively monitored and mitigated campus network threats, substantially reducing
+                                security risks.</p>
+                        </li>
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p>Enhanced system defenses, reducing vulnerabilities by over 40% through targeted
+                                assessments and strategic mitigation.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="services__modal">
+                <div class="services__modal-content">
+                    <h4 class="services__modal-title">Embedded Systems & IoT</h4>
+                    <i class="uil uil-times services__modal-close"></i>
+
+                    <ul class="services__modal-services grid">
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p>Improved autonomous coordination and efficiency in off-road environments through
+                                a real-time data exchange system.</p>
+                        </li>
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p>Boosted operational efficiency and reliability with tailored embedded systems
+                                for various industries.</p>
+                        </li>
+                        <li class="services__modal-service">
+                            <i class="uil uil-check-circle services__modal-icon"></i>
+                            <p>Enhanced UAV fuel performance and reliability, showcased at the UTSR and Advanced
+                                Turbines Program Review Meeting.</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </section>
 
@@ -978,30 +1016,51 @@
             <h2 class="section__title">Contact Me</h2>
             <!-- <span class="section__subtitle">The best way to contact me is by email at</span> -->
 
-            <div class="contact__container container grid">
-                <div>
-                    <!-- <div class="contact__information">
-                        <i class="uil uil-phone contact__icon"></i>
-                        <div>
-                            <h3 class="contact__title">Call Me</h3>
-                            <span class="contact__subtitle">999-777-666</span>
-                        </div>
-                    </div> -->
-                    <div class="contact__information">
-                        <i class="uil uil-envelope contact__icon"></i>
-                        <div>
-                            <h3 class="contact__title">Email</h3>
-                            <span class="contact__subtitle">isabelmoore717@gmail.com</span>
-                        </div>
+            <div class="contact__container container grid" style="grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/isabel-moore/" target="_blank" class="contact__information">
+                    <i class="uil uil-linkedin-alt contact__icon"></i>
+                    <div>
+                        <h3 class="contact__title">LinkedIn</h3>
+                        <span class="contact__subtitle">Connect</span>
                     </div>
-                    <!-- <div class="contact__information">
-                        <i class="uil uil-map-marker contact__icon"></i>
-                        <div>
-                            <h3 class="contact__title">Location</h3>
-                            <span class="contact__subtitle">Peru - Lima Av. Bolivar #123</span>
-                        </div>
-                    </div> -->
-                </div>
+                </a>
+
+                <!-- GitHub -->
+                <a href="https://github.com/isabelmoore" target="_blank" class="contact__information">
+                    <i class="uil uil-github-alt contact__icon"></i>
+                    <div>
+                        <h3 class="contact__title">GitHub</h3>
+                        <span class="contact__subtitle">Follow</span>
+                    </div>
+                </a>
+
+                <!-- Email -->
+                <a href="mailto:isabelmoore717@gmail.com" class="contact__information">
+                    <i class="uil uil-envelope contact__icon"></i>
+                    <div>
+                        <h3 class="contact__title">Email</h3>
+                        <span class="contact__subtitle">isabelmoore717@gmail.com</span>
+                    </div>
+                </a>
+
+                <!-- Resume -->
+                <a href="/assets/pdf/Isabel-Moore-Resume.pdf" target="_blank" class="contact__information">
+                    <i class="uil uil-file-alt contact__icon"></i>
+                    <div>
+                        <h3 class="contact__title">Resume</h3>
+                        <span class="contact__subtitle">View PDF</span>
+                    </div>
+                </a>
+
+                <!-- Goodreads -->
+                <a href="https://www.goodreads.com/" target="_blank" class="contact__information">
+                    <i class="uil uil-book-open contact__icon"></i>
+                    <div>
+                        <h3 class="contact__title">Goodreads</h3>
+                        <span class="contact__subtitle">Read With Me</span>
+                    </div>
+                </a>
 
                 <!-- <form class="contact__form grid">
                     <div class="contact__inputs grid">
@@ -1035,6 +1094,8 @@
         </section>
 
         <!--==================== GAME SECTION ====================-->
+        <h2 class="section__title">Take a Break</h2>
+        <span class="section__subtitle">Help Doggo navigate the desert! Dodge the tumbleweeds and cacti!</span>
         <div class="game-container">
             <div class="game-buttons">
                 <a id="start-button" class="button button--flex">
@@ -1060,6 +1121,7 @@
                 </a>
             </div>
             <div id="score" style="display: none;">Score: 0</div>
+            <hr class="portfolio__divider">
         </div>
 
         <!--==================== FLOWER ANIMATION SECTION ====================-->
@@ -1367,7 +1429,6 @@
                 <h3 style="font-weight: normal;">Thank you for visiting my website!</h3>
             </div>            
         </div> -->
-
     </main>
 
     <!--==================== FOOTER ====================-->
@@ -1386,22 +1447,22 @@
                         <a href="#portfolio" class="footer__link">Portfolio</a>
                     </li>
                     <li>
-                        <a href="#contact" class="footer__link">ContactMe</a>
+                        <a href="#contact" class="footer__link">Contact Me</a>
                     </li>
                 </ul>
-                <div class="footer__socials">
+                <!-- <div class="footer__socials">
                     <a href="https://www.linkedin.com/in/isabel-moore/" aria-label="footer__social" target="_blank"
                         class="footer__social">
                         <i class="uil uil-linkedin-alt"></i>
                     </a>
-                    <!-- <a href="https://www.instagram.com/" aria-label="footer__social" target="_blank"
+                    <a href="https://www.instagram.com/" aria-label="footer__social" target="_blank"
                         class="footer__social">
                         <i class="uil uil-instagram"></i>
                     </a>
                     <a href="https://twitter.com/" aria-label="footer__social" target="_blank" class="footer__social">
                         <i class="uil uil-twitter-alt"></i>
-                    </a> -->
-                </div>
+                    </a>
+                </div> -->
             </div>
             <p class="footer__copy">&#169; isabelmoore.github. All right reserved</p>
         </div>
@@ -1414,6 +1475,9 @@
 
     <!--==================== SWIPER JS ====================-->
     <!-- <script src="./assets/js/swiper-bundle.min.js"></script> -->
+
+    <!--==================== PARTICLES JS ====================-->
+    <!-- <script src="./assets/js/particles.js"></script> -->
 
     <!--==================== MAIN JS ====================-->
     <script src="./assets/js/main.js"></script>

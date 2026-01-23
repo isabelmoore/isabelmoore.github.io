@@ -85,8 +85,8 @@
 
 .sidebar__list {
     display: flex;
-    flex-direction: column;
-    gap: .75rem;
+    flex-direction: row;
+    gap: 1.5rem;
 }
 
 .sidebar__link {
@@ -103,14 +103,14 @@
 }
 
 .sidebar__icon {
-    font-size: 1.25rem;
+    font-size: 1.75rem;
     color: var(--first-color);
     /* Icon takes the accent color */
 }
 
 .sidebar__link:hover {
     color: var(--first-color);
-    transform: translateX(.25rem);
+    transform: translateY(-.25rem);
 }
 
 
@@ -119,7 +119,7 @@
     text-align: left;
     margin-top: 0;
     margin-bottom: 2rem;
-    font-size: var(--h1-font-size);
+    font-size: 3rem;
     color: var(--title-color);
 }
 
@@ -144,7 +144,7 @@
 }
 
 .blog__title {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
     margin-bottom: .5rem;
     color: var(--title-color);
     font-weight: 600;
@@ -206,6 +206,12 @@
     border-radius: 2rem;
     /* Pill shape */
     font-weight: 500;
+    transition: 0.3s;
+}
+
+.blog__tag:hover {
+    background-color: var(--first-color);
+    color: #fff;
 }
 
 .dark-theme .blog__tag {

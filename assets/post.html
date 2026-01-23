@@ -55,7 +55,7 @@
             padding: 1.5rem;
             border-radius: 0.5rem;
             margin: 1.5rem 0;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
         }
 
         /* Ensure specific code tokens are visible in dark mode if needed
@@ -101,10 +101,40 @@
 </head>
 
 <body>
+    <!--==================== PARALLAX BACKGROUND ====================-->
+    <div class="parallax-bg">
+        <!-- Layer 1: Furthest (Hidden) -->
+        <div class="parallax-layer" data-speed="0.1">
+            <svg class="mountain-svg" viewBox="0 0 1440 2000" preserveAspectRatio="xMidYMin slice"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-opacity="1" d="M0,120 C 480,20 960,220 1440,120 L 1440,1950 C 960,1850 480,2050 0,1950 Z">
+                </path>
+            </svg>
+        </div>
+        <!-- Layer 2: Middle -->
+        <div class="parallax-layer" data-speed="0.2">
+            <svg class="mountain-svg" viewBox="0 0 1440 2000" preserveAspectRatio="xMidYMin slice"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-opacity="1"
+                    d="M0,200 C 300,200 600,500 900,300 C 1200,100 1300,400 1440,300 L 1440,1600 C 1300,1500 1200,1800 900,1600 C 600,1400 300,1700 0,1600 Z">
+                </path>
+            </svg>
+        </div>
+        <!-- Layer 3: Closest -->
+        <div class="parallax-layer" data-speed="0.5">
+            <svg class="mountain-svg" viewBox="0 0 1440 2000" preserveAspectRatio="xMidYMin slice"
+                xmlns="http://www.w3.org/2000/svg">
+                <path fill-opacity="1"
+                    d="M0,900 C 250,700 500,1000 750,850 C 1000,700 1250,950 1440,850 L 1440,1600 C 1250,1500 1000,1750 750,1600 C 500,1450 250,1750 0,1600 Z">
+                </path>
+            </svg>
+        </div>
+    </div>
+
     <!--==================== HEADER ====================-->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Isabel</a>
+            <a href="/" class="nav__logo">Isabel</a>
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list grid">
                     <li class="nav__item">
@@ -176,14 +206,14 @@
                     <p id="post-description" class="blog__description"
                         style="font-size: 1.1rem; margin-bottom: 2rem; font-style: italic; opacity: 0.9;"></p>
 
-                    <hr style="margin: 2rem 0; border: 0; border-top: 2px solid var(--text-color); opacity: 0.5;">
+                    <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--text-color); opacity: 0.5;">
 
                     <!-- Post Content -->
                     <div id="post-content" class="blog__content-text">
                         <!-- Content loaded dynamically -->
                     </div>
 
-                    <hr style="margin: 3rem 0; border: 0; border-top: 1px solid var(--text-color-light);">
+                    <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--text-color); opacity: 0.5;">
 
                     <!-- Share Buttons (Bottom) -->
                     <div class="blog__share"
@@ -220,7 +250,7 @@
                         <a href="/#portfolio" class="footer__link">Portfolio</a>
                     </li>
                     <li>
-                        <a href="/#contact" class="footer__link">ContactMe</a>
+                        <a href="/#contact" class="footer__link">Contact Me</a>
                     </li>
                 </ul>
                 <div class="footer__socials">

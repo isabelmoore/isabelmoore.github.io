@@ -17,11 +17,16 @@
         bottom: -100%;
         left: 0;
         width: 100%;
-        background-color: var(--body-color);
+        background-color: hsla(var(--hue-color), 60%, 99%, 0.5);
         padding: 2rem 1.5rem 4rem;
         box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.15);
         border-radius: 1.5rem 1.5rem 0 0;
         transition: 0.3s;
+        backdrop-filter: blur(10px);
+    }
+
+    body.dark-theme .nav__menu {
+        background-color: hsla(var(--hue-color), 28%, 12%, 0.5);
     }
 }
 
@@ -89,8 +94,9 @@
     .testimonial__description {
         text-align: center;
     }
+
     .flower-animation {
-        height: 40vh; 
+        height: 40vh;
     }
 }
 
@@ -123,8 +129,9 @@
         grid-template-columns: 0.6fr;
         justify-content: center;
     }
+
     .flower-animation {
-        height: 65vh; 
+        height: 65vh;
     }
 }
 
@@ -275,7 +282,7 @@
     }
 
     .footer__container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr auto;
     }
 
     .footer__bg {
@@ -288,14 +295,15 @@
     }
 
     .footer__social {
-        justify-self: flex-end;
+        justify-self: initial;
     }
 
     .footer__copy {
         margin-top: 4.5rem;
     }
+
     .flower-animation {
-        height: 65vh; 
+        height: 65vh;
     }
 }
 
@@ -348,8 +356,9 @@
     .contact__inputs {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .flower-animation {
-        height: 60vh; 
+        height: 60vh;
     }
 }
 
@@ -368,8 +377,9 @@
     .footer__copy {
         margin-right: 20px;
     }
+
     .flower-animation {
-        height: 30vh; 
+        height: 30vh;
     }
 }
 
@@ -383,8 +393,9 @@
         display: flex;
         justify-content: center;
     }
+
     .flower-animation {
-        height: 50vh; 
+        height: 50vh;
     }
 }
 
@@ -393,7 +404,8 @@
     .home__content {
         padding-top: 0px;
     }
+
     .flower-animation {
-        height: 65vh; 
+        height: 65vh;
     }
 }
