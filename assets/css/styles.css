@@ -1466,9 +1466,12 @@ body.dark-theme .portfolio__divider {
 }
 
 /* Make top two layers longer */
-.parallax-layer:nth-child(1),
-.parallax-layer:nth-child(2) {
+.parallax-layer:nth-child(1) {
   height: 400vh;
+}
+
+.parallax-layer:nth-child(2) {
+  height: 800vh;
 }
 
 .mountain-svg {
