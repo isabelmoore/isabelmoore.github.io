@@ -1016,7 +1016,7 @@
             <h2 class="section__title">Contact Me</h2>
             <!-- <span class="section__subtitle">The best way to contact me is by email at</span> -->
 
-            <div class="contact__container container grid" style="grid-template-columns: repeat(3, 1fr); gap: 2rem;">
+            <div class="contact__container container grid">
                 <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/isabel-moore/" target="_blank" class="contact__information">
                     <i class="uil uil-linkedin-alt contact__icon"></i>
@@ -1094,35 +1094,39 @@
         </section>
 
         <!--==================== GAME SECTION ====================-->
-        <h2 class="section__title">Take a Break</h2>
-        <span class="section__subtitle">Help Doggo navigate the desert! Dodge the tumbleweeds and cacti!</span>
-        <div class="game-container">
-            <div class="game-buttons">
-                <a id="start-button" class="button button--flex">
-                    Start Doggo Game
-                    <i class="uil uil-play button__icon"></i>
-                </a>
+        <section class="section" id="game">
+            <h2 class="section__title">Take a Break</h2>
+            <div class="container">
+                <span class="section__subtitle">Help Doggo navigate the desert! Dodge the tumbleweeds and cacti!</span>
             </div>
-            <div class="game" style="display: none;">
-                <div id="doggo"></div>
-                <div id="ground"></div>
-                <div id="cactus"></div>
-                <div id="cloud"></div>
-                <div id="cloud2"></div> <!-- New cloud -->
-                <div id="tree"></div>
-                <div id="moon"></div>
-                <div id="bird"></div> <!-- Added bird element -->
-                <div id="tumbleweed"></div> <!-- Added bird element -->
+            <div class="game-container">
+                <div class="game-buttons">
+                    <a id="start-button" class="button button--flex">
+                        Start Doggo Game
+                        <i class="uil uil-play button__icon"></i>
+                    </a>
+                </div>
+                <div class="game" style="display: none;">
+                    <div id="doggo"></div>
+                    <div id="ground"></div>
+                    <div id="cactus"></div>
+                    <div id="cloud"></div>
+                    <div id="cloud2"></div> <!-- New cloud -->
+                    <div id="tree"></div>
+                    <div id="moon"></div>
+                    <div id="bird"></div> <!-- Added bird element -->
+                    <div id="tumbleweed"></div> <!-- Added bird element -->
+                </div>
+                <div class="jump-button-container">
+                    <a id="jump-button" class="button button--flex" style="display: none;">
+                        Jump
+                        <i class="uil uil-arrow-up button__icon"></i>
+                    </a>
+                </div>
+                <div id="score" style="display: none;">Score: 0</div>
+                <hr class="portfolio__divider">
             </div>
-            <div class="jump-button-container">
-                <a id="jump-button" class="button button--flex" style="display: none;">
-                    Jump
-                    <i class="uil uil-arrow-up button__icon"></i>
-                </a>
-            </div>
-            <div id="score" style="display: none;">Score: 0</div>
-            <hr class="portfolio__divider">
-        </div>
+        </section>
 
         <!--==================== FLOWER ANIMATION SECTION ====================-->
         <!-- <div class="flower-container">
