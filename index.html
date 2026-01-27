@@ -151,11 +151,12 @@
                             class="home__social-icon">
                             <i class="uil uil-github-alt"></i>
                         </a>
-                        <a href="mailto:isabelmoore717@gmail.com" aria-label="Email" class="home__social-icon">
+                        <!-- <a href="mailto:isabelmoore717@gmail.com" aria-label="Email" class="home__social-icon">
                             <i class="uil uil-envelope"></i>
-                        </a>
+                        </a> -->
                         <a href="/assets/pdf/Isabel-Moore-Resume.pdf" aria-label="Resume" target="_blank"
-                            class="home__social-icon">
+                            class="home__social-icon"
+                            onclick="this.href='/assets/pdf/Isabel-Moore-Resume.pdf?v=' + Math.floor(Math.random() * 100000)">
                             <i class="uil uil-file-alt"></i>
                         </a>
                         <!-- <a href="https://www.goodreads.com/" aria-label="Goodreads" target="_blank"
@@ -231,7 +232,8 @@
                         </div>
                     </div>
                     <div class="about__buttons">
-                        <a href="/assets/pdf/Isabel-Moore-Resume.pdf" download class="button button--flex">
+                        <a href="/assets/pdf/Isabel-Moore-Resume.pdf" download class="button button--flex"
+                            onclick="this.href='/assets/pdf/Isabel-Moore-Resume.pdf?v=' + Math.floor(Math.random() * 100000)">
                             Download Resume<i class="uil uil-download-alt button__icon"></i>
                         </a>
                     </div>
@@ -420,15 +422,16 @@
                         <!-- Education - M.S. in Computer Engineering -->
                         <div class="qualification__data">
                             <div>
-                                <h3 class="qualification__title">M.S. in Computer Engineering</h3>
+                                <h3 class="qualification__title"><i class="uil uil-graduation-cap"></i> M.S. in Computer
+                                    Engineering</h3>
                                 <span class="qualification__subtitle">Texas A&M University</span>
-                                <div class="qualification__calendar">
+                                <div class="qualification__calendar qualification__active-work">
                                     <i class="uil uil-calendar-alt"></i>
                                     2024 - 2026
                                 </div>
                             </div>
                             <div>
-                                <span class="qualification__rounder"></span>
+                                <span class="qualification__rounder qualification__active-rounder"></span>
                                 <span class="qualification__line"></span>
                             </div>
                         </div>
@@ -440,37 +443,75 @@
                                 <!-- <span class="qualification__line"></span> -->
                             </div>
                             <div>
-                                <h3 class="qualification__title">B.S. in Mechanical Engineering</h3>
-                                <span class="qualification__subtitle">Texas A&M University</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    2019 - 2024
+                                <div>
+                                    <h3 class="qualification__title"><i class="uil uil-graduation-cap"></i> B.S. in
+                                        Mechanical Engineering</h3>
+                                    <span class="qualification__subtitle">Texas A&M University</span>
+                                    <div class="qualification__calendar">
+                                        <i class="uil uil-calendar-alt"></i>
+                                        2019 - 2024
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
+                    </div>
                     <!--==================== QUALIFICATION CONTENT 2 (Work Experience) ====================-->
                     <div class="qualification__content" data-content id="work">
 
-                        <!-- Work - MCITY -->
+                        <!-- 1. RESILIENT REAL-TIME NETWORK ARCHITECTURES RESEARCHER (MCITY) - LEFT -->
                         <div class="qualification__data">
                             <div>
-                                <h3 class="qualification__title">Computer Vision Researcher</h3>
-                                <span class="qualification__subtitle">Texas A&M Computer Vision & Robotics
-                                    Laboratory</span>
-                                <div class="qualification__calendar">
+                                <h3 class="qualification__title"><i class="uil uil-server-network"></i> Resilient
+                                    Networks Researcher</h3>
+                                <span class="qualification__subtitle">Texas A&M (Bush Combat Development Complex),
+                                    Bryan, TX</span>
+                                <div class="qualification__calendar qualification__active-work">
                                     <i class="uil uil-calendar-alt"></i>
-                                    Sep 2024 - Present
+                                    Jan 2026 - Present
                                 </div>
                             </div>
                             <div>
-                                <span class="qualification__rounder"></span>
+                                <span class="qualification__rounder qualification__active-rounder"></span>
                                 <span class="qualification__line"></span>
                             </div>
                         </div>
 
-                        <!-- Work - Bush Combat Development Complex -->
+                        <!-- 2. SYSTEMS ENGINEER (NORTHROP GRUMMAN) - RIGHT -->
+                        <div class="qualification__data">
+                            <div></div>
+                            <div>
+                                <span class="qualification__rounder qualification__active-rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                            <div>
+                                <h3 class="qualification__title"><i class="uil uil-rocket"></i> Systems Design Intern
+                                </h3>
+                                <span class="qualification__subtitle">Northrop Grumman</span>
+                                <div class="qualification__calendar qualification__active-work">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    May 2025 - Present
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 3. GRADUATE RESEARCHER (LENS LAB) - LEFT -->
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title"><i class="uil uil-atom"></i> Graduate Researcher</h3>
+                                <span class="qualification__subtitle">Texas A&M (LENS Lab), College Station, TX</span>
+                                <div class="qualification__calendar qualification__active-work">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    Jan 2025 - Present
+                                </div>
+                            </div>
+                            <div>
+                                <span class="qualification__rounder qualification__active-rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+
+                        <!-- 4. COMPUTER VISION RESEARCHER - RIGHT -->
                         <div class="qualification__data">
                             <div></div>
                             <div>
@@ -478,70 +519,73 @@
                                 <span class="qualification__line"></span>
                             </div>
                             <div>
-                                <h3 class="qualification__title">Controls Researcher</h3>
-                                <span class="qualification__subtitle">Bush Combat Development Complex, Texas A&M</span>
+                                <h3 class="qualification__title"><i class="uil uil-eye"></i> Computer Vision Researcher
+                                </h3>
+                                <span class="qualification__subtitle">Texas A&M (Computer Vision & Robotics Laboratory),
+                                    College Station, TX</span>
                                 <div class="qualification__calendar">
                                     <i class="uil uil-calendar-alt"></i>
-                                    May 2024 - Present
+                                    Sep 2024 - May 2025
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Work - CAST Laboratory -->
+                        <!-- 5. AIR-GROUND TEAMED AUTONOMY RESEARCHER - LEFT -->
                         <div class="qualification__data">
-
                             <div>
-                                <h3 class="qualification__title">Guidance, Navigation, and Controls (GNC) Researcher
-                                </h3>
-                                <span class="qualification__subtitle">Connected Autonomous Safe Technologies (CAST)
-                                    Laboratory, Texas A&M</span>
+                                <h3 class="qualification__title"><i class="uil uil-robot"></i> Air-Ground
+                                    Autonomy Researcher</h3>
+                                <span class="qualification__subtitle">Texas A&M (Bush Combat Development Complex),
+                                    Bryan, TX</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    May 2024 - Oct 2024
+                                </div>
+                            </div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+
+                        <!-- 6. GNC RESEARCHER - RIGHT -->
+                        <div class="qualification__data">
+                            <div></div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                            <div>
+                                <h3 class="qualification__title"><i class="uil uil-compass"></i> Guidance, Navigation,
+                                    and Controls (GNC) Researcher</h3>
+                                <span class="qualification__subtitle">Texas A&M (CAST Laboratory), College Station,
+                                    TX</span>
                                 <div class="qualification__calendar">
                                     <i class="uil uil-calendar-alt"></i>
                                     Sep 2023 - May 2024
                                 </div>
                             </div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
                         </div>
 
-                        <!-- Work - Southwest Research Institute -->
+                        <!-- 7. FELLOW FOR UTSR GAS TURBINE - LEFT -->
                         <div class="qualification__data">
-                            <div></div>
                             <div>
-                                <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
-                            </div>
-                            <div>
-                                <h3 class="qualification__title">Fellow for UTSR Gas Turbine Industrial Fellowship
-                                    Program</h3>
-                                <span class="qualification__subtitle">Southwest Research Institute</span>
+                                <h3 class="qualification__title"><i class="uil uil-fire"></i> Fellow for UTSR Gas
+                                    Turbine Industrial Fellowship Program</h3>
+                                <span class="qualification__subtitle">Southwest Research Institute, San Antonio,
+                                    TX</span>
                                 <div class="qualification__calendar">
                                     <i class="uil uil-calendar-alt"></i>
                                     May 2023 - Aug 2023
                                 </div>
                             </div>
-                        </div>
-
-                        <!-- Work - IT Security Operations -->
-                        <div class="qualification__data">
-
-                            <div>
-                                <h3 class="qualification__title">Cybersecurity Student Analyst</h3>
-                                <span class="qualification__subtitle">IT Security Operations, Texas A&M</span>
-                                <div class="qualification__calendar">
-                                    <i class="uil uil-calendar-alt"></i>
-                                    Jan 2023 - May 2023
-                                </div>
-                            </div>
                             <div>
                                 <span class="qualification__rounder"></span>
                                 <span class="qualification__line"></span>
                             </div>
                         </div>
 
-                        <!-- American Airlines -->
+                        <!-- 8. CYBERSECURITY STUDENT ANALYST - RIGHT -->
                         <div class="qualification__data">
                             <div></div>
                             <div>
@@ -549,28 +593,50 @@
                                 <span class="qualification__line"></span>
                             </div>
                             <div>
-                                <h3 class="qualification__title">Airbus A320F Engineering Co-Op </h3>
+                                <h3 class="qualification__title"><i class="uil uil-shield-check"></i> Cybersecurity
+                                    Student Analyst</h3>
+                                <span class="qualification__subtitle">Texas A&M (IT Security Operations), College
+                                    Station, TX</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    Jan 2023 - May 2023
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 9. AIRBUS A320F ENGINEERING CO-OP - LEFT -->
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title"><i class="uil uil-plane-departure"></i> Airbus A320F
+                                    Engineering Co-Op</h3>
                                 <span class="qualification__subtitle">American Airlines, Charlotte, NC</span>
                                 <div class="qualification__calendar">
                                     <i class="uil uil-calendar-alt"></i>
                                     Jun 2022 - Dec 2023
                                 </div>
                             </div>
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
                         </div>
 
-                        <!-- Turbomachinery Laboratory -->
+                        <!-- 10. UNDERGRADUATE RESEARCH TECHNICIAN - RIGHT -->
                         <div class="qualification__data">
+                            <div></div>
                             <div>
-                                <h3 class="qualification__title">Undergraduate Research Technician</h3>
-                                <span class="qualification__subtitle">Turbomachinery Laboratory, Texas A&M</span>
+                                <span class="qualification__rounder"></span>
+                                <!-- <span class="qualification__line"></span> -->
+                            </div>
+                            <div>
+                                <h3 class="qualification__title"><i class="uil uil-wrench"></i> Undergraduate Research
+                                    Technician</h3>
+                                <span class="qualification__subtitle">Texas A&M (Turbomachinery Laboratory), College
+                                    Station, TX</span>
                                 <div class="qualification__calendar">
                                     <i class="uil uil-calendar-alt"></i>
                                     Jan 2022 - May 2022
                                 </div>
-                            </div>
-                            <div>
-                                <span class="qualification__rounder"></span>
-                                <!-- <span class="qualification__line"></span> -->
                             </div>
                         </div>
 
@@ -580,15 +646,16 @@
         </section>
 
         <!--==================== SERVICES ====================-->
+        <!--==================== SERVICES ====================-->
         <section class="services section" id="services">
-            <h2 class="section__title">Services</h2>
-            <span class="section__subtitle">What I offer</span>
+            <h2 class="section__title">Expertise</h2>
+            <span class="section__subtitle">What I specialize in</span>
             <div class="services__container container grid">
 
                 <div class="services__content">
                     <div>
                         <i class="uil uil-robot services__icon"></i>
-                        <h3 class="services__title">Robotics & Automation</h3>
+                        <h3 class="services__title">Autonomous Systems & Motion Control</h3>
                     </div>
 
                     <span class="button button--flex button--small button--link services__button">
@@ -599,8 +666,8 @@
 
                 <div class="services__content">
                     <div>
-                        <i class="uil uil-shield-check services__icon"></i>
-                        <h3 class="services__title">Cybersecurity & Cyber-Physical Systems</h3>
+                        <i class="uil uil-map-marker services__icon"></i>
+                        <h3 class="services__title">Navigation & Localization</h3>
                     </div>
 
                     <span class="button button--flex button--small button--link services__button">
@@ -612,7 +679,7 @@
                 <div class="services__content">
                     <div>
                         <i class="uil uil-circuit services__icon"></i>
-                        <h3 class="services__title">Embedded Systems & IoT</h3>
+                        <h3 class="services__title">Embedded & Real-Time Computing</h3>
                     </div>
 
                     <span class="button button--flex button--small button--link services__button">
@@ -626,25 +693,25 @@
             <!-- Services Modals -->
             <div class="services__modal">
                 <div class="services__modal-content">
-                    <h4 class="services__modal-title">Robotics & Automation</h4>
+                    <h4 class="services__modal-title">Autonomous Systems & Motion Control</h4>
                     <i class="uil uil-times services__modal-close"></i>
 
                     <ul class="services__modal-services grid">
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>GM-SAE AutoDrive Challenge™ II Success: Improved vehicle stability and
-                                maneuverability, achieving a 75% reduction in radial lateral error, securing
-                                second place.</p>
+                            <p>Technical lead for GM-SAE AutoDrive Challenge II — designed and validated Stanley,
+                                Pure-Pursuit, and Compound Feed controllers, achieving 75% reduction in radial error and
+                                2nd place finish.</p>
                         </li>
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Developed Stanley, Pure-Pursuit, and Feedback algorithms, enhancing autonomous
-                                systems' accuracy and reliability.</p>
+                            <p>Developing meta-reinforcement learning control for differential-drive robots using Soft
+                                Actor-Critic (SAC) training in Gazebo simulation environments.</p>
                         </li>
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Led the integration of advanced sensors and actuators for competition-level
-                                performance.</p>
+                            <p>Contributed monocular depth estimation and semantic segmentation to Mcity Data Engine
+                                using SAM2, Depth Pro, and Depth Anything models.</p>
                         </li>
                     </ul>
                 </div>
@@ -652,24 +719,24 @@
 
             <div class="services__modal">
                 <div class="services__modal-content">
-                    <h4 class="services__modal-title">Cybersecurity & Cyber-Physical Systems</h4>
+                    <h4 class="services__modal-title">Navigation & Localization</h4>
                     <i class="uil uil-times services__modal-close"></i>
 
                     <ul class="services__modal-services grid">
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Developed countermeasures against GPS spoofing, enhancing navigation system
-                                security, leading to significant publications and presentations.</p>
+                            <p>Developed sensor-health-aware resilient fusion for localization under GPS spoofing
+                                attacks, published in IEEE CSR 2024.</p>
                         </li>
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Actively monitored and mitigated campus network threats, substantially reducing
-                                security risks.</p>
+                            <p>Built SatTrack — real-time satellite tracking with Kalman filtering for state estimation
+                                and geodetic math for accurate Mercator projection.</p>
                         </li>
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Enhanced system defenses, reducing vulnerabilities by over 40% through targeted
-                                assessments and strategic mitigation.</p>
+                            <p>Developing real-time telemetry and diagnostics infrastructure for Mcity 2.0 autonomous
+                                vehicle testing facility.</p>
                         </li>
                     </ul>
                 </div>
@@ -677,24 +744,24 @@
 
             <div class="services__modal">
                 <div class="services__modal-content">
-                    <h4 class="services__modal-title">Embedded Systems & IoT</h4>
+                    <h4 class="services__modal-title">Embedded & Real-Time Computing</h4>
                     <i class="uil uil-times services__modal-close"></i>
 
                     <ul class="services__modal-services grid">
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Improved autonomous coordination and efficiency in off-road environments through
-                                a real-time data exchange system.</p>
+                            <p>Designed real-time V2V data exchange system for AGC MOTE, enabling cooperative trajectory
+                                sharing between aerial and ground vehicles in off-road environments.</p>
                         </li>
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Boosted operational efficiency and reliability with tailored embedded systems
-                                for various industries.</p>
+                            <p>Developed embedded fuel management system for 7kW microturbine UAV power generation,
+                                presented at UTSR Program Review.</p>
                         </li>
                         <li class="services__modal-service">
                             <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Enhanced UAV fuel performance and reliability, showcased at the UTSR and Advanced
-                                Turbines Program Review Meeting.</p>
+                            <p>Integrated CANBUS communication for real-time vehicle dynamics and sensor data streaming
+                                in autonomous vehicle platforms.</p>
                         </li>
                     </ul>
                 </div>
@@ -731,22 +798,46 @@
                 </div>
                 <hr class="portfolio__divider"> -->
 
+                <div class="portfolio__content grid">
+                    <div class="portfolio__data">
+                        <h3 class="portfolio__title">Real-time Orbital Tracking with Physics-Based Prediction</h3>
+                        <p class="portfolio__description">Live satellite tracking progressive web app (PWA), solved the
+                            'teleportation' problem
+                            of discrete TLE data by creating custom interpolation system with Kalman Filters for
+                            physics-based state estimation.
+                        </p>
+                        <p class="portfolio__description">Implemented SGP4 propagation and cosine-corrected geodetic
+                            math to ensure accurate, smooth 60fps orbital
+                            visualization.</p>
+                        <p class="portfolio__status">Status: Ongoing, Jan 2026 - Feb 2026</p>
+                        <a href="assets/posts/sattrack.html"
+                            class="button button--flex button--small portfolio__button">
+                            Read More
+                            <i class="uil uil-arrow-right button__icon"></i>
+                        </a>
+                    </div>
+                    <img src="./assets/img/sattrack.png" class="portfolio__img" style="margin-bottom: 1rem;">
+
+                    <!-- No image or placeholder -->
+                </div>
+                <hr class="portfolio__divider">
+
                 <div class="portfolio__content grid portfolio__content--reverse">
                     <img src="./assets/img/gazebo-jackal-race.png" class="portfolio__img">
 
                     <div class="portfolio__data">
-                        <h3 class="portfolio__title">Dynamic Differential Drive using Reinforcement Learning in Sparse
+                        <h3 class="portfolio__title">Dynamic Differential Drive using Reinforcement Learning (RL) in
+                            Sparse
                             Reward Environments</h3>
                         <p class="portfolio__description">
-                            The Dynamic Differential-Drive framework delivers adaptive control via meta-reinforcement
-                            learning and Soft Actor–Critic (SAC) training, validated in Docker-containerized Gazebo
-                            simulations and real-world experiments.
+                            Adaptive control system for differential drive robots in sparse reward environments,
+                            leveraging Meta-RL and Soft Actor-Critic (SAC) for robust performance.
                         </p>
                         <p class="portfolio__status">
-                            I implemented the core differential-drive dynamics and Gym environment wrappers, designed
-                            and tuned reward functions for effective training and deployment.
+                            Implemented custom Gym environments and optimized reward functions, validating the system
+                            through Gazebo simulations and real-world hardware experiments.
                         </p>
-                        <p class="portfolio__status">Status: Ongoing, Completion Expected May 2026 (MS Thesis)</p>
+                        <p class="portfolio__status">Status: Ongoing, Jan 2025 - May 2026 (M.S. Thesis)</p>
 
                         <a href="https://github.com/isabelmoore/afcagc_controls/tree/main"
                             class="button button--flex button--small portfolio__button">
@@ -758,19 +849,18 @@
                 </div>
                 <hr class="portfolio__divider">
 
+
                 <div class="portfolio__content grid portfolio__content">
 
                     <div class="portfolio__data">
                         <h3 class="portfolio__title">Mcity Data Engine: Iterative Model Improvement Through
                             Open-Vocabulary Data Selection</h3>
-                        <p class="portfolio__description">Mcity Data Engine is an open-source framework that accelerates
-                            autonomous-vehicle ML via iterative, open-vocabulary sample selection and end-to-end data
-                            curation through Voxel51 UI. </p>
-                        <p class="portfolio__status">I contributed monocular depth estimation and semantic segmentation,
+                        <p class="portfolio__description">Open-source framework accelerating AV ML via iterative sample
+                            selection and end-to-end curation.</p>
+                        <p class="portfolio__status">Contributed monocular depth estimation and semantic segmentation,
                             integrating various HuggingFace models, such as SAM2, Apple's Depth Pro, and Depth Anything.
                         </p>
-                        <p class="portfolio__status">Status: Completed, May 2025 (with open-source release and
-                            publication)</p>
+                        <p class="portfolio__status">Status: Completed, Jan 2025 - Apr 2025</p>
                         <!-- <a href="https://mcity.umich.edu/what-we-do/data-for-ai/" class="button button--flex button--small portfolio__button">
                             About
                             <i class="uil uil-arrow-right button__icon"></i>
@@ -797,10 +887,9 @@
                     <div class="portfolio__data">
                         <h3 class="portfolio__title">Mcity 2.0: NSF-Funded Next-Generation Autonomous Vehicle Testing
                         </h3>
-                        <p class="portfolio__description">Real-time, cloud-based autonomous vehicle testing integrating
-                            AWS and CARLA environments. Enhancements include real-time telemetry and diagnostics with
-                            Redis for detailed analysis of vehicle trials on Mcity's test track.</p>
-                        <p class="portfolio__status">Status: Ongoing, Completion Expected May 2025</p>
+                        <p class="portfolio__description">Real-time, cloud-based AV testing integrating AWS and CARLA
+                            with live telemetry.</p>
+                        <p class="portfolio__status">Status: Completed, Oct 2024 - May 2025</p>
                         <a href="https://mcity.umich.edu/mcity-2-0/"
                             class="button button--flex button--small portfolio__button">
                             Mcity2.0 Facility Information
@@ -832,7 +921,7 @@
                             trajectory data between aerial and ground vehicles. </p>
                         <p class="portfolio__description">I optimized yaw-navigation and execution in off-road
                             environments</p>
-                        <p class="portfolio__status">Status: Completed, Sep 2024</p>
+                        <p class="portfolio__status">Status: Completed, May 2024 - Sep 2024</p>
                         <a href="https://github.com/isabelmoore/mote_ros"
                             class="button button--flex button--small portfolio__button">
                             GitHub Repo
@@ -848,10 +937,13 @@
                     <div class="portfolio__data">
                         <h3 class="portfolio__title">Using Sensor-Health-Aware Resilient Fusion for Localization in
                             Presence of GPS Spoofing Attacks</h3>
-                        <p class="portfolio__description">Cooperative autonomy by real-time sharing of obstacle and
-                            trajectory data between aerial and ground vehicles, optimizing navigation and mission
-                            execution in off-road environments.</p>
-                        <p class="portfolio__status">Status: Completed, Jun 2024</p>
+                        <p class="portfolio__description">Co-authored research on securing autonomous navigation against
+                            GPS
+                            spoofing using Sensor-Health Aware Resilient Fusion (SHARF). Validated the algorithm by
+                            fusing GPS, IMU, and onboard sensor data on a drive-by-wire Lincoln MKZ using Python and
+                            ROS2, demonstrating resilience during emulated attacks.
+                        </p>
+                        <p class="portfolio__status">Status: Completed, Sep 2023 - Jun 2024</p>
                         <a href="https://ieeexplore.ieee.org/document/10679455"
                             class="button button--flex button--small portfolio__button">
                             IEEE CSR Publication
@@ -864,11 +956,13 @@
 
                 <div class="portfolio__content grid portfolio__content--reverse">
                     <div class="portfolio__data">
-                        <h3 class="portfolio__title">GM-SAE AutoDrive Challenge™ II / Vehicle Dynamics \& CANBUS
-                            Communication</h3>
-                        <p class="portfolio__description">Senior design project for autonomous car competition sponsored
-                            by General Motors (GM) and Society of Automotive Engineers (SAE) International.</p>
-                        <p class="portfolio__status">Status: Completed, Jun 2024 (Won 2nd Place!)</p>
+                        <h3 class="portfolio__title">GM-SAE AutoDrive Challenge™ II — Vehicle Dynamics & Controls</h3>
+                        <p class="portfolio__description">Technical lead for lateral and longitudinal control systems in
+                            the GM/SAE AutoDrive Challenge.</p>
+                        <p class="portfolio__status">Designed and validated Stanley, Pure-Pursuit, and
+                            Compound Feed controllers, achieving a 75% reduction in radial error through optimized
+                            steering gradients and feedback gains.</p>
+                        <p class="portfolio__status">Status: Completed, Sep 2023 - Jun 2024 (2nd Place)</p>
 
                         <a href="assets/pdf/Concept_Design_Report_2023.pdf"
                             class="button button--flex button--small portfolio__button">
@@ -884,10 +978,14 @@
                 <div class="portfolio__content grid">
                     <img src="./assets/img/liner.png" class="portfolio__img">
                     <div class="portfolio__data">
-                        <h3 class="portfolio__title">Microturbine for 7kW Power Generation in UAVs</h3>
-                        <p class="portfolio__description">Fuel-to-electricity gas turbine generator developed to meet
-                            quiet, lightweight, and high-power goals.</p>
-                        <p class="portfolio__status">Status: Completed, Aug 2023</p>
+                        <h3 class="portfolio__title">Gas Turbine Combustor Analysis for 7kW UAV Power Generation</h3>
+                        <p class="portfolio__description">Investigated pressure drop in the Great
+                            Horned Owl (GHO) gas turbine combustor via CFD modeling and experimental validation.
+                            Identified critical geometry discrepancies, validated CFD predictions against cold flow
+                            testing, and characterized jetting issues affecting light-off conditions.</p>
+                        <p class="portfolio__status">Conducted as part of the DOE University Turbine Systems Research
+                            (UTSR) Fellowship at Southwest Research Institute.</p>
+                        <p class="portfolio__status">Status: Completed, May 2023 - Aug 2023</p>
 
                         <a href="https://netl.doe.gov/sites/default/files/netl-file/23UTSR_Posters_Moore.pdf"
                             class="button button--flex button--small portfolio__button">
@@ -911,6 +1009,21 @@
         </section>
 
 
+
+        <!--==================== BLOG ====================-->
+        <!-- <section class="blog section" id="blog-home">
+            <h2 class="section__title">Recent Posts</h2>
+            <span class="section__subtitle">Thoughts & Tutorials</span>
+
+            <div class="blog__container container grid" id="home-blog-container">
+            </div>
+
+            <div class="blog__view-more" style="text-align: center; margin-top: 2rem;">
+                <a href="assets/blog.html" class="button button--flex button--small">
+                    View All Posts <i class="uil uil-arrow-right button__icon"></i>
+                </a>
+            </div>
+        </section> -->
 
         <!--==================== PROJECT IN MIND ====================-->
         <!-- <section class="project section">
@@ -1014,60 +1127,63 @@
         <!--==================== CONTACT ME ====================-->
         <section class="contact section" id="contact">
             <h2 class="section__title">Contact Me</h2>
-            <!-- <span class="section__subtitle">The best way to contact me is by email at</span> -->
+            <span class="section__subtitle" style="margin-bottom: var(--mb-0-5);"></span>
 
-            <div class="contact__container container grid">
+            <div
+                style="text-align: center; max-width: 700px; margin: 0 auto 3rem auto; padding: 0 1rem; font-size: var(--small-font-size); color: var(--text-color-light);">
+                <p>
+                    Feel free to connect, or use the form to send me an email—it goes straight to my
+                    inbox and I'll get back to you as soon as possible!
+                </p>
+            </div>
+
+            <div class="contact__container container">
                 <!-- LinkedIn -->
-                <a href="https://www.linkedin.com/in/isabel-moore/" target="_blank" class="contact__information">
-                    <i class="uil uil-linkedin-alt contact__icon"></i>
-                    <div>
-                        <h3 class="contact__title">LinkedIn</h3>
-                        <span class="contact__subtitle">Connect</span>
-                    </div>
-                </a>
+                <!-- Contact Info Group (Links) -->
+                <div class="contact__info">
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/isabel-moore/" target="_blank" class="contact__information">
+                        <i class="uil uil-linkedin-alt contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">LinkedIn</h3>
+                            <span class="contact__subtitle">Connect</span>
+                        </div>
+                    </a>
 
-                <!-- GitHub -->
-                <a href="https://github.com/isabelmoore" target="_blank" class="contact__information">
-                    <i class="uil uil-github-alt contact__icon"></i>
-                    <div>
-                        <h3 class="contact__title">GitHub</h3>
-                        <span class="contact__subtitle">Follow</span>
-                    </div>
-                </a>
+                    <!-- GitHub -->
+                    <a href="https://github.com/isabelmoore" target="_blank" class="contact__information">
+                        <i class="uil uil-github-alt contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">GitHub</h3>
+                            <span class="contact__subtitle">Follow</span>
+                        </div>
+                    </a>
 
-                <!-- Email -->
-                <a href="mailto:isabelmoore717@gmail.com" class="contact__information">
-                    <i class="uil uil-envelope contact__icon"></i>
-                    <div>
-                        <h3 class="contact__title">Email</h3>
-                        <span class="contact__subtitle">isabelmoore717@gmail.com</span>
-                    </div>
-                </a>
 
-                <!-- Resume -->
-                <a href="/assets/pdf/Isabel-Moore-Resume.pdf" target="_blank" class="contact__information">
-                    <i class="uil uil-file-alt contact__icon"></i>
-                    <div>
-                        <h3 class="contact__title">Resume</h3>
-                        <span class="contact__subtitle">View PDF</span>
-                    </div>
-                </a>
+                    <!-- Resume -->
+                    <a href="/assets/pdf/Isabel-Moore-Resume.pdf" target="_blank" class="contact__information">
+                        <i class="uil uil-file-alt contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Resume</h3>
+                            <span class="contact__subtitle">View PDF</span>
+                        </div>
+                    </a>
 
-                <!-- Goodreads -->
-                <a href="https://www.goodreads.com/" target="_blank" class="contact__information">
-                    <i class="uil uil-book-open contact__icon"></i>
-                    <div>
-                        <h3 class="contact__title">Goodreads</h3>
-                        <span class="contact__subtitle">Read With Me</span>
-                    </div>
-                </a>
+                    <!-- Goodreads -->
+                    <a href="https://www.goodreads.com/" target="_blank" class="contact__information">
+                        <i class="uil uil-book-open contact__icon"></i>
+                        <div>
+                            <h3 class="contact__title">Goodreads</h3>
+                            <span class="contact__subtitle">Read With Me</span>
+                        </div>
+                    </a>
 
-                <!-- <form class="contact__form grid">
+                    <!-- <form class="contact__form grid">
                     <div class="contact__inputs grid">
                         <div class="contact__content">
                             <label for="" class="contact__label">Name</label>
                             <input type="text" class="contact__input">
-                        </div>
+                </div>
                         <div class="contact__content">
                             <label for="" class="contact__label">Email</label>
                             <input type="email" class="contact__input">
@@ -1090,7 +1206,34 @@
                     <button type="submit" style="display:none">Submit</button>
                 </form> -->
 
-            </div>
+                </div>
+
+                <form action="https://formspree.io/f/mreqolpq" method="POST" class="contact__form grid">
+                    <div class="contact__inputs grid">
+                        <div class="contact__content">
+                            <label for="name" class="contact__label">Name</label>
+                            <input type="text" name="name" class="contact__input" required>
+                        </div>
+                        <div class="contact__content">
+                            <label for="email" class="contact__label">Email</label>
+                            <input type="email" name="email" class="contact__input" required>
+                        </div>
+                    </div>
+                    <div class="contact__content">
+                        <label for="project" class="contact__label">Project</label>
+                        <input type="text" name="project" class="contact__input">
+                    </div>
+                    <div class="contact__content">
+                        <label for="message" class="contact__label">Message</label>
+                        <textarea name="message" cols="0" rows="7" class="contact__input" required></textarea>
+                    </div>
+                    <div style="display: flex; justify-content: center;">
+                        <button type="submit" class="button button--flex">
+                            Send Message
+                            <i class="uil uil-message button__icon"></i>
+                        </button>
+                    </div>
+                </form>
         </section>
 
         <!--==================== GAME SECTION ====================-->
@@ -1488,8 +1631,43 @@
 
 
 
+    <!--==================== BLOG DATA ====================-->
+    <script src="/assets/js/blog-data.js?v=3"></script>
+
     <!--==================== GAME SCRIPT ====================-->
-    <script src="./assets/js/scripts.js"></script>
+    <script src="/assets/js/scripts.js"></script>
+
+    <!--==================== HOME BLOG SCRIPT ====================-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const homeBlogContainer = document.getElementById("home-blog-container");
+            if (homeBlogContainer && typeof blogPosts !== 'undefined') {
+                const recentPosts = blogPosts.slice(0, 2); // Show top 2
+
+                recentPosts.forEach(post => {
+                    const dateObj = new Date(post.date + 'T12:00:00');
+                    const dateStr = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+
+                    const div = document.createElement("div");
+                    div.className = "services__content"; // Reusing services card style for simplicity or custom styling
+                    div.style.padding = "1.5rem";
+
+                    div.innerHTML = `
+                        <div style="margin-bottom: 0.5rem;">
+                             <i class="uil uil-calender" style="font-size: 1rem; color: var(--text-color-light);"></i> 
+                             <span style="font-size: 0.9rem; color: var(--text-color-light);">${dateStr}</span>
+                        </div>
+                        <h3 class="services__title" style="margin-bottom: 0.5rem; font-size: 1.1rem;">${post.title}</h3>
+                         <span class="button button--flex button--small button--link services__button">
+                            <a href="/assets/post.html?file=${encodeURIComponent(post.file)}" style="color: inherit;">Read More</a>
+                            <i class="uil uil-arrow-right button__icon"></i>
+                        </span>
+                    `;
+                    homeBlogContainer.appendChild(div);
+                });
+            }
+        });
+    </script>
 
     <!--==================== FLOWER SCRIPT ====================-->
     <link rel="stylesheet" href="./assets/flower/style.css">

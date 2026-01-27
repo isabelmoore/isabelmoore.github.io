@@ -410,40 +410,41 @@
     }
 }
 
-/* ==================== CONTACT GRID LAYOUT ==================== */
-/* Ensure text truncates/wraps properly in grid columns */
-.contact__information {
-    min-width: 0;
-    /* Allows flex child to shrink properly */
-    overflow: hidden;
-    /* Prevents overflow */
-}
+/* ==================== CONTACT SECTION MEDIA QUERIES ==================== */
 
-.contact__subtitle {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
-    max-width: 100%;
-}
+/* Mobile adjustments */
+@media screen and (max-width: 567px) {
 
-/* Default / Mobile: 2 Columns (3 rows, 2 columns) */
-.contact__container {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 1rem !important;
-}
-
-/* Tablet / Medium: 2 Columns (3 rows, 2 columns) */
-@media screen and (min-width: 568px) {
-    .contact__container {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-        gap: 2rem !important;
+    .contact__links,
+    .contact__socials,
+    .contact__info-container {
+        flex-wrap: wrap !important;
+        gap: 1.5rem !important;
     }
 }
 
-/* Laptop / Desktop: 3 Columns (2 rows, 3 columns) */
+/* Tablet and up */
+@media screen and (min-width: 568px) {
+    .contact__form {
+        max-width: 650px;
+    }
+
+    .contact__links,
+    .contact__socials,
+    .contact__info-container {
+        gap: 2.5rem !important;
+    }
+}
+
+/* Desktop */
 @media screen and (min-width: 968px) {
-    .contact__container {
-        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    .contact__form {
+        max-width: 700px;
+    }
+
+    .contact__links,
+    .contact__socials,
+    .contact__info-container {
+        gap: 3rem !important;
     }
 }

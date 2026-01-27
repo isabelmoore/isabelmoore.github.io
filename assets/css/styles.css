@@ -385,6 +385,10 @@ body.dark-theme .header::before {
   border-radius: 0.5rem;
   font-weight: var(--font-medium);
   transition: 0.3s;
+  border: none;
+  cursor: pointer;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
 }
 
 .button:hover {
@@ -667,6 +671,14 @@ body.dark-theme .header::before {
   color: var(--first-color);
 }
 
+.qualification__active-work {
+  color: var(--first-color);
+}
+
+.qualification__active-rounder {
+  box-shadow: 0 0 0 .25rem hsla(var(--hue-color), 69%, 61%, .5);
+}
+
 /*==================== SERVICES ====================*/
 .services__container {
   gap: 1.5rem;
@@ -754,6 +766,7 @@ body.dark-theme .services__content {
   font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
   margin-bottom: var(--mb-1-5);
+  padding-right: 3rem;
 }
 
 .services__modal-close {
@@ -945,13 +958,42 @@ body.dark-theme .portfolio__divider {
 }
 
 /*==================== CONTACT ME ====================*/
+/* Main contact section container */
 .contact__container {
-  row-gap: 3rem;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 2rem !important;
 }
 
+/* Contact form - centered */
+.contact__form {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Social links container - horizontal row */
+.contact__links,
+.contact__socials,
+.contact__info,
+.contact__info-container {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 2rem !important;
+  width: 100%;
+}
+
+/* Individual link items */
+.contact__card,
 .contact__information {
+  min-width: 0;
+  overflow: hidden;
+  flex: 0 0 auto;
   display: flex;
-  margin-bottom: var(--mb-2);
 }
 
 .contact__icon {
@@ -974,6 +1016,11 @@ body.dark-theme .portfolio__divider {
 .contact__subtitle {
   font-size: var(--small-font-size);
   color: var(--text-color-light);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 100%;
 }
 
 .contact__content {
