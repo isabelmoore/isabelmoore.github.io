@@ -154,9 +154,9 @@
                         <!-- <a href="mailto:isabelmoore717@gmail.com" aria-label="Email" class="home__social-icon">
                             <i class="uil uil-envelope"></i>
                         </a> -->
-                        <a href="/assets/pdf/Isabel-Moore-Resume.pdf" aria-label="Resume" target="_blank"
+                        <a href="./assets/pdf/Isabel-Moore-Resume.pdf" aria-label="Resume" target="_blank"
                             class="home__social-icon"
-                            onclick="this.href='/assets/pdf/Isabel-Moore-Resume.pdf?v=' + Math.floor(Math.random() * 100000)">
+                            onclick="this.href='./assets/pdf/Isabel-Moore-Resume.pdf?v=' + Math.floor(Math.random() * 100000)">
                             <i class="uil uil-file-alt"></i>
                         </a>
                         <!-- <a href="https://www.goodreads.com/" aria-label="Goodreads" target="_blank"
@@ -232,8 +232,8 @@
                         </div>
                     </div>
                     <div class="about__buttons">
-                        <a href="/assets/pdf/Isabel-Moore-Resume.pdf" download class="button button--flex"
-                            onclick="this.href='/assets/pdf/Isabel-Moore-Resume.pdf?v=' + Math.floor(Math.random() * 100000)">
+                        <a href="./assets/pdf/Isabel-Moore-Resume.pdf" download class="button button--flex"
+                            onclick="this.href='./assets/pdf/Isabel-Moore-Resume.pdf?v=' + Math.floor(Math.random() * 100000)">
                             Download Resume<i class="uil uil-download-alt button__icon"></i>
                         </a>
                     </div>
@@ -810,7 +810,7 @@
                             math to ensure accurate, smooth 60fps orbital
                             visualization.</p>
                         <p class="portfolio__status">Status: Ongoing, Jan 2026 - Feb 2026</p>
-                        <a href="assets/posts/sattrack.html"
+                        <a href="./assets/post.html?file=posts%2Fsattrack.html"
                             class="button button--flex button--small portfolio__button">
                             Read More
                             <i class="uil uil-arrow-right button__icon"></i>
@@ -1161,8 +1161,8 @@
 
 
                     <!-- Resume -->
-                    <a href="/assets/pdf/Isabel-Moore-Resume.pdf" target="_blank" class="contact__information"
-                        onclick="this.href='/assets/pdf/Isabel-Moore-Resume.pdf?v=' + Math.floor(Math.random() * 100000)">
+                    <a href="./assets/pdf/Isabel-Moore-Resume.pdf" target="_blank" class="contact__information"
+                        onclick="this.href='./assets/pdf/Isabel-Moore-Resume.pdf?v=' + Math.floor(Math.random() * 100000)">
                         <i class="uil uil-file-alt contact__icon"></i>
                         <div>
                             <h3 class="contact__title">Resume</h3>
@@ -1635,10 +1635,10 @@
 
 
     <!--==================== BLOG DATA ====================-->
-    <script src="/assets/js/blog-data.js?v=3"></script>
+    <script src="./assets/js/blog-data.js?v=3"></script>
 
     <!--==================== GAME SCRIPT ====================-->
-    <script src="/assets/js/scripts.js"></script>
+    <script src="./assets/js/scripts.js"></script>
 
     <!--==================== HOME BLOG SCRIPT ====================-->
     <script>
@@ -1662,7 +1662,7 @@
                         </div>
                         <h3 class="services__title" style="margin-bottom: 0.5rem; font-size: 1.1rem;">${post.title}</h3>
                          <span class="button button--flex button--small button--link services__button">
-                            <a href="/assets/post.html?file=${encodeURIComponent(post.file)}" style="color: inherit;">Read More</a>
+                            <a href="./assets/post.html?file=${encodeURIComponent(post.file)}" style="color: inherit;">Read More</a>
                             <i class="uil uil-arrow-right button__icon"></i>
                         </span>
                     `;
