@@ -2,7 +2,7 @@
 const blogPosts = [
     {
         "title": "Dynamic Differential Drive Reinforcement Learning (RL) for Jackal Navigation",
-        "date": "2025-01-31",
+        "date": "2026-01-31",
         "readTime": "12 min read",
         "file": "posts/robust-navigation.md",
         "description": "Bridging the sim-to-real gap using Reinforcement Learning, Gazebo simulation, and Domain Randomization for a differential drive robot.",
