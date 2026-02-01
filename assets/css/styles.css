@@ -399,6 +399,7 @@ body.dark-theme .header::before {
 
 .button:hover {
   background-color: var(--first-color-alt);
+  color: #fff;
   transform: translateY(-0.25rem);
 }
 
