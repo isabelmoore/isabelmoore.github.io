@@ -184,7 +184,9 @@
     <!--==================== MAIN JS ====================-->
     <script src="js/main.js"></script>
     <!--==================== BLOG DATA ====================-->
-    <script src="js/blog-data.js?v=3"></script>
+    <script>
+        document.write('<script src="js/blog-data.js?v=' + Date.now() + '"><\/script>');
+    </script>
 
     <script>
         // Reference to the container

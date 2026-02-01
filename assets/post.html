@@ -415,7 +415,9 @@
 
     <!--==================== MAIN JS ====================-->
     <script src="js/main.js"></script>
-    <script src="js/blog-data.js?v=3"></script>
+    <script>
+        document.write('<script src="js/blog-data.js?v=' + Date.now() + '"><\/script>');
+    </script>
 
     <!--==================== Markdown Support ====================-->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -463,6 +465,10 @@
                 if (post.tags) {
                     document.getElementById("post-tags").innerHTML = post.tags.map(tag => `<span class="blog__tag">${tag}</span>`).join('');
                 }
+            } else {
+                // Fallback title from filename if metadata lookup fails
+                const betterTitle = fileName.split('/').pop().replace('.md', '').replace(/-/g, ' ');
+                document.getElementById("post-title").textContent = betterTitle.charAt(0).toUpperCase() + betterTitle.slice(1);
             }
 
             // Fetch Content
