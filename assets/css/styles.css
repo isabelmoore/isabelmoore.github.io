@@ -1531,17 +1531,17 @@ body.dark-theme .portfolio__divider {
 
 /* Day Mode Colors */
 .parallax-layer:nth-child(1) .mountain-svg path {
-  fill: hsl(var(--hue-color), 25%, 90%);
-  /* Furthest - Very Light */
+  fill: hsl(var(--hue-color), 45%, 92%);
+  /* Furthest - Light warm peach */
 }
 
 .parallax-layer:nth-child(2) .mountain-svg path {
-  fill: hsl(var(--hue-color), 30%, 85%);
+  fill: hsl(var(--hue-color), 50%, 87%);
 }
 
 .parallax-layer:nth-child(3) .mountain-svg path {
-  fill: hsl(var(--hue-color), 35%, 80%);
-  /* Closest - Slightly Darker */
+  fill: hsl(var(--hue-color), 55%, 82%);
+  /* Closest - Warmer peach */
 }
 
 /* Dark Mode Colors */
