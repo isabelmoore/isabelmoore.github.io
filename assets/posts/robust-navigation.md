@@ -6,7 +6,7 @@ I wanted to see if **domain randomization** could help. By training with randomi
 
 ![Jackal Robot Demo](img/jackal_demo.gif)
 
-## The Kinematics & Dynamics
+## Kinematics & Dynamics
 
 The Jackal is a differential drive robot. The kinematics are straightforward:
 
@@ -34,7 +34,7 @@ $$
 
 The critical insight: **if the simulation models friction incorrectly, the learned policy will fail in the real world.**
 
-## The Experiment: Narrow vs. Broad Distribution
+## Experiment: Narrow vs. Broad Distribution
 
 I trained two policies using Proximal Policy Optimization (PPO) for 10 million steps:
 
