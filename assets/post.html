@@ -414,7 +414,7 @@
     </footer>
 
     <!--==================== MAIN JS ====================-->
-
+    <script src="js/main.js"></script>
     <script src="js/blog-data.js?v=3"></script>
 
     <!--==================== Markdown Support ====================-->
@@ -452,16 +452,8 @@
                 document.getElementById("post-title").textContent = post.title;
                 document.getElementById("post-read-time").innerHTML = `<i class="uil uil-clock"></i> ${post.readTime || '5 min read'}`;
 
-                // Robust date parsing
-                let dateObj = new Date(post.date);
-                if (isNaN(dateObj.getTime())) {
-                    // Fallback for different browser engines
-                    dateObj = new Date(post.date.replace(/-/g, '/'));
-                }
-                const dateStr = !isNaN(dateObj.getTime())
-                    ? dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
-                    : post.date;
-
+                const dateObj = new Date(post.date + 'T12:00:00');
+                const dateStr = dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
                 document.getElementById("post-date").innerHTML = `<i class="uil uil-calendar-alt"></i> Published: ${dateStr}`;
 
                 if (post.description) {
