@@ -11,7 +11,7 @@
   /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
   /* HSL color mode */
-  --first-color: hsl(var(--hue-color), 69%, 61%);
+  --first-color: hsl(var(--hue-color), 69%, 63%);
   --first-color-second: hsl(var(--hue-color), 55%, 61%);
   --first-color-alt: hsl(var(--hue-color), 35%, 65%);
   --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
@@ -1081,7 +1081,7 @@ body.dark-theme .portfolio__divider {
 }
 
 .footer__link {
-  color: var(--first-color-alt);
+  color: var(--title-color);
   transition: all 0.3s ease;
   display: inline-block;
 }

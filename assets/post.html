@@ -176,22 +176,25 @@
 
         /* Table Styling for Blog Posts */
         .blog__content-text table {
-            width: auto;
+            width: 100%;
             max-width: 100%;
+            table-layout: fixed;
             border-collapse: separate;
             border-spacing: 0;
             margin: 2rem auto;
             overflow: hidden;
             border-radius: 0.75rem;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            font-size: 0.9rem;
         }
 
         .blog__content-text th,
         .blog__content-text td {
-            padding: 0.75rem 1.25rem;
+            padding: 0.6rem 0.75rem;
             border: none;
             border-bottom: 1px solid rgba(0, 0, 0, 0.15);
             text-align: left;
+            word-wrap: break-word;
         }
 
         .blog__content-text th {
