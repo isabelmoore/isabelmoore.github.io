@@ -24,10 +24,12 @@
     <style>
         /* Post Specific Overrides */
         /* Center content layout */
+        /* Center content layout */
         .blog__layout-post {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 0 1rem;
+            margin: 0 auto !important;
+            padding: 0 1.5rem !important;
+            width: 100%;
         }
 
         /* "Off-color" background for code blocks */
@@ -53,9 +55,12 @@
             color: var(--text-color) !important;
             /* Use theme text color */
             padding: 1.5rem;
-            border-radius: 0.5rem;
-            margin: 1.5rem 0;
+            border-radius: 0.75rem;
+            margin: 1.5rem auto;
             font-family: 'Fira Code', 'Consolas', 'Monaco', 'Courier New', monospace;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            display: block;
+            overflow-x: auto;
         }
 
         /* Ensure specific code tokens are visible in dark mode if needed
@@ -86,16 +91,149 @@
         }
 
         .blog__content-text img {
-            border-radius: 0.5rem;
-            margin: 1.5rem 0;
+            display: block;
+            max-width: 90%;
+            margin: 1.5rem auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
         /* Headers in post content */
         .blog__content-text h2 {
-            margin-top: 2rem;
-            margin-bottom: 1rem;
+            margin-top: 3rem;
+            margin-bottom: 1.25rem;
             font-size: 1.5rem;
             color: var(--title-color);
+            padding-top: 1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .blog__content-text h2:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .blog__content-text h3 {
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            color: var(--title-color);
+        }
+
+        .blog__content-text p {
+            margin-bottom: 1.25rem;
+            line-height: 1.8;
+        }
+
+        /* Restore bullet points for lists in blog posts */
+        .blog__content-text ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog__content-text ol {
+            list-style: decimal;
+            margin-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .blog__content-text li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Prevent MathJax overflow on mobile */
+        mjx-container[display="true"] {
+            overflow-x: auto;
+            overflow-y: hidden;
+            max-width: 100%;
+            padding: 0.5rem 0;
+        }
+
+        /* Custom thin scrollbar for math equations */
+        mjx-container[display="true"]::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        mjx-container[display="true"]::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        mjx-container[display="true"]::-webkit-scrollbar-thumb {
+            background-color: transparent;
+            border-radius: 4px;
+        }
+
+        mjx-container[display="true"]:hover::-webkit-scrollbar-thumb,
+        mjx-container[display="true"]:active::-webkit-scrollbar-thumb {
+            background-color: var(--scroll-thumb-color);
+        }
+
+        mjx-container[display="true"]::-webkit-scrollbar-thumb:hover {
+            background-color: var(--text-color);
+        }
+
+        /* Table Styling for Blog Posts */
+        .blog__content-text table {
+            width: auto;
+            max-width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem auto;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .blog__content-text th,
+        .blog__content-text td {
+            padding: 0.75rem 1.25rem;
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+            text-align: left;
+        }
+
+        .blog__content-text th {
+            background-color: var(--first-color-lighter);
+            color: var(--title-color);
+            font-weight: 600;
+        }
+
+        .blog__content-text td {
+            background-color: var(--code-bg);
+        }
+
+        .blog__content-text tr:last-child td {
+            border-bottom: none;
+        }
+
+        .blog__content-text tr:nth-child(even) td {
+            background-color: hsl(var(--hue-color), 30%, 92%);
+        }
+
+        /* Dark mode adjustments for tables */
+        body.dark-theme .blog__content-text table {
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        body.dark-theme .blog__content-text th {
+            background-color: hsl(var(--hue-color), 30%, 25%);
+            color: #f5f5f5;
+        }
+
+        body.dark-theme .blog__content-text td {
+            background-color: hsl(var(--hue-color), 15%, 18%);
+            color: #e0e0e0;
+        }
+
+        body.dark-theme .blog__content-text th,
+        body.dark-theme .blog__content-text td {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
+        body.dark-theme .blog__content-text tr:nth-child(even) td {
+            background-color: hsl(var(--hue-color), 15%, 15%);
         }
     </style>
 </head>
@@ -276,6 +414,23 @@
     <script src="js/main.js"></script>
     <script src="js/blog-data.js?v=3"></script>
 
+    <!--==================== Markdown Support ====================-->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!--==================== MathJax Support ====================-->
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const params = new URLSearchParams(window.location.search);
@@ -313,9 +468,54 @@
                     if (!response.ok) throw new Error("Failed to load content");
                     return response.text();
                 })
-                .then(html => {
-                    document.getElementById("post-content").innerHTML = html;
+                .then(async text => {
+                    const postContentEl = document.getElementById("post-content");
+
+                    if (fileName.endsWith('.md')) {
+                        // Protect MathJax from Marked.js
+                        // Use alphanumeric placeholders to avoid Markdown formatting (underscores/asterisks)
+                        const mathBlocks = [];
+                        let protectedText = text.replace(/\$\$([\s\S]*?)\$\$/g, (match) => {
+                            mathBlocks.push(match);
+                            return `MATHBLOCKPLACEHOLDER${mathBlocks.length - 1}ENDMATHBLOCK`;
+                        }).replace(/\$([^\$\n]+?)\$/g, (match) => {
+                            mathBlocks.push(match);
+                            return `MATHINLINEPLACEHOLDER${mathBlocks.length - 1}ENDMATHINLINE`;
+                        });
+
+                        // Render Markdown
+                        let html = marked.parse(protectedText);
+
+                        // Restore MathJax
+                        html = html.replace(/MATHBLOCKPLACEHOLDER(\d+)ENDMATHBLOCK/g, (match, index) => {
+                            return mathBlocks[parseInt(index)];
+                        }).replace(/MATHINLINEPLACEHOLDER(\d+)ENDMATHINLINE/g, (match, index) => {
+                            return mathBlocks[parseInt(index)];
+                        });
+
+                        postContentEl.innerHTML = html;
+                    } else {
+                        // Render HTML
+                        postContentEl.innerHTML = text;
+                    }
+
+                    // Highlight Code
                     hljs.highlightAll();
+
+                    // Render Math (Safely check if MathJax is ready)
+                    if (window.MathJax && window.MathJax.typesetPromise) {
+                        try {
+                            await MathJax.typesetPromise([postContentEl]);
+                        } catch (err) {
+                            console.log('MathJax error:', err);
+                            // Retry once if needed or ignore
+                        }
+                    } else if (window.MathJax) {
+                        // Fallback if typesetPromise isn't ready yet (shouldn't happen with async, but good for safety)
+                        window.MathJax.startup.promise.then(() => {
+                            MathJax.typesetPromise([postContentEl]);
+                        });
+                    }
                 })
                 .catch(err => {
                     document.getElementById("post-content").innerHTML = `<p>Error loading post: ${err.message}</p>`;

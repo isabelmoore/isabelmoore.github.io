@@ -1,21 +1,21 @@
 // List of blog posts
 const blogPosts = [
     {
-        "title": "Real-time Orbital Tracking with Physics-Based Prediction",
+        "title": "Real-Time Satellite Tracking with Kalman Filters",
         "date": "2026-01-27",
         "readTime": "6 min read",
-        "file": "posts/sattrack.html",
+        "file": "posts/sattrack.md",
         "description": "Building a full-stack satellite tracker using Vue 3 and FastAPI. Solving the 'teleportation' problem with physics-based state estimation and SGP4 orbital propagation.",
         "tags": ["Vue 3", " Python (FastAPI)", "Leaflet"]
     },
-    // {
-    //     "title": "Getting Started with ROS 2 in 2025",
-    //     "date": "2024-12-15",
-    //     "readTime": "8 min read",
-    //     "file": "posts/ros2-intro.html",
-    //     "description": "An overview of the latest features in ROS 2 Jazzy Jalisco and how to set up your development environment for robotics.",
-    //     "tags": ["Robotics", "ROS", "Tutorial"]
-    // },
+    {
+        "title": "Dynamic Differential Drive Reinforcement Learning (RL) for Jackal Navigation",
+        "date": "2024-12-15",
+        "readTime": "12 min read",
+        "file": "posts/robust-navigation.md",
+        "description": "Bridging the sim-to-real gap using Reinforcement Learning, Gazebo simulation, and Domain Randomization for a differential drive robot.",
+        "tags": ["Reinforcement Learning", "Robotics", "Gazebo"]
+    },
     // {
     //     title: "Securing Embedded Systems against IoT Threats",
     //     date: "2024-11-03",
