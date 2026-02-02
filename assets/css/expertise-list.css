@@ -19,11 +19,11 @@
     /* Glass base */
     backdrop-filter: blur(10px);
     border-radius: 1rem;
-    padding: 1.5rem 2rem;
+    padding: 1rem 1.5rem;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     /* Explicitly list properties */
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: none;
     /* Subtle glass border */
     overflow: hidden;
     box-sizing: border-box;
@@ -92,7 +92,7 @@
 }
 
 .skill-tag {
-    font-size: var(--smaller-font-size);
+    font-size: 0.7rem;
     padding: 0.25rem 0.75rem;
     background-color: rgba(255, 255, 255, 0.6);
     /* Translucent tag bg */
@@ -181,7 +181,7 @@
 body.dark-theme .expertise__item {
     background-color: hsla(var(--hue-color), 28%, 12%, 0.6);
     /* Dark glass */
-    border-color: rgba(255, 255, 255, 0.05);
+    border: none;
 }
 
 body.dark-theme .expertise__item:hover {
