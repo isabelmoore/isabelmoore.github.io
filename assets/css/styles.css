@@ -640,6 +640,7 @@ body.dark-theme .header::before {
   display: grid;
   grid-template-columns: 1fr max-content 1fr;
   column-gap: 1.5rem;
+  margin-bottom: -1rem;
 }
 
 .qualification__title {
@@ -650,7 +651,7 @@ body.dark-theme .header::before {
 .qualification__subtitle {
   display: inline-block;
   font-size: var(--small-font-size);
-  margin-bottom: var(--mb-1);
+  margin-bottom: var(--mb-0-25);
 }
 
 .qualification__calendar {
@@ -661,9 +662,9 @@ body.dark-theme .header::before {
 .qualification__description {
   display: block;
   font-size: var(--small-font-size);
-  margin-top: var(--mb-0-5);
+  margin-top: var(--mb-0-25);
   color: var(--text-color);
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .qualification__rounder {
@@ -679,7 +680,7 @@ body.dark-theme .header::before {
   width: 1px;
   height: 100%;
   background-color: var(--first-color);
-  transform: translate(6px, -7px);
+  transform: translate(6px, -20px);
 }
 
 
@@ -1583,7 +1584,7 @@ body.dark-theme .parallax-layer:nth-child(3) .mountain-svg path {
 /* Widen Qualification Section - Only for tablet/laptop+ */
 @media screen and (min-width: 768px) {
   .qualification__container.container {
-    max-width: 1600px !important;
+    max-width: 1400px !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
