@@ -1,0 +1,206 @@
+/* Expert List Styles */
+.expertise__container {
+    /* Rely on .container class for margins by default (mobile) */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* On larger screens, center and cap the width */
+@media screen and (min-width: 768px) {
+    .expertise__container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+}
+
+.expertise__item {
+    background-color: hsla(var(--hue-color), 60%, 99%, 0.5);
+    /* Glass base */
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    /* Explicitly list properties */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    /* Subtle glass border */
+    overflow: hidden;
+    box-sizing: border-box;
+    /* Ensure padding doesn't push width */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    /* Match portfolio base shadow */
+}
+
+/* Hover Effect - Subtle Lift, no white flash, no outline change - ONLY on hover devices */
+@media (hover: hover) {
+    .expertise__item:hover {
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        /* Match portfolio hover shadow */
+        transform: translateY(-5px);
+        /* Increased lift since user liked movement */
+    }
+
+    .expertise__item:hover .skill-tag {
+        background-color: var(--first-color);
+        color: #fff;
+        /* White text on hover */
+        border-color: transparent;
+    }
+}
+
+/* Arrow icon */
+.expertise__arrow {
+    font-size: 1.5rem;
+    color: var(--first-color);
+    transition: 0.3s;
+    margin-left: 1rem;
+}
+
+/* Restored Styles */
+.expertise__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.expertise__left {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.expertise__icon {
+    font-size: 2rem;
+    color: var(--first-color);
+}
+
+.expertise__title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: 0;
+    color: var(--title-color);
+}
+
+/* Right side skills tags */
+.expertise__skills {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.skill-tag {
+    font-size: var(--smaller-font-size);
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(255, 255, 255, 0.6);
+    /* Translucent tag bg */
+    border-radius: 2rem;
+    color: var(--title-color);
+    /* Darker text for readability */
+    font-weight: var(--font-medium);
+    transition: 0.3s;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Highlight tags when item is open (Active) */
+.expertise__item.active .skill-tag {
+    background-color: var(--first-color);
+    color: #fff;
+    border-color: transparent;
+}
+
+.expertise__item.active .expertise__arrow {
+    transform: rotate(180deg);
+}
+
+/* Expanded Content */
+.expertise__content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: 1px solid transparent;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.expertise__item.active .expertise__content {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.expertise__description {
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: var(--small-font-size);
+}
+
+.expertise__description li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.expertise__description i {
+    color: var(--first-color);
+    margin-top: 0.2rem;
+}
+
+/* Responsive adjustments */
+/* (Media query removed to enforce global max-width) */
+
+@media screen and (max-width: 768px) {
+    .expertise__header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .expertise__skills {
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .expertise__arrow {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+
+    .expertise__item {
+        position: relative;
+    }
+}
+
+/* Dark Theme Adjustments */
+body.dark-theme .expertise__item {
+    background-color: hsla(var(--hue-color), 28%, 12%, 0.6);
+    /* Dark glass */
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .expertise__item:hover {
+    background-color: hsla(var(--hue-color), 28%, 16%, 0.8);
+    /* No border color change here either */
+}
+
+body.dark-theme .skill-tag {
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Subtle tag in dark mode */
+    color: var(--text-color-light);
+    border-color: transparent;
+}
+
+body.dark-theme .expertise__item:hover .skill-tag {
+    background-color: var(--first-color);
+    color: #fff;
+}
+
+body.dark-theme .expertise__item.active .expertise__content {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

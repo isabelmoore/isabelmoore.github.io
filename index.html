@@ -3,7 +3,8 @@
 
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LJVTRKFL98"></script>
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="c6c270f9-2d77-4122-8732-2f42c1a86c03"></script>
+    <script defer src="https://cloud.umami.is/script.js"
+        data-website-id="c6c270f9-2d77-4122-8732-2f42c1a86c03"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -26,6 +27,8 @@
 
     <!--==================== CSS ====================-->
     <link rel="stylesheet" href="./assets/css/styles.css">
+    <link rel="stylesheet" href="./assets/css/portfolio-cards.css">
+    <link rel="stylesheet" href="./assets/css/expertise-list.css">
     <link rel="stylesheet" href="./assets/css/responsive.css">
 
     <title>Isabel Moore Portfolio</title>
@@ -470,6 +473,8 @@
                                     <i class="uil uil-calendar-alt"></i>
                                     Jan 2026 - Present
                                 </div>
+                                <span class="qualification__description">Sim-to-real reinforcement learning for
+                                    autonomous navigation.</span>
                             </div>
                             <div>
                                 <span class="qualification__rounder qualification__active-rounder"></span>
@@ -492,6 +497,8 @@
                                     <i class="uil uil-calendar-alt"></i>
                                     May 2025 - Present
                                 </div>
+                                <span class="qualification__description">Trajectory optimization using deep learning
+                                    models.</span>
                             </div>
                         </div>
 
@@ -504,6 +511,8 @@
                                     <i class="uil uil-calendar-alt"></i>
                                     Jan 2025 - Present
                                 </div>
+                                <span class="qualification__description">Meta reinforcement learning for adaptive robot
+                                    control.</span>
                             </div>
                             <div>
                                 <span class="qualification__rounder qualification__active-rounder"></span>
@@ -527,6 +536,8 @@
                                     <i class="uil uil-calendar-alt"></i>
                                     Sep 2024 - May 2025
                                 </div>
+                                <span class="qualification__description">Autonomous vehicle data pipeline and perception
+                                    models.</span>
                             </div>
                         </div>
 
@@ -541,6 +552,8 @@
                                     <i class="uil uil-calendar-alt"></i>
                                     May 2024 - Sep 2024
                                 </div>
+                                <span class="qualification__description">Reinforcement learning differential drive
+                                    controller development.</span>
                             </div>
                             <div>
                                 <span class="qualification__rounder"></span>
@@ -564,6 +577,8 @@
                                     <i class="uil uil-calendar-alt"></i>
                                     Sep 2023 - May 2024
                                 </div>
+                                <span class="qualification__description">Kalman Filter state estimation for GPS spoofing
+                                    defense.</span>
                             </div>
                         </div>
 
@@ -578,6 +593,8 @@
                                     <i class="uil uil-calendar-alt"></i>
                                     May 2023 - Aug 2023
                                 </div>
+                                <span class="qualification__description">Microturbine design and simulation for UAV
+                                    propulsion.</span>
                             </div>
                             <div>
                                 <span class="qualification__rounder"></span>
@@ -601,6 +618,8 @@
                                     <i class="uil uil-calendar-alt"></i>
                                     Jan 2023 - May 2023
                                 </div>
+                                <span class="qualification__description">Monitoring networks and mitigating security
+                                    threats daily.</span>
                             </div>
                         </div>
 
@@ -612,21 +631,22 @@
                                 <span class="qualification__subtitle">American Airlines, Charlotte, NC</span>
                                 <div class="qualification__calendar">
                                     <i class="uil uil-calendar-alt"></i>
-                                    Jun 2022 - Dec 2023
+                                    Jun 2022 - Dec 2022
                                 </div>
+                                <span class="qualification__description">Aircraft systems maintenance and FAA compliance
+                                    documentation.</span>
                             </div>
                             <div>
                                 <span class="qualification__rounder"></span>
-                                <span class="qualification__line"></span>
+                                <!-- <span class="qualification__line"></span> -->
                             </div>
                         </div>
 
                         <!-- 10. UNDERGRADUATE RESEARCH TECHNICIAN - RIGHT -->
-                        <div class="qualification__data">
+                        <!-- <div class="qualification__data">
                             <div></div>
                             <div>
                                 <span class="qualification__rounder"></span>
-                                <!-- <span class="qualification__line"></span> -->
                             </div>
                             <div>
                                 <h3 class="qualification__title"><i class="uil uil-wrench"></i> Undergraduate Research
@@ -638,133 +658,118 @@
                                     Jan 2022 - May 2022
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
 
                     </div>
+
+                    <!-- Show More Button -->
+                    <div class="qualification__show-more" style="display: none; text-align: center; margin-top: 2rem;">
+                        <span class="button button--flex button--small button--link" id="show-more-work-btn"
+                            data-expanded="false">
+                            Show More <i class="uil uil-arrow-down button__icon"></i>
+                        </span>
+                    </div>
+
                 </div>
+            </div>
             </div>
         </section>
 
         <!--==================== SERVICES ====================-->
         <!--==================== SERVICES ====================-->
+        <!--==================== EXPERTISE (FORMERLY SERVICES) ====================-->
         <section class="services section" id="expertise">
             <h2 class="section__title">Expertise</h2>
-            <span class="section__subtitle">What I specialize in</span>
-            <div class="services__container container grid">
+            <span class="section__subtitle">Core competencies & technical skills</span>
 
-                <div class="services__content">
-                    <div>
-                        <i class="uil uil-robot services__icon"></i>
-                        <h3 class="services__title">Autonomous Systems & Motion Control</h3>
+            <div class="expertise__container container">
+
+                <!-- Item 1 -->
+                <div class="expertise__item">
+                    <div class="expertise__header">
+                        <div class="expertise__left">
+                            <i class="uil uil-robot expertise__icon"></i>
+                            <h3 class="expertise__title">Autonomous Systems & Control</h3>
+                        </div>
+                        <div class="expertise__skills">
+                            <span class="skill-tag">ROS2</span>
+                            <span class="skill-tag">Gazebo</span>
+                            <span class="skill-tag">MPC/PID</span>
+                            <span class="skill-tag">Python</span>
+                            <i class="uil uil-angle-down expertise__arrow"></i>
+                        </div>
                     </div>
 
-                    <span class="button button--flex button--small button--link services__button">
-                        View More
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </span>
+                    <div class="expertise__content">
+                        <ul class="expertise__description">
+                            <li><i class="uil uil-check-circle"></i> Technical lead for GM-SAE AutoDrive Challenge II —
+                                designed and validated Stanley, Pure-Pursuit, and Compound Feed controllers.</li>
+                            <li><i class="uil uil-check-circle"></i> Achieved 75% reduction in radial error and 2nd
+                                place finish via optimized control algorithms.</li>
+                            <li><i class="uil uil-check-circle"></i> Developing meta-reinforcement learning control for
+                                differential-drive robots using Soft Actor-Critic (SAC).</li>
+                            <li><i class="uil uil-check-circle"></i> Integrator of monocular depth estimation (SAM2,
+                                Depth Anything) for Mcity Data Engine.</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="services__content">
-                    <div>
-                        <i class="uil uil-map-marker services__icon"></i>
-                        <h3 class="services__title">Navigation & Localization</h3>
+                <!-- Item 2 -->
+                <div class="expertise__item">
+                    <div class="expertise__header">
+                        <div class="expertise__left">
+                            <i class="uil uil-map-marker expertise__icon"></i>
+                            <h3 class="expertise__title">Navigation & Localization</h3>
+                        </div>
+                        <div class="expertise__skills">
+                            <span class="skill-tag">Kalman Filters</span>
+                            <span class="skill-tag">Sensor Fusion</span>
+                            <span class="skill-tag">SLAM</span>
+                            <span class="skill-tag">State Estimation</span>
+                            <i class="uil uil-angle-down expertise__arrow"></i>
+                        </div>
                     </div>
 
-                    <span class="button button--flex button--small button--link services__button">
-                        View More
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </span>
+                    <div class="expertise__content">
+                        <ul class="expertise__description">
+                            <li><i class="uil uil-check-circle"></i> Developed sensor-health-aware resilient fusion
+                                (SHARF) for localization under GPS spoofing attacks (IEEE CSR 2024).</li>
+                            <li><i class="uil uil-check-circle"></i> Built SatTrack: Real-time satellite tracking with
+                                custom Kalman filtering and geodetic math.</li>
+                            <li><i class="uil uil-check-circle"></i> Creating real-time telemetry and diagnostics
+                                infrastructure for Mcity 2.0 autonomous testing.</li>
+                        </ul>
+                    </div>
                 </div>
 
-                <div class="services__content">
-                    <div>
-                        <i class="uil uil-circuit services__icon"></i>
-                        <h3 class="services__title">Embedded & Real-Time Computing</h3>
+                <!-- Item 3 -->
+                <div class="expertise__item">
+                    <div class="expertise__header">
+                        <div class="expertise__left">
+                            <i class="uil uil-circuit expertise__icon"></i>
+                            <h3 class="expertise__title">Embedded & Real-Time Computing</h3>
+                        </div>
+                        <div class="expertise__skills">
+                            <span class="skill-tag">RTOS</span>
+                            <span class="skill-tag">C/C++</span>
+                            <span class="skill-tag">CAN Bus</span>
+                            <span class="skill-tag">UAVs</span>
+                            <i class="uil uil-angle-down expertise__arrow"></i>
+                        </div>
                     </div>
 
-                    <span class="button button--flex button--small button--link services__button">
-                        View More
-                        <i class="uil uil-arrow-right button__icon"></i>
-                    </span>
+                    <div class="expertise__content">
+                        <ul class="expertise__description">
+                            <li><i class="uil uil-check-circle"></i> Designed real-time V2V data exchange system for AGC
+                                MOTE (Aerial-Ground Cooperative).</li>
+                            <li><i class="uil uil-check-circle"></i> Developed embedded fuel management system for 7kW
+                                microturbine UAV power generation.</li>
+                            <li><i class="uil uil-check-circle"></i> Implemented CANBUS communication for high-frequency
+                                sensor data streaming.</li>
+                        </ul>
+                    </div>
                 </div>
 
-            </div>
-
-            <!-- Services Modals -->
-            <div class="services__modal">
-                <div class="services__modal-content">
-                    <h4 class="services__modal-title">Autonomous Systems & Motion Control</h4>
-                    <i class="uil uil-times services__modal-close"></i>
-
-                    <ul class="services__modal-services grid">
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Technical lead for GM-SAE AutoDrive Challenge II — designed and validated Stanley,
-                                Pure-Pursuit, and Compound Feed controllers, achieving 75% reduction in radial error and
-                                2nd place finish.</p>
-                        </li>
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Developing meta-reinforcement learning control for differential-drive robots using Soft
-                                Actor-Critic (SAC) training in Gazebo simulation environments.</p>
-                        </li>
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Contributed monocular depth estimation and semantic segmentation to Mcity Data Engine
-                                using SAM2, Depth Pro, and Depth Anything models.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="services__modal">
-                <div class="services__modal-content">
-                    <h4 class="services__modal-title">Navigation & Localization</h4>
-                    <i class="uil uil-times services__modal-close"></i>
-
-                    <ul class="services__modal-services grid">
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Developed sensor-health-aware resilient fusion for localization under GPS spoofing
-                                attacks, published in IEEE CSR 2024.</p>
-                        </li>
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Built SatTrack — real-time satellite tracking with Kalman filtering for state estimation
-                                and geodetic math for accurate Mercator projection.</p>
-                        </li>
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Developing real-time telemetry and diagnostics infrastructure for Mcity 2.0 autonomous
-                                vehicle testing facility.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="services__modal">
-                <div class="services__modal-content">
-                    <h4 class="services__modal-title">Embedded & Real-Time Computing</h4>
-                    <i class="uil uil-times services__modal-close"></i>
-
-                    <ul class="services__modal-services grid">
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Designed real-time V2V data exchange system for AGC MOTE, enabling cooperative trajectory
-                                sharing between aerial and ground vehicles in off-road environments.</p>
-                        </li>
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Developed embedded fuel management system for 7kW microturbine UAV power generation,
-                                presented at UTSR Program Review.</p>
-                        </li>
-                        <li class="services__modal-service">
-                            <i class="uil uil-check-circle services__modal-icon"></i>
-                            <p>Integrated CANBUS communication for real-time vehicle dynamics and sensor data streaming
-                                in autonomous vehicle platforms.</p>
-                        </li>
-                    </ul>
-                </div>
             </div>
         </section>
 
@@ -772,242 +777,146 @@
         <section class="portfolio section" id="portfolio">
             <h2 class="section__title">Portfolio</h2>
             <span class="section__subtitle">Selected projects, personally and professionally</span>
-            <div class="portfolio__container container grid">
-                <!-- <div class="portfolio__content grid portfolio__content">
 
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">University of San Diego: Triton Baja Suspension Design </h3>
-                        <p class="portfolio__description">Mcity Data Engine is an open-source framework that accelerates autonomous-vehicle ML via iterative, open-vocabulary sample selection and end-to-end data curation through Voxel51 UI. </p>
-                        <p class="portfolio__status">I contributed monocular depth estimation and semantic segmentation, integrating various HuggingFace models, such as SAM2, Apple's Depth Pro, and Depth Anything.</p>
-                        <p class="portfolio__status">Status: Completed, May 2025 (with open-source release and publication)</p>
-                        <a href="https://mcity.umich.edu/what-we-do/data-for-ai/" class="button button--flex button--small portfolio__button">
-                            About
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </a>
-                        <a href="https://github.com/mcity/mcity_data_engine" class="button button--flex button--small portfolio__button">
-                            GitHub Repo
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </a>  
-                        <a href="https://arxiv.org/abs/2504.21614" class="button button--flex button--small portfolio__button">
-                            Publication
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </a>  
-                    </div>
-                    <img src="./assets/img/mcity_data_engine.jpeg" class="portfolio__img">
+            <div class="portfolio__container container">
+                <!-- Project 1: Satellite Tracking -->
+                <div class="portfolio__content">
+                    <img src="./assets/img/sattrack.png" alt="Satellite Tracking" class="portfolio__img">
+                    <h3 class="portfolio__title">Real-Time Satellite Tracking with Kalman Filters</h3>
 
-                </div>
-                <hr class="portfolio__divider"> -->
-
-                <div class="portfolio__content grid">
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">Real-Time Satellite Tracking with Kalman Filters</h3>
+                    <!-- Details to be shown in modal -->
+                    <div class="portfolio__details" style="display: none;">
                         <p class="portfolio__description">Live satellite tracking progressive web app (PWA), solved the
-                            'teleportation' problem
-                            of discrete TLE data by creating custom interpolation system with Kalman Filters for
-                            physics-based state estimation.
-                        </p>
+                            'teleportation' problem of discrete TLE data by creating custom interpolation system with
+                            Kalman Filters for physics-based state estimation.</p>
                         <p class="portfolio__description">Implemented SGP4 propagation and cosine-corrected geodetic
-                            math to ensure accurate, smooth 60fps orbital
-                            visualization.</p>
+                            math to ensure accurate, smooth 60fps orbital visualization.</p>
                         <p class="portfolio__status">Status: Ongoing, Jan 2026 - Feb 2026</p>
-                        <a href="./assets/post.html?file=posts%2Fsattrack.html"
+                        <a href="./assets/post.html?file=posts%2Fsattrack.md"
                             class="button button--flex button--small portfolio__button">
-                            Read More
-                            <i class="uil uil-arrow-right button__icon"></i>
+                            Read More <i class="uil uil-arrow-right button__icon"></i>
                         </a>
                     </div>
-                    <img src="./assets/img/sattrack.png" class="portfolio__img" style="margin-bottom: 1rem;">
-
-                    <!-- No image or placeholder -->
                 </div>
-                <hr class="portfolio__divider">
 
-                <div class="portfolio__content grid portfolio__content--reverse">
-                    <img src="./assets/img/gazebo-jackal-race.png" class="portfolio__img">
+                <!-- Project 2: Jackal RL -->
+                <div class="portfolio__content">
+                    <img src="./assets/img/gazebo-jackal-race.png" alt="Jackal RL" class="portfolio__img">
+                    <h3 class="portfolio__title">Dynamic Differential Drive RL for Jackal Navigation</h3>
 
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">Dynamic Differential Drive Reinforcement Learning (RL) for Jackal
-                            Navigation</h3>
-                        <p class="portfolio__description">
-                            Adaptive control system for differential drive robots in sparse reward environments,
-                            leveraging domain randomization and PPO for robust performance across varying terrain
-                            conditions.
-                        </p>
-                        <p class="portfolio__status">
-                            Validated through Gazebo simulations with 11-21% improvement in tracking accuracy via
-                            physics randomization.
-                        </p>
+                    <div class="portfolio__details" style="display: none;">
+                        <p class="portfolio__description">Adaptive control system for differential drive robots in
+                            sparse reward environments, leveraging domain randomization and PPO for robust performance
+                            across varying terrain conditions.</p>
+                        <p class="portfolio__status">Validated through Gazebo simulations with 11-21% improvement in
+                            tracking accuracy via physics randomization.</p>
                         <p class="portfolio__status">Status: Ongoing, Jan 2025 - May 2026 (M.S. Thesis)</p>
-
                         <a href="./assets/post.html?file=posts%2Frobust-navigation.md"
                             class="button button--flex button--small portfolio__button">
-                            Read More
-                            <i class="uil uil-arrow-right button__icon"></i>
+                            Read More <i class="uil uil-arrow-right button__icon"></i>
                         </a>
                     </div>
-
                 </div>
-                <hr class="portfolio__divider">
 
+                <!-- Project 3: Mcity Data Engine -->
+                <div class="portfolio__content">
+                    <img src="./assets/img/mcity_data_engine.jpeg" alt="Mcity Data Engine" class="portfolio__img">
+                    <h3 class="portfolio__title">Mcity Data Engine: Iterative Model Improvement</h3>
 
-                <div class="portfolio__content grid portfolio__content">
-
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">Mcity Data Engine: Iterative Model Improvement Through
-                            Open-Vocabulary Data Selection</h3>
+                    <div class="portfolio__details" style="display: none;">
                         <p class="portfolio__description">Open-source framework accelerating AV ML via iterative sample
                             selection and end-to-end curation.</p>
                         <p class="portfolio__status">Contributed monocular depth estimation and semantic segmentation,
                             integrating various HuggingFace models, such as SAM2, Apple's Depth Pro, and Depth Anything.
                         </p>
                         <p class="portfolio__status">Status: Completed, Jan 2025 - Apr 2025</p>
-                        <!-- <a href="https://mcity.umich.edu/what-we-do/data-for-ai/" class="button button--flex button--small portfolio__button">
-                            About
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </a>   -->
-                        <a href="https://github.com/mcity/mcity_data_engine"
-                            class="button button--flex button--small portfolio__button">
-                            GitHub Repo
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </a>
-                        <a href="https://arxiv.org/abs/2504.21614"
-                            class="button button--flex button--small portfolio__button">
-                            Publication
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </a>
-                    </div>
-                    <img src="./assets/img/mcity_data_engine.jpeg" class="portfolio__img">
-
-                </div>
-                <hr class="portfolio__divider">
-
-                <!-- <div class="portfolio__content grid portfolio__content--reverse">
-                    <img src="./assets/img/swin.png" class="portfolio__img">
-
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">Mcity 2.0: NSF-Funded Next-Generation Autonomous Vehicle Testing
-                        </h3>
-                        <p class="portfolio__description">Real-time, cloud-based AV testing integrating AWS and CARLA
-                            with live telemetry.</p>
-                        <p class="portfolio__status">Status: Completed, Oct 2024 - May 2025</p>
-                        <a href="https://mcity.umich.edu/mcity-2-0/"
-                            class="button button--flex button--small portfolio__button">
-                            Mcity2.0 Facility Information
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </a>
-                    </div>
-
-                </div>
-                <hr class="portfolio__divider">
-
-                <div class="portfolio__content grid">
-                    <img src="./assets/img/eversneaks.png" class="portfolio__img">
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">Sneaker Customization Android App (Prototype)</h3>
-                        <p class="portfolio__description">
-                            Optimized for Google Pixel devices, the EverSneaks app provides a platform for customizing sneakers in a 3D virtual environment. Users can select from an variety of materials, textures, and colors to design their sneaker. </p>
-                        </p>
-                        <p class="portfolio__status">Status: Completed, Aug 2024</p>
-
+                        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <a href="https://github.com/mcity/mcity_data_engine"
+                                class="button button--flex button--small portfolio__button">
+                                GitHub Repo <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                            <a href="https://arxiv.org/abs/2504.21614"
+                                class="button button--flex button--small portfolio__button">
+                                Publication <i class="uil uil-arrow-right button__icon"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
-                <hr class="portfolio__divider"> 
 
-                <div class="portfolio__content grid portfolio__content--reverse">
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">Air-Ground-Cooperative (AGC) Moving Object Trajectory Estimation
-                            (MOTE)</h3>
-                        <p class="portfolio__description">Cooperative autonomy by real-time sharing of obstacle and
-                            trajectory data between aerial and ground vehicles. </p>
-                        <p class="portfolio__description">I optimized yaw-navigation and execution in off-road
-                            environments</p>
-                        <p class="portfolio__status">Status: Completed, May 2024 - Sep 2024</p>
-                        <a href="https://github.com/isabelmoore/mote_ros"
-                            class="button button--flex button--small portfolio__button">
-                            GitHub Repo
-                            <i class="uil uil-arrow-right button__icon"></i>
-                        </a>
-                    </div>
-                    <img src="./assets/img/Hunter-WOLF-website-hero.png" class="portfolio__img">
-                </div>
-                <hr class="portfolio__divider"> -->
+                <!-- Project 4: GPS Spoofing -->
+                <div class="portfolio__content">
+                    <img src="./assets/img/spoof.jpg" alt="GPS Spoofing" class="portfolio__img">
+                    <h3 class="portfolio__title">Sensor-Health-Aware Resilient Fusion (SHARF)</h3>
 
-                <div class="portfolio__content grid">
-                    <img src="./assets/img/spoof.jpg" class="portfolio__img">
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">Using Sensor-Health-Aware Resilient Fusion for Localization in
-                            Presence of GPS Spoofing Attacks</h3>
+                    <div class="portfolio__details" style="display: none;">
                         <p class="portfolio__description">Co-authored research on securing autonomous navigation against
-                            GPS
-                            spoofing using Sensor-Health Aware Resilient Fusion (SHARF). Validated the algorithm by
+                            GPS spoofing using Sensor-Health Aware Resilient Fusion (SHARF). Validated the algorithm by
                             fusing GPS, IMU, and onboard sensor data on a drive-by-wire Lincoln MKZ using Python and
-                            ROS2, demonstrating resilience during emulated attacks.
-                        </p>
+                            ROS2, demonstrating resilience during emulated attacks.</p>
                         <p class="portfolio__status">Status: Completed, Sep 2023 - Jun 2024</p>
                         <a href="https://ieeexplore.ieee.org/document/10679455"
                             class="button button--flex button--small portfolio__button">
-                            IEEE CSR Publication
-                            <i class="uil uil-arrow-right button__icon"></i>
+                            IEEE CSR Publication <i class="uil uil-arrow-right button__icon"></i>
                         </a>
                     </div>
-
                 </div>
-                <hr class="portfolio__divider">
 
-                <div class="portfolio__content grid portfolio__content--reverse">
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">GM-SAE AutoDrive Challenge™ II — Vehicle Dynamics & Controls</h3>
+                <!-- Project 5: AutoDrive Challenge -->
+                <div class="portfolio__content">
+                    <img src="./assets/img/1717623061611.jfif" alt="AutoDrive Challenge" class="portfolio__img">
+                    <h3 class="portfolio__title">GM-SAE AutoDrive Challenge™ II</h3>
+
+                    <div class="portfolio__details" style="display: none;">
                         <p class="portfolio__description">Technical lead for lateral and longitudinal control systems in
                             the GM/SAE AutoDrive Challenge.</p>
-                        <p class="portfolio__status">Designed and validated Stanley, Pure-Pursuit, and
-                            Compound Feed controllers, achieving a 75% reduction in radial error through optimized
-                            steering gradients and feedback gains.</p>
+                        <p class="portfolio__status">Designed and validated Stanley, Pure-Pursuit, and Compound Feed
+                            controllers, achieving a 75% reduction in radial error through optimized steering gradients
+                            and feedback gains.</p>
                         <p class="portfolio__status">Status: Completed, Sep 2023 - Jun 2024 (2nd Place)</p>
-
                         <a href="assets/pdf/Concept_Design_Report_2023.pdf"
                             class="button button--flex button--small portfolio__button">
-                            Design Report
-                            <i class="uil uil-arrow-right button__icon"></i>
+                            Design Report <i class="uil uil-arrow-right button__icon"></i>
                         </a>
-
                     </div>
-                    <img src="./assets/img/1717623061611.jfif" class="portfolio__img">
                 </div>
-                <hr class="portfolio__divider">
 
-                <div class="portfolio__content grid">
-                    <img src="./assets/img/liner.png" class="portfolio__img">
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">Gas Turbine Combustor Analysis for 7kW UAV Power Generation</h3>
-                        <p class="portfolio__description">Investigated pressure drop in the Great
-                            Horned Owl (GHO) gas turbine combustor via CFD modeling and experimental validation.
-                            Identified critical geometry discrepancies, validated CFD predictions against cold flow
-                            testing, and characterized jetting issues affecting light-off conditions.</p>
+                <!-- Project 6: Gas Turbine -->
+                <div class="portfolio__content">
+                    <img src="./assets/img/liner.png" alt="Gas Turbine" class="portfolio__img">
+                    <h3 class="portfolio__title">Gas Turbine Combustor Analysis</h3>
+
+                    <div class="portfolio__details" style="display: none;">
+                        <p class="portfolio__description">Investigated pressure drop in the Great Horned Owl (GHO) gas
+                            turbine combustor via CFD modeling and experimental validation. Identified critical geometry
+                            discrepancies, validated CFD predictions against cold flow testing, and characterized
+                            jetting issues affecting light-off conditions.</p>
                         <p class="portfolio__status">Conducted as part of the DOE University Turbine Systems Research
                             (UTSR) Fellowship at Southwest Research Institute.</p>
                         <p class="portfolio__status">Status: Completed, May 2023 - Aug 2023</p>
-
                         <a href="https://netl.doe.gov/sites/default/files/netl-file/23UTSR_Posters_Moore.pdf"
                             class="button button--flex button--small portfolio__button">
-                            Conference Poster
-                            <i class="uil uil-arrow-right button__icon"></i>
+                            Conference Poster <i class="uil uil-arrow-right button__icon"></i>
                         </a>
-
                     </div>
                 </div>
-                <!-- <div class="portfolio__content grid portfolio__content--reverse">
-                    <div class="portfolio__data">
-                        <h3 class="portfolio__title">Pi Pico Soil Moisture Indicator</h3>
-                        <p class="portfolio__description">Soil moisture indicator designed using the Raspberry Pi Pico and CircuitPython to ensure optimal watering of indoor plants. Features automatic calibration, minimal hardware requirements, and customizable LED notifications based on soil moisture levels.</p>
-                        <p class="portfolio__status">Status: Completed, Jun 2023</p>
+            </div>
 
-                    </div>
-                    <img src="./assets/img/moisturesensor1-768x576.jpg" class="portfolio__img">
+            <div class="portfolio__show-more" style="text-align: center; margin-top: 2rem; display: none;">
+                <button id="show-more-btn" class="button button--flex button--small">
+                    Show More <i class="uil uil-arrow-down button__icon"></i>
+                </button>
+            </div>
 
-                </div> -->
+            <!-- Portfolio Modal -->
+            <div class="portfolio__modal">
+                <div class="portfolio__modal-content">
+                    <i class="uil uil-times portfolio__modal-close"></i>
+                    <img src="" alt="" class="portfolio__modal-img">
+                    <h3 class="portfolio__modal-title"></h3>
+                    <div class="portfolio__modal-body"></div>
+                </div>
             </div>
         </section>
-
 
 
         <!--==================== BLOG ====================-->
@@ -1239,7 +1148,11 @@
         </section>
 
         <!--==================== GAME SECTION ====================-->
-        <section class="section" id="game">
+        <div class="container">
+            <hr class="portfolio__divider">
+        </div>
+
+        <!-- <section class="section" id="game">
             <h2 class="section__title">Take a Break</h2>
             <div class="container">
                 <span class="section__subtitle">Help Doggo navigate the desert! Dodge the tumbleweeds and cacti!</span>
@@ -1256,11 +1169,11 @@
                     <div id="ground"></div>
                     <div id="cactus"></div>
                     <div id="cloud"></div>
-                    <div id="cloud2"></div> <!-- New cloud -->
+                    <div id="cloud2"></div>
                     <div id="tree"></div>
                     <div id="moon"></div>
-                    <div id="bird"></div> <!-- Added bird element -->
-                    <div id="tumbleweed"></div> <!-- Added bird element -->
+                    <div id="bird"></div>
+                    <div id="tumbleweed"></div>
                 </div>
                 <div class="jump-button-container">
                     <a id="jump-button" class="button button--flex" style="display: none;">
@@ -1271,7 +1184,7 @@
                 <div id="score" style="display: none;">Score: 0</div>
                 <hr class="portfolio__divider">
             </div>
-        </section>
+        </section> -->
 
         <!--==================== FLOWER ANIMATION SECTION ====================-->
         <!-- <div class="flower-container">

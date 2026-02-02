@@ -1,0 +1,235 @@
+/*==================== PORTFOLIO CARDS & MODAL ====================*/
+.portfolio__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  overflow: initial;
+  /* Resetting potentially conflicting styles */
+}
+
+/* Card Style */
+.portfolio__content {
+  position: relative;
+  background-color: hsla(var(--hue-color), 60%, 99%, 0.5);
+  backdrop-filter: blur(10px);
+  border-radius: 1.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  /* For show/hide transition */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden-portfolio-item {
+  display: none;
+  /* JS will toggle this after opacity transition */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Helper class for fading out */
+.fading-out {
+  opacity: 0 !important;
+  transform: translateY(20px) !important;
+  pointer-events: none;
+}
+
+.portfolio__content:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.portfolio__img {
+  width: 100%;
+  height: 160px;
+  /* Made smaller from 200px */
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.portfolio__data {
+  /* Details hidden in card view */
+  display: none;
+}
+
+/* Show these in card? No, user said "just image and title". */
+.portfolio__content .portfolio__description,
+.portfolio__content .portfolio__status,
+.portfolio__content .portfolio__button,
+.portfolio__content .portfolio__divider {
+  display: none;
+}
+
+.portfolio__title {
+  font-size: var(--h3-font-size);
+  margin-bottom: 0;
+  text-align: center;
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+/* Dark theme overrides for cards */
+body.dark-theme .portfolio__content {
+  background-color: hsla(var(--hue-color), 28%, 12%, 0.5);
+}
+
+/* MODAL STYLES */
+.portfolio__modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: var(--z-modal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 1rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(4px);
+  /* Adds a subtle blur to background */
+}
+
+.portfolio__modal-content {
+  background-color: var(--container-color);
+  padding: 3.5rem 2rem 2.5rem 2rem;
+  border-radius: 1.5rem;
+  width: 90%;
+  max-width: 450px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  /* Initial state: zoomed out slightly and dropped down */
+  transform: scale(0.9) translateY(20px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio__modal-close {
+  position: absolute;
+  top: 0.5rem;
+  /* Higher up */
+  right: 1rem;
+  /* Moved away from edge */
+  font-size: 2rem;
+  color: var(--first-color);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.portfolio__modal-close:hover {
+  color: var(--first-color-alt);
+}
+
+.portfolio__modal-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.portfolio__modal-title {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--mb-1);
+  color: var(--title-color);
+}
+
+.portfolio__modal-description {
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-1);
+  color: var(--text-color);
+}
+
+.portfolio__modal-status {
+  font-size: var(--small-font-size);
+  margin-bottom: var(--mb-1);
+  color: var(--first-color);
+}
+
+.active-portfolio-modal {
+  opacity: 1;
+  visibility: visible;
+}
+
+.active-portfolio-modal .portfolio__modal-content {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* Modal Button & Layout Fixes */
+.portfolio__modal-body {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  /* Left align */
+}
+
+.portfolio__modal-body .button {
+  /* Enforce consistency globally */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.25rem;
+  /* Consistent padding everywhere */
+  height: auto;
+  min-height: auto;
+  line-height: normal;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* Mobile Adjustments: Scale down content instead of container */
+@media screen and (max-width: 768px) {
+  .portfolio__modal-img {
+    max-height: 180px;
+    margin-bottom: 0.75rem;
+  }
+
+  .portfolio__modal-title {
+    font-size: var(--h3-font-size);
+    margin-bottom: 0.5rem;
+  }
+
+  .portfolio__modal-description,
+  .portfolio__modal-status {
+    font-size: var(--smaller-font-size);
+  }
+
+  .portfolio__modal-content {
+    padding: 3rem 1.5rem 2rem 1.5rem;
+  }
+
+  .portfolio__modal-close {
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 1.5rem;
+  }
+
+  /* Make buttons smaller and uniform on mobile */
+  /* Make buttons smaller text but standard padding on mobile */
+  /* Make buttons smaller text but standard padding on mobile */
+  .portfolio__modal-body .button {
+    font-size: 0.813rem;
+    /* Smaller text only */
+    /* Inherit padding from global */
+    height: auto;
+    min-height: auto;
+    width: auto;
+    flex: initial;
+    line-height: normal;
+  }
+}

@@ -223,3 +223,125 @@ if (parallaxLayers.length > 0) {
 }
 
 
+
+/*==================== PORTFOLIO MODAL ====================*/
+const portfolioModal = document.querySelector('.portfolio__modal');
+const portfolioModalContent = document.querySelector('.portfolio__modal-content');
+const portfolioModalBody = document.querySelector('.portfolio__modal-body');
+const portfolioModalImg = document.querySelector('.portfolio__modal-img');
+const portfolioModalTitle = document.querySelector('.portfolio__modal-title');
+const portfolioModalClose = document.querySelector('.portfolio__modal-close');
+const portfolioItems = document.querySelectorAll('.portfolio__content');
+
+if (portfolioModal) {
+    portfolioItems.forEach((item) => {
+        item.addEventListener('click', () => {
+            const img = item.querySelector('.portfolio__img');
+            const title = item.querySelector('.portfolio__title');
+            const details = item.querySelector('.portfolio__details');
+
+            if (img) portfolioModalImg.src = img.src;
+            if (title) portfolioModalTitle.innerText = title.innerText;
+            if (details) portfolioModalBody.innerHTML = details.innerHTML;
+
+            portfolioModal.classList.add('active-portfolio-modal');
+        });
+    });
+
+    if (portfolioModalClose) {
+        portfolioModalClose.addEventListener('click', () => {
+            portfolioModal.classList.remove('active-portfolio-modal');
+        });
+    }
+
+    // Close on click outside
+    portfolioModal.addEventListener('click', (e) => {
+        if (e.target === portfolioModal) {
+            portfolioModal.classList.remove('active-portfolio-modal');
+        }
+    })
+}
+
+/*==================== PORTFOLIO SHOW MORE ====================*/
+const portfolioShowMoreContainer = document.querySelector('.portfolio__show-more');
+const showMoreBtn = document.getElementById('show-more-btn');
+const portfolioItemsList = document.querySelectorAll('.portfolio__content');
+const INITIAL_VISIBLE_COUNT = 4;
+
+if (portfolioItemsList.length > INITIAL_VISIBLE_COUNT) {
+    // Hide items beyond the initial count
+    for (let i = INITIAL_VISIBLE_COUNT; i < portfolioItemsList.length; i++) {
+        portfolioItemsList[i].style.display = 'none';
+        portfolioItemsList[i].style.opacity = '0';
+        portfolioItemsList[i].style.transform = 'translateY(20px)';
+    }
+
+    // Show the button
+    if (portfolioShowMoreContainer) {
+        portfolioShowMoreContainer.style.display = 'block';
+    }
+
+    if (showMoreBtn) {
+        showMoreBtn.addEventListener('click', () => {
+            const isExpanded = showMoreBtn.getAttribute('data-expanded') === 'true';
+
+            if (isExpanded) {
+                // Show Less
+                // 1. Fade out
+                for (let i = INITIAL_VISIBLE_COUNT; i < portfolioItemsList.length; i++) {
+                    portfolioItemsList[i].style.opacity = '0';
+                    portfolioItemsList[i].style.transform = 'translateY(20px)';
+                }
+
+                showMoreBtn.innerHTML = 'Show More <i class="uil uil-arrow-down button__icon"></i>';
+                showMoreBtn.setAttribute('data-expanded', 'false');
+
+                // 2. Wait for transition then hide
+                setTimeout(() => {
+                    for (let i = INITIAL_VISIBLE_COUNT; i < portfolioItemsList.length; i++) {
+                        portfolioItemsList[i].style.display = 'none';
+                    }
+                    // Scroll back to portfolio section top
+                    document.getElementById('portfolio').scrollIntoView({ behavior: 'smooth' });
+                }, 400); // 400ms matches CSS transition time
+
+            } else {
+                // Show More
+                showMoreBtn.innerHTML = 'Show Less <i class="uil uil-arrow-up button__icon"></i>';
+                showMoreBtn.setAttribute('data-expanded', 'true');
+
+                for (let i = INITIAL_VISIBLE_COUNT; i < portfolioItemsList.length; i++) {
+                    portfolioItemsList[i].style.display = 'flex'; // Make visible in layout
+                }
+
+                // Slight delay to allow display:flex to apply before animating opacity
+                setTimeout(() => {
+                    for (let i = INITIAL_VISIBLE_COUNT; i < portfolioItemsList.length; i++) {
+                        portfolioItemsList[i].style.opacity = '1';
+                        portfolioItemsList[i].style.transform = 'translateY(0)';
+                    }
+                }, 50);
+            }
+        });
+    }
+}
+
+/*==================== EXPERTISE ACCORDION ====================*/
+const expertiseItems = document.querySelectorAll('.expertise__item');
+
+expertiseItems.forEach((item) => {
+    const header = item.querySelector('.expertise__header');
+    header.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+
+        // Close all other items
+        expertiseItems.forEach((otherItem) => {
+            otherItem.classList.remove('active');
+        });
+
+        // Toggle current item
+        if (!isOpen) {
+            item.classList.add('active');
+        }
+    });
+});
