@@ -66,7 +66,6 @@
 .portfolio__content .portfolio__button,
 .portfolio__content .portfolio__divider {
   display: none;
-  font-size: 0.2rem;
 }
 
 .portfolio__title {
@@ -168,22 +167,6 @@ body.dark-theme .portfolio__content:hover {
   color: var(--first-color);
 }
 
-/* 
- * IMPORTANT: The JavaScript copies content from .portfolio__details 
- * which uses .portfolio__description and .portfolio__status class names.
- * We must target those classes INSIDE .portfolio__modal-body.
- */
-.portfolio__modal-body .portfolio__description {
-  font-size: var(--small-font-size);
-  line-height: 1.5;
-  margin-bottom: 0.5rem;
-}
-
-.portfolio__modal-body .portfolio__status {
-  font-size: var(--small-font-size);
-  margin-bottom: 0.75rem;
-}
-
 .active-portfolio-modal {
   opacity: 1;
   visibility: visible;
@@ -245,21 +228,18 @@ body.dark-theme .portfolio__content:hover {
   }
 
   /* Make buttons smaller and uniform on mobile */
+  /* Make buttons smaller text but standard padding on mobile */
+  /* Make buttons smaller text but standard padding on mobile */
   .portfolio__modal-body .button {
-    font-size: 12px;
-    padding: 0.5rem 1rem;
-  }
-
-  /* Make description/status text smaller on mobile */
-  .portfolio__modal-body .portfolio__description {
-    font-size: 11px;
-    line-height: 1.4;
-    margin-bottom: 0.4rem;
-  }
-
-  .portfolio__modal-body .portfolio__status {
-    font-size: 11px;
-    margin-bottom: 0.5rem;
+    font-size: 0.813rem;
+    /* Smaller text only */
+    /* Inherit padding from global */
+    height: auto;
+    min-height: auto;
+    width: auto;
+    width: auto;
+    flex: initial;
+    line-height: normal;
   }
 }
 

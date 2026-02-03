@@ -2,7 +2,7 @@ I wanted to learn more about orbital mechanics and coordinate transformations, s
 
 Additionally, I was dissatisfied with existing satellite tracking websites. Most of them feel like they were built in the early 2000s: you search for a satellite, view it, but then have to go back and search again to look at another one. There is no sidebar to browse or filter, no smooth navigation. I wanted something modern: a single map view where you can toggle constellations, click on any satellite, and explore without constant page reloads.
 
-![SatTrack App](../img/sattrack_demo.gif)
+![SatTrack App](img/sattrack_demo.gif)
 
 While the GIF doesn't do it justice, the app is fully functional and can be found [here](https://sattracklive.vercel.app/).
 
@@ -19,46 +19,17 @@ While the GIF doesn't do it justice, the app is fully functional and can be foun
 
 In the field of satellite navigation, the term "constellations" refers to the group of satellites that make up a particular navigation system. All of these orbit in Medium Earth Orbit (MEO) and are used for positioning, navigation, and timing services, used in devices like smartphones and smartwatches.
 
-## Working with TLE Data
+## How It Works
 
-Satellites publish their orbital parameters in a format called **Two-Line Elements (TLE)**, which is a compact representation of a satellite's orbit at a specific moment in time (the "epoch"). To find where a satellite is *now*, I propagate these elements forward using the **SGP4 algorithm**, which is a physics-based model that accounts for Earth's gravity, atmospheric drag, and other factors. 
+Satellite positions are calculated from **Two-Line Element (TLE)** data using the **SGP4 propagation algorithm**, which models orbital physics including gravity and atmospheric drag. The output is converted from the TEME reference frame to latitude/longitude coordinates via GMST rotation and WGS84 geodetic conversion.
 
-The output of SGP4 is a position vector in the **TEME (True Equator Mean Equinox)** reference frame—an Earth-centered inertial coordinate system. However, for plotting on a map, I need latitude and longitude. The conversion involves:
+For GPS satellites, the app also displays operational status by fetching real-time health data from **NAVCEN** (U.S. Coast Guard Navigation Center), cross-referenced with each satellite's PRN identifier.
 
-1. Calculating **Greenwich Mean Sidereal Time (GMST)** to account for Earth's rotation
-2. Rotating from TEME to an Earth-fixed frame
-3. Converting Cartesian (x, y, z) to geodetic coordinates using the **WGS84** ellipsoid model
+## Technical Stack
 
-The geodetic conversion uses an iterative algorithm to handle Earth's oblateness (it's not a perfect sphere).
+The **backend** is built with Python and FastAPI, handling TLE data fetching from CelesTrak, SGP4 position propagation, orbit path calculation (±60 minutes), and GPS health status integration from NAVCEN.
 
-## Satellite Health Status
-
-Beyond just position, the app shows whether each satellite is actually operational. For GPS satellites, I fetch real-time health data from the **U.S. Coast Guard Navigation Center (NAVCEN)**, which publishes which satellites are currently under maintenance or marked unusable.
-
-This data is cross-referenced with each satellite's PRN (Pseudo-Random Noise) number extracted from the TLE name field.
-
-## Technical Implementation
-
-**Backend (Python/FastAPI):**
-- Fetches TLE data from CelesTrak with caching and rate-limit handling
-- Propagates positions using the `sgp4` library
-- Calculates ±60 minute orbit paths for trajectory visualization
-- Integrates NAVCEN health status for GPS constellation
-
-**Frontend (Vue.js/Leaflet):**
-- Interactive map with satellite markers color-coded by constellation
-- Toggleable orbit path visualization
-- Constellation filter in sidebar
-- Live position updates with smooth marker animations
-
-## What I Learned
-
-- **Deployment is harder than development.** Getting code to run on my laptop was the easy part. Getting it to run on cloud servers took just as long—debugging build errors, wiring services together, and dealing with configuration differences between local and production environments. All of which I had never done before.
-
-- **External APIs will push back.** The satellite data, specifically the TLE data from CelesTrak, started blocking my requests when I hit them too often. I had to add caching and "back off and retry" logic to keep the app from breaking.
-
-- **Edge cases hide at the edges.** Satellites near the North Pole or crossing the International Date Line broke the map in subtle ways. Real-world data doesn't stay inside the happy path.
-
+The **frontend** uses Vue.js and Leaflet to render an interactive map with constellation filtering, color-coded satellite markers, toggleable orbit paths, and live position updates.
 
 ## Future Work
 
