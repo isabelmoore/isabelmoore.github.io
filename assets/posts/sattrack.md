@@ -1,38 +1,81 @@
-I wanted to learn more about Kalman filters and orbital mechanics, so I built a satellite tracker. It seemed like a good way to get hands-on with state estimation, coordinate transformations, and real-time data—concepts I'd been reading about but hadn't applied to a real system.
+I wanted to learn more about orbital mechanics and coordinate transformations, so I built a satellite tracker. It was a good way to get hands-on with orbital mechanics, refresh myself on reference frame conversions, and Frontend development concepts. I had been hearing and reading about but had not applied to a live system.
 
-![SatTrack App Screenshot](img/sattrack.png)
+Additionally, I was dissatisfied with existing satellite tracking websites. Most of them feel like they were built in the early 2000s: you search for a satellite, view it, but then have to go back and search again to look at another one. There is no sidebar to browse or filter, no smooth navigation. I wanted something modern: a single map view where you can toggle constellations, click on any satellite, and explore without constant page reloads.
 
-## A Quick Primer on Satellites
+![SatTrack App](../img/sattrack_demo.gif)
 
-Before getting into the technical details, here's a quick reference for the different types of satellites you'll encounter:
+While the GIF doesn't do it justice, the app is fully functional and can be found [here](https://sattracklive.vercel.app/).
 
-| Type | Altitude | Purpose | Examples |
-| :--- | :---: | :--- | :--- |
-| **GPS/Navigation** | ~20,200 km | Position, timing, navigation | GPS, GLONASS, Galileo |
-| **Communications** | ~35,786 km | Internet, TV, phone | Starlink, SES, Intelsat |
-| **Weather** | ~800 km | Forecasting, storm tracking | NOAA, GOES |
-| **Reconnaissance** | ~200-1000 km | Earth imaging | Classified |
-| **Space Stations** | ~400 km | Human spaceflight, research | ISS, Tiangong |
+## Understanding GNSS Satellites
+
+**GNSS** stands for **Global Navigation Satellite System**—the umbrella term for all satellite navigation systems. GPS is the American one, but GNSS includes all four major constellations:
+
+| Constellation | Country | # of Satellites | Altitude |
+| :--- | :---: | :---: | :---: |
+| **GPS** | USA | ~31 | ~20,200 km |
+| **GLONASS** | Russia | ~24 | ~19,100 km |
+| **Galileo** | EU | ~30 | ~23,222 km |
+| **BeiDou** | China | ~35 | ~21,528 km |
+
+In the field of satellite navigation, the term "constellations" refers to the group of satellites that make up a particular navigation system. All of these orbit in Medium Earth Orbit (MEO) and are used for positioning, navigation, and timing services, used in devices like smartphones and smartwatches.
 
 ## Working with TLE Data
 
-Satellites publish their orbital parameters in a format called Two-Line Elements (TLE). It's a compact representation of an orbit at a specific moment in time. To find where a satellite is *now*, you need to propagate these elements forward using the SGP4 model.
+Satellites publish their orbital parameters in a format called **Two-Line Elements (TLE)**, which is a compact representation of a satellite's orbit at a specific moment in time (the "epoch"). To find where a satellite is *now*, I propagate these elements forward using the **SGP4 algorithm**, which is a physics-based model that accounts for Earth's gravity, atmospheric drag, and other factors. 
 
-The output is in an inertial reference frame (TEME), which is fixed relative to the stars. But we want coordinates on a map, so the next step is converting to latitude and longitude—accounting for the fact that the Earth has rotated since the epoch.
+The output of SGP4 is a position vector in the **TEME (True Equator Mean Equinox)** reference frame—an Earth-centered inertial coordinate system. However, for plotting on a map, I need latitude and longitude. The conversion involves:
 
-## State Estimation with Kalman Filtering
+1. Calculating **Greenwich Mean Sidereal Time (GMST)** to account for Earth's rotation
+2. Rotating from TEME to an Earth-fixed frame
+3. Converting Cartesian (x, y, z) to geodetic coordinates using the **WGS84** ellipsoid model
 
-TLE data is updated periodically, but between updates we can predict position and correct for drift when new data arrives. This is the same principle used in GPS receivers—combine a physics model with noisy measurements to get a better estimate than either alone.
+The geodetic conversion uses an iterative algorithm to handle Earth's oblateness (it's not a perfect sphere).
 
-## Current Status
+## Satellite Health Status
 
-The app runs as a Progressive Web App with smooth 60fps updates. I also integrated health data from the USCG Navigation Center to show which satellites are operational vs. under maintenance.
+Beyond just position, the app shows whether each satellite is actually operational. For GPS satellites, I fetch real-time health data from the **U.S. Coast Guard Navigation Center (NAVCEN)**, which publishes which satellites are currently under maintenance or marked unusable.
 
-*This project is still in progress.*
+This data is cross-referenced with each satellite's PRN (Pseudo-Random Noise) number extracted from the TLE name field.
 
-## What's Next
+## Technical Implementation
 
+**Backend (Python/FastAPI):**
+- Fetches TLE data from CelesTrak with caching and rate-limit handling
+- Propagates positions using the `sgp4` library
+- Calculates ±60 minute orbit paths for trajectory visualization
+- Integrates NAVCEN health status for GPS constellation
+
+**Frontend (Vue.js/Leaflet):**
+- Interactive map with satellite markers color-coded by constellation
+- Toggleable orbit path visualization
+- Constellation filter in sidebar
+- Live position updates with smooth marker animations
+
+## What I Learned
+
+- **Deployment is harder than development.** Getting code to run on my laptop was the easy part. Getting it to run on cloud servers took just as long—debugging build errors, wiring services together, and dealing with configuration differences between local and production environments. All of which I had never done before.
+
+- **External APIs will push back.** The satellite data, specifically the TLE data from CelesTrak, started blocking my requests when I hit them too often. I had to add caching and "back off and retry" logic to keep the app from breaking.
+
+- **Edge cases hide at the edges.** Satellites near the North Pole or crossing the International Date Line broke the map in subtle ways. Real-world data doesn't stay inside the happy path.
+
+
+## Future Work
+
+While this project was a great learning experience, there are several features I would consider adding if I were to continue working on it:
 - 3D visualization with a Three.js globe
 - Pass predictions for specific observer locations
-- Conjunction analysis to monitor potential collisions
+- Support for additional satellite types (Starlink, weather satellites)
+    - However, these satellites are numerous and would require a different approach to data management and visualization.
 
+## References
+
+[1] F. R. Hoots and R. L. Roehrich, "Spacetrack Report No. 3: Models for Propagation of NORAD Element Sets," U.S. Air Force Aerospace Defense Command, Colorado Springs, CO, Tech. Rep., Dec. 1980.
+
+[2] D. A. Vallado, P. Crawford, R. Hujsak, and T. S. Kelso, "Revisiting Spacetrack Report #3," in *AIAA/AAS Astrodynamics Specialist Conference*, Keystone, CO, 2006, Paper AIAA 2006-6753.
+
+[3] National Imagery and Mapping Agency, "Department of Defense World Geodetic System 1984: Its Definition and Relationships with Local Geodetic Systems," NIMA Tech. Rep. TR8350.2, 3rd ed., Jan. 2000.
+
+[4] T. S. Kelso, "CelesTrak: NORAD Two-Line Element Sets," [Online]. Available: https://celestrak.org/NORAD/elements/. [Accessed: Feb. 2, 2026].
+
+[5] U.S. Coast Guard Navigation Center, "GPS Constellation Status," [Online]. Available: https://www.navcen.uscg.gov/gps-constellation. [Accessed: Feb. 2, 2026].
