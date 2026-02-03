@@ -106,9 +106,12 @@ body.dark-theme .portfolio__content:hover {
 }
 
 .portfolio__modal-content {
-  background-color: var(--container-color);
-  padding: 3.5rem 2rem 2.5rem 2rem;
-  border-radius: 1.5rem;
+  background-color: hsla(var(--hue-color), 60%, 99%, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  padding: 3.5rem 1.5rem 1.5rem 1.5rem;
+  border-radius: 1rem;
   width: 90%;
   max-width: 450px;
   position: relative;
@@ -139,28 +142,28 @@ body.dark-theme .portfolio__content:hover {
 
 .portfolio__modal-img {
   width: 100%;
-  max-height: 250px;
+  max-height: 220px;
   object-fit: cover;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
 }
 
 .portfolio__modal-title {
-  font-size: var(--h2-font-size);
+  font-size: var(--h3-font-size);
   font-weight: var(--font-medium);
-  margin-bottom: var(--mb-1);
+  margin-bottom: 0.5rem;
   color: var(--title-color);
 }
 
 .portfolio__modal-description {
-  font-size: var(--small-font-size);
-  margin-bottom: var(--mb-1);
+  font-size: 0.4rem;
+  margin-bottom: 0.5rem;
   color: var(--text-color);
 }
 
 .portfolio__modal-status {
-  font-size: var(--small-font-size);
-  margin-bottom: var(--mb-1);
+  font-size: 0.4rem;
+  margin-bottom: 0.75rem;
   color: var(--first-color);
 }
 
@@ -200,22 +203,22 @@ body.dark-theme .portfolio__content:hover {
 /* Mobile Adjustments: Scale down content instead of container */
 @media screen and (max-width: 768px) {
   .portfolio__modal-img {
-    max-height: 180px;
-    margin-bottom: 0.75rem;
+    max-height: 160px;
+    margin-bottom: 0.5rem;
   }
 
   .portfolio__modal-title {
-    font-size: var(--h3-font-size);
+    font-size: var(--normal-font-size);
     margin-bottom: 0.5rem;
   }
 
   .portfolio__modal-description,
   .portfolio__modal-status {
-    font-size: var(--smaller-font-size);
+    font-size: 0.4rem;
   }
 
   .portfolio__modal-content {
-    padding: 3rem 1.5rem 2rem 1.5rem;
+    padding: 3rem 1.5rem 1.5rem 1.5rem;
   }
 
   .portfolio__modal-close {
@@ -234,7 +237,14 @@ body.dark-theme .portfolio__content:hover {
     height: auto;
     min-height: auto;
     width: auto;
+    width: auto;
     flex: initial;
     line-height: normal;
   }
+}
+
+/* Dark Theme Modal Glass */
+body.dark-theme .portfolio__modal-content {
+  background-color: hsla(var(--hue-color), 28%, 12%, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }

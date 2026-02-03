@@ -19,7 +19,7 @@
     /* Glass base */
     backdrop-filter: blur(10px);
     border-radius: 1rem;
-    padding: 1rem 1.5rem;
+    padding: 0.75rem 1rem;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
     /* Explicitly list properties */
@@ -68,11 +68,11 @@
 .expertise__left {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .expertise__icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--first-color);
 }
 
@@ -158,7 +158,8 @@
     .expertise__header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 1rem;
+        gap: 0.5rem;
+        padding-right: 3rem;
     }
 
     .expertise__skills {
