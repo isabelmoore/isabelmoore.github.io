@@ -8,14 +8,14 @@ const blogPosts = [
         "description": "Bridging the sim-to-real gap using Reinforcement Learning, Gazebo simulation, and Domain Randomization for a differential drive robot.",
         "tags": ["Reinforcement Learning", "Robotics", "Gazebo"]
     },
-    {
-        "title": "Real-Time Satellite Tracking with Kalman Filters",
-        "date": "2026-01-27",
-        "readTime": "6 min read",
-        "file": "posts/sattrack.md",
-        "description": "Building a full-stack satellite tracker using Vue 3 and FastAPI. Solving the 'teleportation' problem with physics-based state estimation and SGP4 orbital propagation.",
-        "tags": ["Vue 3", " Python (FastAPI)", "Leaflet"]
-    },
+    // {
+    //     "title": "Real-Time Satellite Tracking with Kalman Filters",
+    //     "date": "2026-01-27",
+    //     "readTime": "6 min read",
+    //     "file": "posts/sattrack.md",
+    //     "description": "Building a full-stack satellite tracker using Vue 3 and FastAPI. Solving the 'teleportation' problem with physics-based state estimation and SGP4 orbital propagation.",
+    //     "tags": ["Vue 3", " Python (FastAPI)", "Leaflet"]
+    // },
 
     // {
     //     title: "Securing Embedded Systems against IoT Threats",
