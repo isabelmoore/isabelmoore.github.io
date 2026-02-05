@@ -684,7 +684,7 @@
 
             <div class="expertise__container container">
 
-                <!-- Item 1 -->
+                <!-- Item 1: Control -->
                 <div class="expertise__item">
                     <div class="expertise__header">
                         <div class="expertise__left">
@@ -692,79 +692,86 @@
                             <h3 class="expertise__title">Autonomous Systems & Control</h3>
                         </div>
                         <div class="expertise__skills">
-                            <span class="skill-tag">ROS2</span>
-                            <span class="skill-tag">Gazebo</span>
-                            <span class="skill-tag">MPC/PID</span>
                             <span class="skill-tag">Python</span>
+                            <span class="skill-tag">ROS 2</span>
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">Control Theory</span>
                             <i class="uil uil-angle-down expertise__arrow"></i>
                         </div>
                     </div>
 
                     <div class="expertise__content">
                         <ul class="expertise__description">
-                            <li><i class="uil uil-check-circle"></i> Technical lead for GM-SAE AutoDrive Challenge II —
-                                designed and validated Stanley, Pure-Pursuit, and Compound Feed controllers.</li>
-                            <li><i class="uil uil-check-circle"></i> Achieved 75% reduction in radial error and 2nd
-                                place finish via optimized control algorithms.</li>
-                            <li><i class="uil uil-check-circle"></i> Developing meta-reinforcement learning control for
-                                differential-drive robots using Soft Actor-Critic (SAC).</li>
-                            <li><i class="uil uil-check-circle"></i> Integrator of monocular depth estimation (SAM2,
-                                Depth Anything) for Mcity Data Engine.</li>
+                            <li><i class="uil uil-check-circle"></i> Technical lead for GM-SAE AutoDrive Challenge II,
+                                optimizing steering control to reduce path error by 70% and securing 2nd place
+                                internationally.</li>
+                            <li><i class="uil uil-check-circle"></i> Developed RL-based controllers for differential
+                                drive robots, achieving a >96% mission completion rate and <6cm cross-track error across
+                                    variable terrain (0.1μ to 1.0μ).</li>
+                            <li><i class="uil uil-check-circle"></i> Bridging the "sim-to-real" gap for my M.S. thesis
+                                by training meta-reinforcement learning models for robust, adaptive-control in
+                                unpredictable environments.</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Item 2 -->
+                <!-- Item 2: Navigation -->
                 <div class="expertise__item">
                     <div class="expertise__header">
                         <div class="expertise__left">
-                            <i class="uil uil-map-marker expertise__icon"></i>
-                            <h3 class="expertise__title">Navigation & Localization</h3>
+                            <i class="uil uil-location-point expertise__icon"></i>
+                            <h3 class="expertise__title">Navigation & Perception</h3>
                         </div>
                         <div class="expertise__skills">
-                            <span class="skill-tag">Kalman Filters</span>
                             <span class="skill-tag">Sensor Fusion</span>
-                            <span class="skill-tag">SLAM</span>
-                            <span class="skill-tag">State Estimation</span>
+                            <span class="skill-tag">Kalman Filters</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">Localization</span>
                             <i class="uil uil-angle-down expertise__arrow"></i>
                         </div>
                     </div>
 
                     <div class="expertise__content">
                         <ul class="expertise__description">
-                            <li><i class="uil uil-check-circle"></i> Developed sensor-health-aware resilient fusion
-                                (SHARF) for localization under GPS spoofing attacks (IEEE CSR 2024).</li>
-                            <li><i class="uil uil-check-circle"></i> Built SatTrack: Real-time satellite tracking.</li>
-                            <li><i class="uil uil-check-circle"></i> Creating real-time telemetry and diagnostics
-                                infrastructure for Mcity 2.0 autonomous testing.</li>
+                            <li><i class="uil uil-check-circle"></i> Developed "health-aware" resilient fusion and
+                                Kalman Filter frameworks to maintain <3% localization error even during active GPS
+                                    spoofing attacks.</li>
+                            <li><i class="uil uil-check-circle"></i> Engineered dead-reckoning systems for off-road
+                                vehicles that reduced yaw drift by 97% (moving from 180° error down to just 2-8°).</li>
+                            <li><i class="uil uil-check-circle"></i> Optimized autonomous vehicle data pipelines for the
+                                Mcity Data Engine, integrating vision models for monocular depth estimation and scene
+                                understanding.</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Item 3 -->
+                <!-- Item 3: Space/Flight Systems -->
                 <div class="expertise__item">
                     <div class="expertise__header">
                         <div class="expertise__left">
-                            <i class="uil uil-circuit expertise__icon"></i>
-                            <h3 class="expertise__title">Embedded & Real-Time Computing</h3>
+                            <i class="uil uil-processor expertise__icon"></i>
+                            <h3 class="expertise__title">Space & Flight Systems Architecture</h3>
                         </div>
                         <div class="expertise__skills">
-                            <span class="skill-tag">RTOS</span>
-                            <span class="skill-tag">C/C++</span>
-                            <span class="skill-tag">CAN Bus</span>
+                            <span class="skill-tag">Embedded C/C++</span>
                             <span class="skill-tag">UAVs</span>
+                            <span class="skill-tag">Systems Design</span>
+                            <span class="skill-tag">Real-Time Data</span>
                             <i class="uil uil-angle-down expertise__arrow"></i>
                         </div>
                     </div>
 
                     <div class="expertise__content">
                         <ul class="expertise__description">
-                            <li><i class="uil uil-check-circle"></i> Designed real-time V2V data exchange system for AGC
-                                MOTE (Aerial-Ground Cooperative).</li>
-                            <li><i class="uil uil-check-circle"></i> Developed embedded fuel management system for 7kW
-                                microturbine UAV power generation.</li>
-                            <li><i class="uil uil-check-circle"></i> Implemented CANBUS communication for high-frequency
-                                sensor data streaming.</li>
+                            <li><i class="uil uil-check-circle"></i> Designing modular flight architectures and training
+                                prediction models (LSTMs/Transformers) that achieve sub-degree accuracy (<0.3°
+                                    error).</li>
+                            <li><i class="uil uil-check-circle"></i> Redesigned microturbine propulsion for UAVs,
+                                reaching a 98.9% predictive alignment between CFD simulations and physical test data.
+                            </li>
+                            <li><i class="uil uil-check-circle"></i> Developing real-time embedded software and
+                                visualization tools, such as SatTrack, to help monitor and manage complex mission
+                                telemetry.</li>
                         </ul>
                     </div>
                 </div>
@@ -778,6 +785,32 @@
             <span class="section__subtitle">Selected projects, personally and professionally</span>
 
             <div class="portfolio__container container">
+
+                <!-- Project: AeroNexus MCL -->
+                <div class="portfolio__content">
+                    <img src="./assets/img/Hunter-WOLF-website-hero.png" alt="AeroNexus MCL" class="portfolio__img">
+                    <h3 class="portfolio__title">Multi-Domain Drift Correction with Monte Carlo Localization</h3>
+
+                    <!-- Details to be shown in modal -->
+                    <div class="portfolio__details" style="display: none;">
+                        <p class="portfolio__description">Robust sensor fusion framework that synchronizes aerial scouts
+                            and ground
+                            vehicles to eliminate systemic odometry drift in autonomous missions.</p>
+                        <p class="portfolio__description">Developed a Shared Common Operating Picture (COP) using
+                            Stochastic
+                            Cost-Landscape Optimization. Employs Monte Carlo algorithms and Kalman filtering to resolve
+                            orientation
+                            and scale ambiguity by correlating ground dead-reckoning with aerial reference data. Built
+                            with Python
+                            and ROS.</p>
+                        <p class="portfolio__status">Status: In Progress, Feb 2026 - Present</p>
+                        <!-- <a href="https://github.com/isabelmoore/AGC-MOTE-Monte-Carlo"
+                            class="button button--flex button--small portfolio__button">
+                            Read More <i class="uil uil-arrow-right button__icon"></i>
+                        </a> -->
+                    </div>
+                </div>
+
                 <!-- Project 1: Satellite Tracking -->
                 <div class="portfolio__content">
                     <img src="./assets/img/sattrack.png" alt="Satellite Tracking" class="portfolio__img">
@@ -793,7 +826,7 @@
                         <p class="portfolio__status">Status: Completed, Jan 2026 - Feb 2026</p>
                         <a href="https://sattracklive.vercel.app/"
                             class="button button--flex button--small portfolio__button">
-                            Read More <i class="uil uil-arrow-right button__icon"></i>
+                            View App <i class="uil uil-arrow-right button__icon"></i>
                         </a>
                     </div>
                 </div>
@@ -845,7 +878,7 @@
                 <!-- Project 4: GPS Spoofing -->
                 <div class="portfolio__content">
                     <img src="./assets/img/spoof.jpg" alt="GPS Spoofing" class="portfolio__img">
-                    <h3 class="portfolio__title">Sensor-Health-Aware Resilient Fusion (SHARF)</h3>
+                    <h3 class="portfolio__title">GPS Spoofing Defense for Autonomous Vehicles</h3>
 
                     <div class="portfolio__details" style="display: none;">
                         <p class="portfolio__description">Co-authored research on securing autonomous navigation against
