@@ -9,6 +9,23 @@ const blogPosts = [
         "tags": ["Reinforcement Learning", "Robotics", "Gazebo"]
     },
     // {
+    //     'title': "Understanding Reinforcement Learning for Robotics",
+    //     'date': "2026-02-06",
+    //     'readTime': "8 min read",
+    //     'file': "posts/rl_notes.md",
+    //     'description': "Techniques for running ORB-SLAM3 on embedded platforms like NVIDIA Jetson Nano, including optimizations and trade-offs.",
+    //     'tags': ["SLAM", "Computer Vision", "Embedded Systems"]
+    // },
+    // {
+    //     'title': "NASA Lunar Rover Challenge: Lessons Learned from the 2025 Competition",
+    //     'date': "2026-02-06",
+    //     'readTime': "8 min read",
+    //     'file': "posts/rl_notes.md",
+    //     'description': "Techniques for running ORB-SLAM3 on embedded platforms like NVIDIA Jetson Nano, including optimizations and trade-offs.",
+    //     'tags': ["SLAM", "Computer Vision", "Embedded Systems"]
+    // },
+    
+    // {
     //     "title": "Real-Time Satellite Tracking with Kalman Filters",
     //     "date": "2026-01-27",
     //     "readTime": "6 min read",

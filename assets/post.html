@@ -437,6 +437,50 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <script>
+        // RL Diagram hover interaction handler
+        function initRLDiagram() {
+            const textEl = document.getElementById('rl-description-text');
+            if (!textEl) return;
+
+            const descriptions = {
+                'agent': 'Agent = the learner. Example: a robot trying to navigate a maze.',
+                'environment': 'Environment = the world. Example: the maze with walls, goal, and rewards.',
+                'state': 's = where you are. Example: position (x=2, y=3) in the maze.',
+                'action': 'a = what you do. Example: move left, move right, move up, move down.',
+                'reward': 'r = immediate feedback. Example: -1 for each step, +10 for reaching goal.',
+                'policy': 'π = your strategy. Example: "always go right unless there is a wall, then go down".',
+                'gamma': 'γ = how much you care about future. Example: γ=0.9 means +10 in 2 steps is worth 0.9×0.9×10 = 8.1 now.',
+                'return': 'G = total discounted reward. Example: path A→B→C→D with rewards -1,-1,-1,+10 gives G = -1 + 0.9(-1) + 0.81(-1) + 0.729(+10) = 4.58.',
+                'value': 'V(s) = expected G from state s. Example: V(A) = 4.58 means starting at A, you expect total reward of 4.58.',
+                'vpi': 'V_π = expected G following policy π. Example: good policy V_π(A)=4.58, bad policy V_π(A)=-20.',
+                'vstar': 'V* = best possible expected G. Example: V*(A) = 4.58 if you act optimally from A.',
+                'vhat': 'V̂_π = our estimate of V_π from samples. Example: ran 3 episodes from A, got G=4.2, 4.8, 4.7. V̂(A) = average = 4.57.',
+                'qvalue': 'Q(s,a) = expected G after taking action a. Example: Q(C, down)=8 (good), Q(C, right)=-1 (bad, hits wall).',
+                'qstar': 'Q* = best Q value. Example: Q*(C, down)=8. Optimal policy = pick action with highest Q*.',
+                'qhat': 'Q̂ = our estimate of Q from samples. Example: tried (C,down) 5 times, got 7.8, 8.1, 8.0, 7.9, 8.2. Q̂ = 8.0.',
+                'bellman': "V(s) = r + γV(s'). Example: V(B) = -1 + 0.9 × V(C) = -1 + 0.9 × 8 = 6.2.",
+                'bellmanopt': "V*(s) = max_a [r + γV*(s')]. Example: at C, max of [go down=8, go right=-1] = 8. Pick best action.",
+                'mc': 'Monte Carlo: run full episode, then update. Example: episode A→B→C→D gave G=4.58, so update V̂(A) toward 4.58.',
+                'td': "TD: update every step using estimate. Example: at A, moved to B, got -1. Update V̂(A) using -1 + 0.9×V̂(B).",
+                'qlearn': 'Q-Learning: TD for Q, learns Q* directly. Example: at C, went down, got -1, reached D. Update Q̂(C,down) using -1 + 0.9 × max Q̂(D,a).'
+            };
+            const defaultText = 'Hover over any box to see definition + example';
+
+            document.querySelectorAll('.rl-node').forEach(node => {
+                node.addEventListener('mouseenter', () => {
+                    const id = node.getAttribute('data-id');
+                    if (descriptions[id]) {
+                        textEl.textContent = descriptions[id];
+                        textEl.classList.add('active');
+                    }
+                });
+                node.addEventListener('mouseleave', () => {
+                    textEl.textContent = defaultText;
+                    textEl.classList.remove('active');
+                });
+            });
+        }
+
         document.addEventListener("DOMContentLoaded", () => {
             const params = new URLSearchParams(window.location.search);
             const fileName = params.get("file");
@@ -510,6 +554,9 @@
 
                     // Highlight Code
                     hljs.highlightAll();
+
+                    // Initialize RL diagram hover interactions if present
+                    initRLDiagram();
 
                     // Render Math (Safely check if MathJax is ready)
                     if (window.MathJax && window.MathJax.typesetPromise) {

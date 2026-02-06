@@ -785,25 +785,34 @@
             <span class="section__subtitle">Selected projects, personally and professionally</span>
 
             <div class="portfolio__container container">
+                <!-- Project: AeroNexus MCL -->
+                <div class="portfolio__content">
+                    <img src="./assets/img/lunar_demo.gif" alt="AeroNexus MCL" class="portfolio__img">
+                    <h3 class="portfolio__title">NASA's Lunar Autonomy Challenge: Perception & Localization</h3>
+
+                    <!-- Details to be shown in modal -->
+                    <div class="portfolio__details" style="display: none;">
+                        <p class="portfolio__description">Short-term contributor to work on SLAM and localization pipelines for autonomous lunar navigation. Was meant to integrate point-cloud data into SLAM algorithms for real-time mapping and pose estimation, but compressed timeline and upstream delays limited contribution.</p>
+                        <p class="portfolio__description">Now independently studying SLAM algorithms, sensor fusion, and GPS-denied localization to build expertise for future autonomous systems work.</p>
+                        <p class="portfolio__status">Status: Feb 2025 - Present (self-directed learning)</p>
+                        <!-- <a href="https://github.com/isabelmoore/AGC-MOTE-Monte-Carlo"
+                            class="button button--flex button--small portfolio__button">
+                            Read More <i class="uil uil-arrow-right button__icon"></i>
+                        </a> -->
+                    </div>
+                </div>
+
 
                 <!-- Project: AeroNexus MCL -->
                 <div class="portfolio__content">
                     <img src="./assets/img/Hunter-WOLF-website-hero.png" alt="AeroNexus MCL" class="portfolio__img">
-                    <h3 class="portfolio__title">Multi-Domain Drift Correction with Monte Carlo Localization</h3>
+                    <h3 class="portfolio__title">Multi-Domain Drift Correction with Monte Carlo and Kalman Filtering Localization</h3>
 
                     <!-- Details to be shown in modal -->
                     <div class="portfolio__details" style="display: none;">
-                        <p class="portfolio__description">Robust sensor fusion framework that synchronizes aerial scouts
-                            and ground
-                            vehicles to eliminate systemic odometry drift in autonomous missions.</p>
-                        <p class="portfolio__description">Developed a Shared Common Operating Picture (COP) using
-                            Stochastic
-                            Cost-Landscape Optimization. Employs Monte Carlo algorithms and Kalman filtering to resolve
-                            orientation
-                            and scale ambiguity by correlating ground dead-reckoning with aerial reference data. Built
-                            with Python
-                            and ROS.</p>
-                        <p class="portfolio__status">Status: In Progress, Feb 2026 - Present</p>
+                        <p class="portfolio__description">Refining and open-sourcing a sensor fusion framework from previous internship work. Synchronizes aerial and ground vehicle odometry to correct drift using Monte Carlo Localization and Kalman filtering.</p>
+                        <p class="portfolio__description">Currently enrolled in an RL course (ECEN 743) to strengthen the theoretical foundation and make the codebase more robust and generalizable for multi-agent autonomous systems.</p>
+                        <p class="portfolio__status">Status: In Progress, Feb 2026 - Present (self-directed learning)</p>
                         <!-- <a href="https://github.com/isabelmoore/AGC-MOTE-Monte-Carlo"
                             class="button button--flex button--small portfolio__button">
                             Read More <i class="uil uil-arrow-right button__icon"></i>
@@ -813,15 +822,14 @@
 
                 <!-- Project 1: Satellite Tracking -->
                 <div class="portfolio__content">
-                    <img src="./assets/img/sattrack.png" alt="Satellite Tracking" class="portfolio__img">
+                    <img src="./assets/img/sattrack_demo.gif" alt="Satellite Tracking" class="portfolio__img">
                     <h3 class="portfolio__title">SatTrack: Real-Time Satellite Tracking</h3>
 
                     <!-- Details to be shown in modal -->
                     <div class="portfolio__details" style="display: none;">
-                        <p class="portfolio__description">Live satellite tracking progressive web app (PWA) that pulls
+                        <p class="portfolio__description">Live satellite tracking that pulls
                             TLE data from CelesTrak and satellite health alerts from NAVCEN.</p>
-                        <p class="portfolio__description">Implemented SGP4 propagation and cosine-corrected geodetic
-                            math to ensure accurate, smooth 60fps orbital visualization. Built with a Python backend and
+                        <p class="portfolio__description">Implemented SGP4 propagation for live, past, and future satellite positions. Built with a Python backend and
                             Vue 3 frontend using Leaflet for rendering.</p>
                         <p class="portfolio__status">Status: Completed, Jan 2026 - Feb 2026</p>
                         <a href="https://sattracklive.vercel.app/"
@@ -833,12 +841,12 @@
 
                 <!-- Project 2: Jackal RL -->
                 <div class="portfolio__content">
-                    <img src="./assets/img/gazebo-jackal-race.png" alt="Jackal RL" class="portfolio__img">
-                    <h3 class="portfolio__title">Dynamic Differential Drive RL for Jackal Navigation</h3>
+                    <img src="./assets/img/jackal_demo.gif" alt="Jackal RL" class="portfolio__img">
+                    <h3 class="portfolio__title">Dynamic Differential Drive Reinforcement Learning (RL) for Jackal Navigation</h3>
 
                     <div class="portfolio__details" style="display: none;">
                         <p class="portfolio__description">Adaptive control system for differential drive robots in
-                            sparse reward environments, leveraging domain randomization and PPO for robust performance
+                            sparse reward environments, using domain randomization for better performance
                             across varying terrain conditions.</p>
                         <p class="portfolio__status">Validated through Gazebo simulations with 11-21% improvement in
                             tracking accuracy via physics randomization.</p>
@@ -852,7 +860,7 @@
 
                 <!-- Project 3: Mcity Data Engine -->
                 <div class="portfolio__content">
-                    <img src="./assets/img/mcity_data_engine.jpeg" alt="Mcity Data Engine" class="portfolio__img">
+                    <img src="./assets/img/open_voc_models.png" alt="Mcity Data Engine" class="portfolio__img">
                     <h3 class="portfolio__title">Mcity Data Engine: Iterative Model Improvement</h3>
 
                     <div class="portfolio__details" style="display: none;">
@@ -883,8 +891,7 @@
                     <div class="portfolio__details" style="display: none;">
                         <p class="portfolio__description">Co-authored research on securing autonomous navigation against
                             GPS spoofing using Sensor-Health Aware Resilient Fusion (SHARF). Validated the algorithm by
-                            fusing GPS, IMU, and onboard sensor data on a drive-by-wire Lincoln MKZ using Python and
-                            ROS2, demonstrating resilience during emulated attacks.</p>
+                            fusing GPS, IMU, and onboard sensor data on Lincoln MKZ with simulated attacks.</p>
                         <p class="portfolio__status">Status: Completed, Sep 2023 - Jun 2024</p>
                         <a href="https://ieeexplore.ieee.org/document/10679455"
                             class="button button--flex button--small portfolio__button">
