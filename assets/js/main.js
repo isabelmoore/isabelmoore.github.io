@@ -320,6 +320,13 @@ if (portfolioItemsList.length > INITIAL_VISIBLE_COUNT) {
                         portfolioItemsList[i].style.opacity = '1';
                         portfolioItemsList[i].style.transform = 'translateY(0)';
                     }
+                    // Clear inline styles after transition so CSS :hover works
+                    setTimeout(() => {
+                        for (let i = INITIAL_VISIBLE_COUNT; i < portfolioItemsList.length; i++) {
+                            portfolioItemsList[i].style.transform = '';
+                            portfolioItemsList[i].style.opacity = '';
+                        }
+                    }, 400);
                 }, 50);
             }
         });

@@ -203,8 +203,7 @@ body.dark-theme .portfolio__content:hover {
 /* Mobile Adjustments: Scale down content instead of container */
 @media screen and (max-width: 768px) {
   .portfolio__modal-img {
-    max-height: 160px;
-    margin-bottom: 0.5rem;
+    display: none;
   }
 
   .portfolio__modal-title {
