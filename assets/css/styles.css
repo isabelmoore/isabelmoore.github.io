@@ -463,11 +463,12 @@ body.dark-theme .header::before {
 
 .about__info {
   display: flex;
-  justify-content: space-evenly;
-  margin-bottom: var(--mb-2-5);
+  justify-content: space-around;
+  margin-bottom: 3rem;
 }
 
 .about__info-title {
+  white-space: nowrap;
   font-size: var(--h2-font-size);
   font-weight: var(--font-semi-bold);
   color: var(--title-color);
