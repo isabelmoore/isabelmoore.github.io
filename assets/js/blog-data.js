@@ -9,7 +9,7 @@ const blogPosts = [
         "tags": ["Robotics", "EKF", "Monte Carlo"]
     },
     {
-        "title": "Dynamic Differential Drive Reinforcement Learning (RL) for Jackal Navigation",
+        "title": "Differential Drive Navigation via Meta-Reinforcement Learning",
         "date": "2026-01-31",
         "readTime": "12 min read",
         "file": "posts/robust-navigation.md",
