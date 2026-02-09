@@ -564,12 +564,15 @@
                             await MathJax.typesetPromise([postContentEl]);
                         } catch (err) {
                             console.log('MathJax error:', err);
-                            // Retry once if needed or ignore
                         }
-                    } else if (window.MathJax) {
-                        // Fallback if typesetPromise isn't ready yet (shouldn't happen with async, but good for safety)
+                    } else if (window.MathJax && window.MathJax.startup && window.MathJax.startup.promise) {
+                        // Fallback if typesetPromise isn't ready yet
                         window.MathJax.startup.promise.then(() => {
-                            MathJax.typesetPromise([postContentEl]);
+                            if (MathJax.typesetPromise) {
+                                MathJax.typesetPromise([postContentEl]);
+                            }
+                        }).catch(err => {
+                            console.log('MathJax startup error:', err);
                         });
                     }
                 })

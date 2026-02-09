@@ -1,7 +1,7 @@
 // List of blog posts
 const blogPosts = [
     {
-        "title": "AGC-MOTE: Sensor Fusion & Multi-Platform Drift Correction",
+        "title": "Air-Ground-Cooperative Multi-Robot Drift Correction",
         "date": "2026-02-09",
         "readTime": "10 min read",
         "file": "posts/agc-mote.md",

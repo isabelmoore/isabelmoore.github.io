@@ -1,40 +1,66 @@
-In the world of autonomous systems, precise localization is the foundation of every mission. **AGC-MOTE** (**A**ir-**G**round-**C**ooperative **M**ulti-Robot Multi-**O**bject **T**rajectory **E**stimation) is a cooperative localization framework designed to solve one of the most persistent hurdles in heterogeneous robot teams: **Sensor Fusion and Drift Correction** across air and ground platforms.
+## Background: Air-Ground Teamed Autonomy at BCDC
 
-This project transforms messy, drifting raw sensor data into rock-solid, accurate trajectories using an **Extended Kalman Filter (EKF)** and **Monte Carlo Localization (Particle Filter)**, enabling robust multi-robot coordination.
+While working at the **George H.W. Bush Combat Development Complex (BCDC)** in coordination with the U.S. Army, I contributed to the **AGC-MOTE** (**A**ir-**G**round-**C**ooperative **M**ulti-Robot Multi-**O**bject **T**rajectory **E**stimation) project, a broader U.S. Army initiative for heterogeneous multi-robot systems that enable air and ground vehicles to operate collaboratively alongside humans in complex mission environments.
 
----
+Within this larger effort, I was specifically tasked with developing a drift correction and localization system for ground vehicles that could operate in conjunction with air and ground platforms, addressing the persistent challenge of sensor drift in autonomous systems.
 
-## Proven Performance
-
-Final analysis of real-world ground-vehicle mission data showed an **84.9% reduction in angular drift**, bringing raw sensor error down from a mean of **23.9°** to a filtered estimate of **3.6°**.
-
-### Longitudinal Drift Correction
-
-| Metric | Raw Sensor (Red) | EKF estimate (Green) | Improvement |
-| :--- | :--- | :--- | :--- |
-| **Mean Error** | 23.951° | 3.618° | **84.9% Reduction** |
-| **95% Confidence** | [0.49°, 120.8°] | [0.05°, 21.8°] | **82.0% Faster Convergence** |
-| **Trimmed Mean (95%)** | 21.555° | 3.100° | **85.6% Accuracy Gain** |
 
 <div style="text-align: center; margin: 2rem 0;">
-  <img src="img/mote_plot.gif" alt="MOTE Convergence Plot" style="width: 100%; max-width: 800px; border-radius: 8px;">
-  <br><em>Real-time convergence of the EKF state estimate vs Ground Truth.</em>
+  <img src="img/jeep_wrld_state.png" alt="Multi-Robot Tracking System" style="width: 100%; max-width: 900px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+  <br><em>Dynamic multi-object tracking: Ground vehicle (Jeep) maintaining real-time trajectory estimates of aerial (Drone) and ground (Wolf) targets through coordinated sensor fusion.</em>
 </div>
 
-The system was validated through an extensive backtesting suite using real-world bag data. We employed robust statistical metrics, including **Trimmed Means** and **95th Percentile Confidence Intervals**, to ensure the localization accuracy was not skewed by GPS "jumps" or outliers.
+By collecting ROS bag data from test vehicles, I replayed missions in a controlled environment to systematically test and tune the algorithms. This was essential for achieving high accuracy.
 
-### Independent Verification
-To avoid mathematical "circularity," all error metrics were calculated against an independent ground truth derived from raw GPS course over ground and geometric course logic, ensuring the Green line's accuracy is a genuine reflection of reality, not just filter over-confidence.
 
----
+## The Problem: Sensor Drift in Autonomous Navigation
 
-## Technical Foundations
+A major issue in autonomous systems is sensor drift, where the vehicle's estimated position and orientation diverge from its true state over time due to accumulated errors from IMUs and wheel encoders. This was a common issue at BCDC across both air and ground platforms, particularly when sensors weren't calibrated correctly or when vehicles began moving.
 
-Our framework is built on three core principles to ensure mathematical accuracy and operational reliability across any autonomous platform.
+Simple approaches like dead reckoning (using only IMU and wheel encoders) create "open-loop" integration errors that accumulate exponentially, causing a vehicle perceiving even a slight rotation while moving straight to be completely lost within seconds. My approach fuses dead reckoning with absolute GPS position, creating a "closed-loop" solution that prevents long-term divergence while smoothing out sensor noise. The Extended Kalman Filter provides an optimal balance by efficiently handling the motion model while explicitly estimating and correcting sensor bias in real-time.
 
-### 1. Reference Frame Reconciliation
 
-The system operates across two reference frames that must be continuously aligned:
+## Technical Approach: Sensor Fusion and Bias Estimation
+
+### Extended Kalman Filter (EKF)
+
+The EKF treats localization as a 7-state estimation problem: `[x, y, v, theta, yaw_rate_bias, heading_bias, acceleration]`, where bias and acceleration are hidden variables estimated alongside position and orientation.
+
+**Prediction Model** (constant acceleration with damping):
+
+$$
+\begin{align*}
+d &= v_k \Delta t + \frac{1}{2} a_k \Delta t^2 \\
+x_{k+1} &= x_k + d \cos(\theta_k) \\
+y_{k+1} &= y_k + d \sin(\theta_k) \\
+v_{k+1} &= v_k + a_k \Delta t \\
+\theta_{k+1} &= \theta_k + (\omega_{meas} - \dot{\psi}_{bias}) \Delta t \\
+a_{k+1} &= a_k (1 - \lambda_{damping})
+\end{align*}
+$$
+
+**The Key: Real-Time Bias Correction**
+
+The filter estimates sensor bias $\dot{\psi}_{bias}$ as a random walk process and subtracts it from the raw IMU reading at every step. The prediction step occurs at every IMU and odometry event, while the update step corrects based on GPS, IMU, and velocity measurements.
+
+**Design Choice:** I chose EKF over UKF for lower computational overhead on embedded hardware. Given the well-behaved motion model and high measurement frequency, EKF linearization was sufficient.
+
+### Particle Filter (Monte Carlo Localization)
+
+For highly non-linear scenarios, the Particle Filter maintains 500+ hypotheses representing potential states. Particles are weighted by their likelihood of explaining measurements, with resampling to converge on the most likely trajectory.
+
+### Validation Pipeline
+
+Three-phase validation: (1) **Backtesting** to tune gains on replay data, (2) **Deployment** to live ROS platforms, (3) **Real-Time QA** monitoring on RViz dashboards. Offline replay with systematic parameter sweeps is essential for high accuracy. For ground truth, I calculated error metrics against an independent reference derived from raw GPS course data and geometric logic to avoid circular validation where the filter would grade its own work.
+
+
+## Results: Proven Performance
+
+The EKF-based localization stack demonstrated an **84.9% reduction in angular drift** compared to raw sensor data, reducing mean heading error from **23.9°** to **3.6°**.
+
+### Visual Comparison: Drift Correction in Action
+
+The visualizations below demonstrate the EKF's effectiveness at correcting yaw drift. The red path shows raw IMU integration with uncorrected yaw bias, which drifts significantly from the true path. The green path shows the corrected EKF estimate, which remains accurate through continuous bias estimation.
 
 <style>
   .truth-learner-container {
@@ -65,125 +91,48 @@ The system operates across two reference frames that must be continuously aligne
 
 <div class="truth-learner-container">
   <div class="truth-learner-column">
-    <strong style="display: block; margin-bottom: 10px; color: var(--title-color);">Sensor-Frame Odometry (Drift)</strong>
+    <strong style="display: block; margin-bottom: 10px; color: var(--title-color);">Raw Sensor Odometry (Drift)</strong>
     <img src="img/red_crop_demo.gif" alt="Raw INS (Red Line)" class="truth-learner-img">
-    <em style="display: block; margin-top: 10px; font-size: 0.9rem;">High-frequency IMU/Odometry estimates subject to cumulative drift (Visualized in Red).</em>
+    <em style="display: block; margin-top: 10px; font-size: 0.9rem;">Raw IMU integration with uncorrected yaw bias (red) diverges from the true trajectory.</em>
   </div>
   <div class="truth-learner-column">
-    <strong style="display: block; margin-bottom: 10px; color: var(--title-color);">Fused State Estimate (Corrected)</strong>
+    <strong style="display: block; margin-bottom: 10px; color: var(--title-color);">EKF-Corrected Estimate</strong>
     <img src="img/green_crop_demo.gif" alt="EKF Estimate (Green Line)" class="truth-learner-img">
-    <em style="display: block; margin-top: 10px; font-size: 0.9rem;">The filtered estimate anchored to absolute position (Visualized in Green).</em>
+    <em style="display: block; margin-top: 10px; font-size: 0.9rem;">EKF-corrected estimate (green) maintains accuracy through real-time bias compensation.</em>
   </div>
 </div>
 
-*   **Sensor-Frame Odometry**: High-frequency estimates from onboard IMU and encoders. Over time, these sensors drift, causing trajectory divergence.
-*   **Global Position Reference**: Absolute measurements from GPS, providing drift-free position at lower update rates.
-*   **Fused State Estimate**: The filter's output that leverages high-frequency dynamics while anchoring to absolute position, providing a stable state estimate.
+### Quantitative Metrics
 
-### 2. Online Bias Estimation
+| Metric | Raw Sensor | EKF Estimate | Improvement |
+| :--- | :--- | :--- | :--- |
+| **Mean Error** | 23.95° | 3.618° | **84.9% Reduction** |
+| **95% Confidence** | [0.49°, 120.8°] | [0.05°, 21.8°] | **82.0% Faster Convergence** |
+| **Trimmed Mean (95%)** | 21.555° | 3.100° | **85.6% Accuracy Gain** |
 
-Real-world sensors exhibit systematic biases, particularly **Yaw Rate Bias**. If your system perceives a slight rotation when moving in a straight line, navigation will fail within seconds. AGC-MOTE treats bias as a state variable in the EKF, estimating and subtracting this bias in real-time to calibrate sensors on the fly.
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="img/performance_metrics.png" alt="AGC-MOTE Performance Analysis" style="width: 100%; max-width: 900px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
+  <br><em>Comprehensive performance analysis showing drift correction metrics, visual comparison of sensor-frame vs fused estimates, and live heading diagnostics over mission time.</em>
+</div>
 
-### 3. Multi-Phase Validation Pipeline
+The live sensor fusion diagnostics (bottom panel) show heading error over mission time. The raw IMU (red) exhibits severe drift, the GPS-derived course (blue) is extremely noisy, while the EKF estimate (green) remains stable and accurate.
 
-To ensure the mathematical foundation holds up, the system is validated across three distinct phases:
-*   **Backtesting**: Replay raw flight or drive data through the filter to tune $Q/R$ gains.
-*   **Deployment**: Deploy the validated localization stack to a live ROS-based robot or drone.
-*   **Real-Time QA**: Monitor the Estimate vs Ground Truth live on a 3D RViZ dashboard.
----
-
-## Architectural Decisions
-
-### Why EKF and not UKF?
-
-While the Unscented Kalman Filter (UKF) can provide better accuracy for highly non-linear systems by using sigma points, the EKF was chosen for its significantly lower computational overhead on the target embedded hardware. Given the relatively well-behaved motion model of the ground vehicle and the high frequency of measurement updates, the EKF provided a sufficient linearization approximation without the added complexity of sigma point propagation and weight tuning.
-
-### Why not simple Dead Reckoning?
-
-Dead reckoning relies solely on internal motion sensors (IMU and wheel encoders), which causes "open-loop" integration errors to accumulate over time. Even high-grade sensors suffer from deterministic and stochastic noise that leads to exponential trajectory divergence. The EKF provides a "closed-loop" solution by fusing dead reckoning with absolute global position (GPS), preventing long-term divergence while smoothing out the inherent noise and jitter found in raw GPS signals.
-
----
-
-## Localization & Drift Correction
-
-This project implements two advanced sensor fusion approaches to estimate and cancel yaw drift in real-time.
-
-### 1. Extended Kalman Filter (EKF)
-
-The EKF treats the system as a 7-state estimation problem where bias and acceleration are hidden variables.
-
-- **State Vector**: `[x, y, v, theta, yaw_rate_bias, heading_bias, acceleration]`
-- **Prediction**: Constant Acceleration Model with moderate damping. It predicts angular change using `(omega_measured - yaw_rate_bias)`.
-- **Update**: Corrects the state based on GPS (position), IMU (yaw/heading), and linear velocity measurements.
-- **Clock Synchronization**: The filter is unified across all event types. Prediction occurs at every INS (IMU) and TWIST (Odometry) event, ensuring the state remains current even when sensor frequencies vary.
-
-#### Mathematical Formulation (EKF)
-
-**State Prediction Model:**
-$$
-\begin{align*}
-d &= v_k \Delta t + \frac{1}{2} a_k \Delta t^2 \\
-x_{k+1} &= x_k + d \cos(\theta_k) \\
-y_{k+1} &= y_k + d \sin(\theta_k) \\
-v_{k+1} &= v_k + a_k \Delta t \\
-\theta_{k+1} &= \theta_k + (\omega_{meas} - \dot{\psi}_{bias}) \Delta t \\
-a_{k+1} &= a_k (1 - \lambda_{damping})
-\end{align*}
-$$
-
-**Bias Correction:**
-The filter estimates the sensor bias $\dot{\psi}_{bias}$ as a random walk process. This estimated bias is subtracted from the raw IMU reading $\omega_{meas}$ at every step, effectively calibrating the sensor in real-time.
-
-### 2. Particle Filter (Monte Carlo Localization)
-
-For complex, non-linear scenarios, the Particle Filter maintains a set of 500+ "hypotheses" (particles).
-
-- **Process**: Each particle represents a potential state `[x, y, theta, bias]`. 
-- **Resampling**: Particles that better explain the observed GPS/Yaw measurements are "survived," while others are discarded, naturally converging on the most likely trajectory.
-
-#### Probability Update
-
-**Weight Calculation:**
-For each particle $i$, the weight $w^{(i)}$ is updated based on the Gaussian likelihood of the measurement $z$:
-$$
-w^{(i)} \propto \exp\left( -\frac{||pos^{(i)} - z_{gps}||^2}{2\sigma_{pos}^2} \right)
-$$
-This rewards particles that are spatially close to the GPS signal while penalizing outliers.
+<div style="text-align: center; margin: 2rem 0;">
+  <img src="img/mote_plot.gif" alt="MOTE Convergence Plot" style="width: 100%; max-width: 800px; border-radius: 8px;">
+  <br><em>Real-time convergence of the EKF state estimate vs Ground Truth.</em>
+</div>
 
 
----
+## Discussion
 
-## Scaling to Aerial Platforms
+This work achieved 84.9% drift reduction, demonstrating that accurate localization is achievable through real-time bias estimation and sensor fusion. The key insight: **continuous bias estimation is non-negotiable** for turning drifting sensor data into reliable trajectories, enabling effective multi-robot coordination in air-ground teams.
 
-While the validation case presented here is a 2D ground vehicle, the core framework is directly applicable to aerial platforms where yaw drift critically impacts mission safety and mapping quality.
+### Extensions and Future Work
 
-### 3D State Extension
+This project is far from over. The framework can be extended to UAVs where yaw drift is just as critical. The yaw bias estimation logic scales directly to flight controllers, and the state vector expands easily to 6-DOF `[x, y, z, v, theta, phi, rho]` for full 3D odometry.
 
-Drones operate in a 6-DOF environment. The AGC-MOTE framework is architected for expansion:
+**Next Steps:**
+- Multi-vehicle cooperative localization with relative position measurements
+- Visual landmark fusion to reduce GPS dependency in denied environments
+- Adaptive noise tuning to automatically handle degraded GPS conditions
 
-- **Yaw Stabilization**: The current logic for estimating $\dot{\psi}_{bias}$ (Yaw Rate Bias) scales directly to UAV flight controllers.
-- **Full 6-DOF Odometry**: The state vector `[x, y, v, theta, ...]` can be mathematically extended to include $[z, \phi, \rho]$ (Altitude, Roll, Pitch) for complete 3D odometry fusion.
-
-### Kinematic Foundations
-
-By utilizing a constant-acceleration model in the EKF prediction step, the system provides a robust kinematic foundation that respects the inertia of both UGVs and UAVs, making it more resilient than simple dead-reckoning approaches.
-
----
-
-## Lessons Learned
-
-### Bias is the Primary Enemy
-
-The most significant finding during this project was that constant yaw rate bias is the primary driver of dead reckoning drift. Simply integrating raw IMU data will fail within seconds. Explicitly estimating this bias as a state variable in the filter is not optional—it is the core requirement for stable navigation.
-
-### The Importance of Sensor Frequency
-
-High-frequency IMU data (100Hz+) is essential for accurate state prediction between lower-frequency GPS updates (often 5-10Hz). Without sufficient temporal resolution, the discrete-time approximations used in the EKF prediction step introduce significant linearization errors during sharp maneuvers.
-
-### Robust Metrics are Mandatory
-
-Standard means and standard deviations are insufficient when dealing with GPS noise. Using **95th Percentile Confidence Intervals** allowed us to see exactly where the filter was struggling—typically during slow, high-curvature turns where GPS heading becomes unreliable.
-
-### Replay Data is Essential
-
-The "sim-to-real" gap exists even in purely mathematical filters. Being able to record raw bag files and replay them through different filter tuning parameters (process noise $Q$ and measurement noise $R$) was the only way to achieve sub-meter accuracy. You cannot tune a filter effectively in real-time while the robot is moving.
