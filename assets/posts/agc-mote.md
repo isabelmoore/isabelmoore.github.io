@@ -110,10 +110,6 @@ The visualizations below demonstrate the EKF's effectiveness at correcting yaw d
 | **95% Confidence** | [0.49°, 120.8°] | [0.05°, 21.8°] | **82.0% Faster Convergence** |
 | **Trimmed Mean (95%)** | 21.555° | 3.100° | **85.6% Accuracy Gain** |
 
-<div style="text-align: center; margin: 2rem 0;">
-  <img src="img/performance_metrics.png" alt="AGC-MOTE Performance Analysis" style="width: 100%; max-width: 900px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.15);">
-  <br><em>Comprehensive performance analysis showing drift correction metrics, visual comparison of sensor-frame vs fused estimates, and live heading diagnostics over mission time.</em>
-</div>
 
 The live sensor fusion diagnostics (bottom panel) show heading error over mission time. The raw IMU (red) exhibits severe drift, the GPS-derived course (blue) is extremely noisy, while the EKF estimate (green) remains stable and accurate.
 
