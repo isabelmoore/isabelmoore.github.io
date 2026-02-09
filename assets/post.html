@@ -516,7 +516,7 @@
             }
 
             // Fetch Content
-            fetch(fileName)
+            fetch(fileName + '?v=' + Date.now())
                 .then(response => {
                     if (!response.ok) throw new Error("Failed to load content");
                     return response.text();

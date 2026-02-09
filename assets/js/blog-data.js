@@ -1,6 +1,14 @@
 // List of blog posts
 const blogPosts = [
     {
+        "title": "AGC-MOTE: Sensor Fusion & Multi-Platform Drift Correction",
+        "date": "2026-02-09",
+        "readTime": "10 min read",
+        "file": "posts/agc-mote.md",
+        "description": "Solving the drift problem in autonomous systems using Extended Kalman Filtering and Particle Filters for sub-meter localization accuracy.",
+        "tags": ["Robotics", "EKF", "Monte Carlo"]
+    },
+    {
         "title": "Dynamic Differential Drive Reinforcement Learning (RL) for Jackal Navigation",
         "date": "2026-01-31",
         "readTime": "12 min read",
@@ -24,7 +32,7 @@ const blogPosts = [
     //     'description': "Techniques for running ORB-SLAM3 on embedded platforms like NVIDIA Jetson Nano, including optimizations and trade-offs.",
     //     'tags': ["SLAM", "Computer Vision", "Embedded Systems"]
     // },
-    
+
     // {
     //     "title": "Real-Time Satellite Tracking with Kalman Filters",
     //     "date": "2026-01-27",
