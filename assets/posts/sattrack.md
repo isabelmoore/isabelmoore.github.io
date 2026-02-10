@@ -4,7 +4,7 @@ Additionally, I was dissatisfied with existing satellite tracking websites. Most
 
 ![SatTrack App](img/sattrack_demo.gif)
 
-While the GIF doesn't do it justice, the app is fully functional and can be found [here](https://sattracklive.vercel.app/).
+While the GIF doesn't do it justice, the app is fully functional and can be found [here](https://sattrack.live/).
 
 ## Understanding GNSS Satellites
 
