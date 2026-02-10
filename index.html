@@ -228,11 +228,11 @@
                         </div>
                         <div>
                             <span class="about__info-title">2nd Place</span>
-                            <span class="about__info-name">SAE GM AutoDrive II</span>
+                            <span class="about__info-name">SAE AutoDrive II</span>
                         </div>
                         <div>
                             <span class="about__info-title">3x Lead</span>
-                            <span class="about__info-name">Multi-Inst. Teams</span>
+                            <span class="about__info-name">Controls & Localization</span>
                         </div>
                     </div>
                     <div class="about__buttons">
@@ -510,8 +510,6 @@
             </div>
         </section>
 
-        <!--==================== SERVICES ====================-->
-        <!--==================== SERVICES ====================-->
         <!--==================== EXPERTISE (FORMERLY SERVICES) ====================-->
         <section class="services section" id="expertise">
             <h2 class="section__title">Expertise</h2>
@@ -615,33 +613,6 @@
 
             <div class="portfolio__container container">
 
-                <!-- Project: Drift Correction -->
-                <div class="portfolio__content">
-                    <img src="./assets/img/mote_drift_demo.gif" alt="Drift Correction" class="portfolio__img">
-                    <h3 class="portfolio__title">Air-Ground-Cooperative Multi-Robot Drift Correction</h3>
-
-                    <!-- Details to be shown in modal -->
-                    <div class="portfolio__details" style="display: none;">
-                        <div class="portfolio__badges"
-                            style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                            <span class="skill-tag">Python</span>
-                            <span class="skill-tag">ROS2</span>
-                            <span class="skill-tag">C++</span>
-                            <span class="skill-tag">UGV/UAV</span>
-                        </div>
-                        <p class="portfolio__description">Developed a platform-agnostic sensor fusion framework designed
-                            to eliminate yaw drift in ground and aerial vehicles. Implemented real-time bias estimation
-                            using Extended Kalman Filters (EKF) and Monte Carlo Localization (MCL).</p>
-                        <p class="portfolio__description">Achieved an 84.9% reduction in angular drift, providing a
-                            robust kinematic foundation for both UGV long-endurance missions and UAV flight
-                            stabilization.</p>
-                        <p class="portfolio__status">Status: Completed, May 2024 - Feb 2026</p>
-                        <a href="./assets/post.html?file=posts%2Fagc-mote.md"
-                            class="button button--flex button--small portfolio__button">
-                            Read Technical Blog <i class="uil uil-arrow-right button__icon"></i>
-                        </a>
-                    </div>
-                </div>
 
                 <!-- Project: SatTrack -->
                 <div class="portfolio__content">
@@ -679,6 +650,7 @@
                             style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
                             <span class="skill-tag">PyTorch</span>
                             <span class="skill-tag">Gazebo</span>
+                            <span class="skill-tag">RViz</span>
                             <span class="skill-tag">Stable Baselines3</span>
                         </div>
                         <p class="portfolio__description">Engineered an adaptive RL controller for Jackal UGV platforms
@@ -693,24 +665,55 @@
                         </a>
                     </div>
                 </div>
+                <!-- Project: Drift Correction -->
+                <div class="portfolio__content">
+                    <img src="./assets/img/mote_drift_demo.gif" alt="Drift Correction" class="portfolio__img">
+                    <h3 class="portfolio__title">Drift Correction using Kalman Filtering and Monte Carlo Localization
+                    </h3>
 
+                    <!-- Details to be shown in modal -->
+                    <div class="portfolio__details" style="display: none;">
+                        <div class="portfolio__badges"
+                            style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">ROS2</span>
+                            <span class="skill-tag">Kalman Filter</span>
+                            <span class="skill-tag">UGV/UAV</span>
+                        </div>
+                        <p class="portfolio__description">Developed a sensor fusion framework to eliminate yaw drift in
+                            ground
+                            and aerial vehicles using Extended Kalman Filtering and Particle Filtering (Monte Carlo
+                            Localization).
+                            Achieved 84.9% reduction in angular drift (23.9° → 3.6°), enabling accurate navigation for
+                            long-endurance
+                            UGV missions and UAV flight stabilization.</p>
+                        <p class="portfolio__status">Status: Completed, May 2024 - Aug 2024</p>
+                        <a href="./assets/post.html?file=posts%2Fagc-mote.md"
+                            class="button button--flex button--small portfolio__button">
+                            Read Technical Blog <i class="uil uil-arrow-right button__icon"></i>
+                        </a>
+                    </div>
+                </div>
                 <!-- Project: Mcity Data Engine -->
                 <div class="portfolio__content">
                     <img src="./assets/img/open_voc_models.png" alt="Mcity Data Engine" class="portfolio__img">
-                    <h3 class="portfolio__title">Mcity Data Engine: AV Perception Pipeline</h3>
+                    <h3 class="portfolio__title">Mcity Data Engine: Smarter Training Data for Autonomous Vehicles</h3>
 
                     <div class="portfolio__details" style="display: none;">
                         <div class="portfolio__badges"
                             style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Active Learning</span>
                             <span class="skill-tag">HuggingFace</span>
-                            <span class="skill-tag">SAM2</span>
-                            <span class="skill-tag">CV</span>
+                            <span class="skill-tag">FiftyOne</span>
                         </div>
-                        <p class="portfolio__description">Optimized an open-source framework for autonomous vehicle
-                            machine learning. Built iterative sample selection pipelines using state-of-the-art vision
-                            models (Apple Depth Pro, SAM2).</p>
-                        <p class="portfolio__status">Integrated monocular depth estimation tools to accelerate
-                            high-fidelity dataset curation for production AV perception models.</p>
+                        <p class="portfolio__description">Built intelligent workflows for an open-source platform that
+                            helps
+                            smaller companies develop AV perception models. Automatically identifies valuable training
+                            examples
+                            using vision models (Depth Pro, SAM2), eliminating expensive manual labeling and making
+                            advanced ML
+                            accessible to teams without large-scale annotation infrastructure.</p>
                         <p class="portfolio__status">Status: Completed, Jan 2025 - Apr 2025</p>
                         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                             <a href="https://github.com/mcity/mcity_data_engine"
@@ -719,7 +722,7 @@
                             </a>
                             <a href="https://arxiv.org/abs/2504.21614"
                                 class="button button--flex button--small portfolio__button">
-                                View arXiv <i class="uil uil-arrow-right button__icon"></i>
+                                View PDF <i class="uil uil-arrow-right button__icon"></i>
                             </a>
                         </div>
                     </div>
@@ -728,7 +731,7 @@
                 <!-- Project: GPS Spoofing -->
                 <div class="portfolio__content">
                     <img src="./assets/img/spoof.jpg" alt="GPS Spoofing" class="portfolio__img">
-                    <h3 class="portfolio__title">Resilient GPS-Spoofing Defense (SHARF)</h3>
+                    <h3 class="portfolio__title">Detecting and Mitigating GPS Spoofing in Autonomous Systems</h3>
 
                     <div class="portfolio__details" style="display: none;">
                         <div class="portfolio__badges"
@@ -737,7 +740,7 @@
                             <span class="skill-tag">Sensor Fusion</span>
                             <span class="skill-tag">Kalman Filter</span>
                         </div>
-                        <p class="portfolio__description">Developed Sensor-Health Aware Resilient Fusion (SHARF) to
+                        <p class="portfolio__description">Co-developed Sensor-Health Aware Resilient Fusion (SHARF) to
                             detect and mitigate GPS spoofing in real-time. Validated via hardware-in-the-loop tests on a
                             Lincoln MKZ platform.</p>
                         <p class="portfolio__status">Maintained &lt;3% cross-track error under active attack by
@@ -745,7 +748,7 @@
                         <p class="portfolio__status">Status: Completed, Sep 2023 - Jun 2024</p>
                         <a href="https://ieeexplore.ieee.org/document/10679455"
                             class="button button--flex button--small portfolio__button">
-                            IEEE Publication <i class="uil uil-arrow-right button__icon"></i>
+                            View PDF <i class="uil uil-arrow-right button__icon"></i>
                         </a>
                     </div>
                 </div>
@@ -753,20 +756,25 @@
                 <!-- Project: AutoDrive Challenge -->
                 <div class="portfolio__content">
                     <img src="./assets/img/1717623061611.jfif" alt="AutoDrive Challenge" class="portfolio__img">
-                    <h3 class="portfolio__title">GM-SAE AutoDrive Challenge™ II</h3>
+                    <h3 class="portfolio__title">SAE AutoDrive II: Lateral/Longitudinal Control Lead</h3>
 
                     <div class="portfolio__details" style="display: none;">
                         <div class="portfolio__badges"
                             style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
                             <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Stanley Control</span>
-                            <span class="skill-tag">AV Systems</span>
+                            <span class="skill-tag">Control Theory</span>
+                            <span class="skill-tag">Vehicle Dynamics</span>
                         </div>
-                        <p class="portfolio__description">Technical lead for the lateral/longitudinal control stack.
-                            Designed and implemented Stanley and Pure-Pursuit controllers for a production-scale
-                            autonomous platform.</p>
-                        <p class="portfolio__status">Reduced radial error by 75% via feedback gain optimization,
-                            securing 2nd Place internationally for the competition's control challenges.</p>
+                        <p class="portfolio__description">Led the design and optimization of lateral/longitudinal
+                            control systems
+                            for Texas A&M's SAE AutoDrive II team. Implemented and compared Compound
+                            Feedforward-Feedback and
+                            Stanley controllers across diverse driving scenarios.</p>
+                        <p class="portfolio__status">Achieved 71% reduction in radial error through systematic parameter
+                            tuning
+                            and gain optimization. Secured 2nd place internationally by demonstrating superior curvature
+                            handling and
+                            trajectory tracking performance.</p>
                         <p class="portfolio__status">Status: Completed, Sep 2023 - Jun 2024 (2nd Place)</p>
                         <a href="assets/pdf/Concept_Design_Report_2023.pdf"
                             class="button button--flex button--small portfolio__button">
@@ -788,125 +796,12 @@
         </section>
 
 
-        <!--==================== BLOG ====================-->
-        <!-- <section class="blog section" id="blog-home">
-            <h2 class="section__title">Recent Posts</h2>
-            <span class="section__subtitle">Thoughts & Tutorials</span>
-
-            <div class="blog__container container grid" id="home-blog-container">
-            </div>
-
-            <div class="blog__view-more" style="text-align: center; margin-top: 2rem;">
-                <a href="assets/blog.html" class="button button--flex button--small">
-                    View All Posts <i class="uil uil-arrow-right button__icon"></i>
-                </a>
-            </div>
-        </section> -->
-
-        <!--==================== PROJECT IN MIND ====================-->
-        <!-- <section class="project section">
-            <div class="project__bg">
-                <div class="project__container container grid">
-                    <div class="project__data">
-                        <h2 class="project__title">You have a new project</h2>
-                        <p class="project__description">Contact me now and get a 30% discount on your new project.</p>
-                        <a href="#contact" class="button button--flex button--white">
-                            Contact Me
-                            <i class="uil uil-message project__icon button__icon"></i>
-                        </a>
-                    </div>
-                    <img src="./assets/img/project.png" alt="project image" class="project__img">
-                </div>
-            </div>
-        </section> -->
-
-        <!--==================== TESTIMONIAL ====================-->
-        <!-- <section class="testimonial section">
-            <h2 class="section__title">Testimonial</h2>
-            <span class="section__subtitle">My client saying</span>
-
-            <div class="testimonial_container container swiper-container">
-                <div class="swiper-wrapper">
-
-                    <div class="testimonial__content swiper-slide">
-                        <div class="testimonial__data">
-                            <div class="testimonial__header">
-                                <img src="./assets/img/testimonial1.jpg" alt="" class="testimonial__img">
-                                <div>
-                                    <h3 class="testimonial__name">Sara Smith</h3>
-                                    <span class="testimonial__client">Client</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                            </div>
-                        </div>
-                        <p class="testimonial__description">I get a good impression, I carry out my project with all the
-                            possible quality and attention and support 24 hours a day.</p>
-
-                    </div>
-
-                    <div class="testimonial__content swiper-slide">
-                        <div class="testimonial__data">
-                            <div class="testimonial__header">
-                                <img src="./assets/img/testimonial2.jpg" alt="" class="testimonial__img">
-                                <div>
-                                    <h3 class="testimonial__name">Matt Robinson</h3>
-                                    <span class="testimonial__client">Client</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                            </div>
-                        </div>
-                        <p class="testimonial__description">I get a good impression, I carry out my project with all the
-                            possible quality and attention and support 24 hours a day.</p>
-
-                    </div>
-
-                    <div class="testimonial__content swiper-slide">
-                        <div class="testimonial__data">
-                            <div class="testimonial__header">
-                                <img src="./assets/img/testimonial3.jpg" alt="" class="testimonial__img">
-                                <div>
-                                    <h3 class="testimonial__name">Raul Harris</h3>
-                                    <span class="testimonial__client">Client</span>
-                                </div>
-                            </div>
-
-                            <div>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                                <i class="uil uil-star testimonial__icon-star"></i>
-                            </div>
-                        </div>
-                        <p class="testimonial__description">I get a good impression, I carry out my project with all the
-                            possible quality and attention and support 24 hours a day.</p>
-
-                    </div>
-                </div>
-
-                <div class="swiper-pagination swiper-pagination-testimonial"></div>
-            </div>
-        </section> -->
 
         <!--==================== CONTACT ME ====================-->
         <section class="contact section" id="contact">
             <h2 class="section__title">Get In Touch</h2>
-            <span class="section__subtitle">Seeking full-time opportunities in autonomous systems | Available May
-                2026</span>
+            <span class="section__subtitle">Feel free to connect, or use the form to send me an email. <br>It goes
+                straight to my inbox, and I'll get back to you as soon as possible!</span>
 
             <div class="contact__container container grid">
                 <div class="contact__info">

@@ -1,12 +1,12 @@
 // List of blog posts
 const blogPosts = [
     {
-        "title": "Air-Ground-Cooperative Multi-Robot Drift Correction",
+        "title": "Drift Correction using Kalman Filtering and Monte Carlo Localization",
         "date": "2026-02-09",
         "readTime": "10 min read",
         "file": "posts/agc-mote.md",
-        "description": "Solving the drift problem in autonomous systems using Extended Kalman Filtering and Particle Filters for sub-meter localization accuracy.",
-        "tags": ["Robotics", "EKF", "Monte Carlo"]
+        "description": "Comparing Extended Kalman Filtering and Particle Filter (Monte Carlo Localization) approaches to eliminate sensor drift in autonomous ground and aerial vehicles. Achieved 84.9% reduction in angular drift using real-time bias estimation.",
+        "tags": ["Robotics", "EKF", "Particle Filter", "Sensor Fusion"]
     },
     {
         "title": "Differential Drive Navigation via Meta-Reinforcement Learning",
