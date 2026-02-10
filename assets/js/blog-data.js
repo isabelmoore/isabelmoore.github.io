@@ -5,7 +5,7 @@ const blogPosts = [
         "date": "2026-02-09",
         "readTime": "10 min read",
         "file": "posts/agc-mote.md",
-        "description": "Comparing Extended Kalman Filtering and Particle Filter (Monte Carlo Localization) approaches to eliminate sensor drift in autonomous ground and aerial vehicles. Achieved 84.9% reduction in angular drift using real-time bias estimation.",
+        "description": "Comparing Extended Kalman Filtering and Particle Filter (Monte Carlo Localization) approaches to eliminate sensor drift in autonomous ground and aerial vehicles.",
         "tags": ["Robotics", "EKF", "Particle Filter", "Sensor Fusion"]
     },
     {
