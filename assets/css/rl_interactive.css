@@ -1,0 +1,259 @@
+/* Interactive RL Diagram Components */
+
+:root {
+    --rl-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --rl-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.rl-diagram-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+    align-items: center;
+    width: 100%;
+}
+
+/* Enclosures removed as per user request */
+.rl-section {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0;
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+.rl-section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--first-color);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.rl-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Interaction Loop Layout */
+.rl-loop {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem 0;
+}
+
+/* Glassmorphism Nodes */
+.rl-node {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+    background-color: hsla(0, 0%, 100%, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    text-align: center;
+    transition: var(--rl-transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+}
+
+/* Dark theme glass node adjustment */
+body.dark-theme .rl-node {
+    background-color: hsla(var(--hue-color), 15%, 20%, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.rl-node:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--first-color);
+    background-color: hsla(var(--hue-color), 100%, 100%, 0.8);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+
+body.dark-theme .rl-node:hover {
+    background-color: hsla(var(--hue-color), 15%, 25%, 0.7);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+}
+
+.rl-node-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--first-color);
+    transition: var(--rl-transition);
+}
+
+.rl-node:hover .rl-node-icon {
+    transform: scale(1.1);
+}
+
+.rl-node-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--title-color);
+    margin-bottom: 0.35rem;
+}
+
+.rl-node-subtitle {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    font-style: italic;
+    opacity: 0.8;
+}
+
+/* Arrows / Connectors */
+.rl-arrow-container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
+
+.rl-arrow {
+    font-size: 2rem;
+    color: var(--first-color);
+    animation: bounce 2s infinite;
+    opacity: 0.7;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0);
+    }
+
+    40% {
+        transform: translateY(-10px);
+    }
+
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Modal Styling with Glassmorphism (already premium, but matching node style) */
+.rl-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+.rl-modal.active-modal {
+    display: flex;
+}
+
+.rl-modal-content {
+    background-color: hsla(var(--hue-color), 100%, 100%, 0.75);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 2.5rem;
+    border-radius: 2rem;
+    max-width: 550px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: var(--text-color);
+}
+
+/* Dark theme glass adjustment */
+body.dark-theme .rl-modal-content {
+    background-color: hsla(var(--hue-color), 15%, 15%, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.rl-modal-close {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.5rem;
+    font-size: 2.2rem;
+    color: var(--first-color);
+    cursor: pointer;
+    transition: var(--rl-transition);
+}
+
+.rl-modal-close:hover {
+    color: var(--first-color-alt);
+    transform: rotate(90deg);
+}
+
+.rl-modal-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--first-color);
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--first-color-lighter);
+    padding-bottom: 0.75rem;
+}
+
+.rl-modal-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .rl-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .rl-node {
+        padding: 1.25rem;
+        min-height: 110px;
+    }
+
+    .rl-modal-content {
+        padding: 2rem;
+        border-radius: 1.5rem;
+    }
+
+    .rl-modal-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .rl-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rl-loop {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .rl-section {
+        padding: 0;
+    }
+
+    .rl-node {
+        width: 100%;
+    }
+}

@@ -1,0 +1,387 @@
+<svg width="1400" height="1600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Arrow markers -->
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#1976d2" />
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#388e3c" />
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#f57c00" />
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#c62828" />
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#7b1fa2" />
+    </marker>
+  </defs>
+  
+  <rect width="1400" height="1600" fill="url(#bgGrad)" />
+  
+  <!-- Title -->
+  <text x="700" y="50" font-family="Arial, sans-serif" font-size="32" font-weight="bold" text-anchor="middle" fill="#1a237e">
+    Reinforcement Learning: Complete Workflow
+  </text>
+  <text x="700" y="80" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#666">
+    From Problem Definition to Solution Strategy
+  </text>
+  
+  <!-- ============ STEP 1: DEFINE THE PROBLEM ============ -->
+  <rect x="450" y="120" width="500" height="140" rx="15" fill="#e3f2fd" stroke="#1565c0" stroke-width="4" />
+  <text x="700" y="155" font-family="Arial" font-size="20" font-weight="bold" text-anchor="middle" fill="#0d47a1">
+    STEP 1: Define Your Problem
+  </text>
+  <text x="700" y="180" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
+    🎯 What are you trying to accomplish?
+  </text>
+  <text x="470" y="210" font-family="Arial" font-size="13" fill="#424242">
+    • What are the <tspan font-weight="bold">States</tspan> (where can the agent be)?
+  </text>
+  <text x="470" y="230" font-family="Arial" font-size="13" fill="#424242">
+    • What are the <tspan font-weight="bold">Actions</tspan> (what can the agent do)?
+  </text>
+  <text x="470" y="250" font-family="Arial" font-size="13" fill="#424242">
+    • What is the <tspan font-weight="bold">Reward</tspan> structure (what's good/bad)?
+  </text>
+  
+  <!-- Arrow down -->
+  <line x1="700" y1="260" x2="700" y2="310" stroke="#1565c0" stroke-width="3" marker-end="url(#arrowBlue)" />
+  
+  <!-- ============ DECISION POINT 1: DO YOU KNOW THE MODEL? ============ -->
+  <path d="M 700 310 L 850 380 L 700 450 L 550 380 Z" fill="#fff3e0" stroke="#ef6c00" stroke-width="4" />
+  <text x="700" y="375" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#e65100">
+    Do you know
+  </text>
+  <text x="700" y="400" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#e65100">
+    the MODEL?
+  </text>
+  <text x="700" y="425" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">
+    (Transition dynamics &amp; Rewards)
+  </text>
+  
+  <!-- YES branch - LEFT -->
+  <line x1="550" y1="380" x2="350" y2="380" stroke="#388e3c" stroke-width="3" marker-end="url(#arrowGreen)" />
+  <text x="450" y="370" font-family="Arial" font-size="16" font-weight="bold" fill="#2e7d32">YES</text>
+  
+  <!-- NO branch - RIGHT -->
+  <line x1="850" y1="380" x2="1050" y2="380" stroke="#d32f2f" stroke-width="3" marker-end="url(#arrowRed)" />
+  <text x="950" y="370" font-family="Arial" font-size="16" font-weight="bold" fill="#c62828">NO</text>
+  
+  <!-- ============ LEFT PATH: MODEL-BASED (PLANNING) ============ -->
+  <rect x="50" y="500" width="600" height="280" rx="15" fill="#e8f5e9" stroke="#388e3c" stroke-width="4" />
+  <text x="350" y="535" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#1b5e20">
+    MODEL-BASED: Planning
+  </text>
+  <text x="350" y="560" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
+    🧮 You know P(s'|s,a) and R(s,a) → Calculate optimal solution
+  </text>
+  
+  <!-- Dynamic Programming box -->
+  <rect x="80" y="585" width="540" height="180" rx="10" fill="#fff" stroke="#43a047" stroke-width="2" />
+  <text x="350" y="615" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle" fill="#2e7d32">
+    Dynamic Programming (DP)
+  </text>
+  
+  <text x="100" y="645" font-family="Arial" font-size="13" font-weight="bold" fill="#1b5e20">
+    Policy Iteration:
+  </text>
+  <text x="120" y="665" font-family="Arial" font-size="12" fill="#424242">
+    1. Policy Evaluation: Compute V<tspan baseline-shift="super" font-size="10">π</tspan>(s) for current policy
+  </text>
+  <text x="120" y="683" font-family="Arial" font-size="12" fill="#424242">
+    2. Policy Improvement: Make policy greedy w.r.t. V
+  </text>
+  <text x="120" y="701" font-family="Arial" font-size="12" fill="#424242">
+    3. Repeat until policy stops changing
+  </text>
+  
+  <text x="100" y="730" font-family="Arial" font-size="13" font-weight="bold" fill="#1b5e20">
+    Value Iteration:
+  </text>
+  <text x="120" y="750" font-family="Arial" font-size="12" fill="#424242">
+    Directly compute V* using Bellman optimality backup, then extract π*
+  </text>
+  
+  <!-- Key concept -->
+  <rect x="90" y="580" width="520" height="2" fill="#81c784" />
+  <text x="350" y="577" font-family="Arial" font-size="11" font-style="italic" text-anchor="middle" fill="#2e7d32">
+    ✓ Guaranteed optimal | Uses Bellman equations | Requires complete model
+  </text>
+  
+  <!-- ============ RIGHT PATH: MODEL-FREE (LEARNING) ============ -->
+  <rect x="750" y="500" width="600" height="700" rx="15" fill="#fce4ec" stroke="#c2185b" stroke-width="4" />
+  <text x="1050" y="535" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#880e4f">
+    MODEL-FREE: Learning from Experience
+  </text>
+  <text x="1050" y="560" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
+    🎲 You DON'T know dynamics → Learn by trial and error
+  </text>
+  
+  <!-- Sub-decision: What type of learning? -->
+  <rect x="780" y="585" width="540" height="60" rx="8" fill="#fff9c4" stroke="#f57f17" stroke-width="2" />
+  <text x="1050" y="608" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#f57f17">
+    ⚡ Choose Your Learning Strategy
+  </text>
+  <text x="1050" y="630" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">
+    How do you want to estimate values?
+  </text>
+  
+  <!-- Three learning methods -->
+  
+  <!-- Monte Carlo -->
+  <rect x="780" y="670" width="170" height="180" rx="10" fill="#fff3e0" stroke="#ff6f00" stroke-width="2" />
+  <text x="865" y="695" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">
+    Monte Carlo
+  </text>
+  <text x="865" y="715" font-family="Arial" font-size="11" text-anchor="middle" fill="#666">
+    "Wait &amp; See" 🎬
+  </text>
+  <text x="795" y="740" font-family="Arial" font-size="11" fill="#424242">
+    <tspan font-weight="bold">How:</tspan> Play full episode
+  </text>
+  <text x="795" y="758" font-family="Arial" font-size="11" fill="#424242">
+    Get actual return G
+  </text>
+  <text x="795" y="776" font-family="Arial" font-size="11" fill="#424242">
+    Update: V(s) ← V(s) + α[G - V(s)]
+  </text>
+  <rect x="790" y="790" width="150" height="50" rx="5" fill="#ffe0b2" />
+  <text x="865" y="808" font-family="Arial" font-size="10" text-anchor="middle" fill="#e65100">
+    <tspan font-weight="bold">✓</tspan> Simple, unbiased
+  </text>
+  <text x="865" y="823" font-family="Arial" font-size="10" text-anchor="middle" fill="#e65100">
+    <tspan font-weight="bold">✗</tspan> High variance, slow
+  </text>
+  <text x="865" y="838" font-family="Arial" font-size="10" text-anchor="middle" fill="#e65100">
+    <tspan font-weight="bold">✗</tspan> Needs episodes to end
+  </text>
+  
+  <!-- TD Learning -->
+  <rect x="975" y="670" width="170" height="180" rx="10" fill="#e1f5fe" stroke="#0277bd" stroke-width="2" />
+  <text x="1060" y="695" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#01579b">
+    TD Learning
+  </text>
+  <text x="1060" y="715" font-family="Arial" font-size="11" text-anchor="middle" fill="#666">
+    "Guess Now" 🔮
+  </text>
+  <text x="990" y="740" font-family="Arial" font-size="11" fill="#424242">
+    <tspan font-weight="bold">How:</tspan> Take 1 step
+  </text>
+  <text x="990" y="758" font-family="Arial" font-size="11" fill="#424242">
+    Bootstrap from V(s')
+  </text>
+  <text x="990" y="776" font-family="Arial" font-size="11" fill="#424242">
+    Update: V(s) + α[R + γV(s') - V(s)]
+  </text>
+  <rect x="985" y="790" width="150" height="50" rx="5" fill="#b3e5fc" />
+  <text x="1060" y="808" font-family="Arial" font-size="10" text-anchor="middle" fill="#01579b">
+    <tspan font-weight="bold">✓</tspan> Online, low variance
+  </text>
+  <text x="1060" y="823" font-family="Arial" font-size="10" text-anchor="middle" fill="#01579b">
+    <tspan font-weight="bold">✓</tspan> Learns faster
+  </text>
+  <text x="1060" y="838" font-family="Arial" font-size="10" text-anchor="middle" fill="#01579b">
+    <tspan font-weight="bold">~</tspan> Biased (bootstrapping)
+  </text>
+  
+  <!-- Q-Learning -->
+  <rect x="1170" y="670" width="170" height="180" rx="10" fill="#f1f8e9" stroke="#558b2f" stroke-width="2" />
+  <text x="1255" y="695" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#33691e">
+    Q-Learning
+  </text>
+  <text x="1255" y="715" font-family="Arial" font-size="11" text-anchor="middle" fill="#666">
+    "The Explorer" 🧭
+  </text>
+  <text x="1185" y="740" font-family="Arial" font-size="11" fill="#424242">
+    <tspan font-weight="bold">How:</tspan> Learn Q(s,a)
+  </text>
+  <text x="1185" y="758" font-family="Arial" font-size="11" fill="#424242">
+    Off-policy (explore freely)
+  </text>
+  <text x="1185" y="776" font-family="Arial" font-size="11" fill="#424242">
+    Update: Q + α[R + γ max Q(s',·) - Q]
+  </text>
+  <rect x="1180" y="790" width="150" height="50" rx="5" fill="#dcedc8" />
+  <text x="1255" y="808" font-family="Arial" font-size="10" text-anchor="middle" fill="#33691e">
+    <tspan font-weight="bold">✓</tspan> Finds optimal policy
+  </text>
+  <text x="1255" y="823" font-family="Arial" font-size="10" text-anchor="middle" fill="#33691e">
+    <tspan font-weight="bold">✓</tspan> Even with random actions
+  </text>
+  <text x="1255" y="838" font-family="Arial" font-size="10" text-anchor="middle" fill="#33691e">
+    <tspan font-weight="bold">~</tspan> Can be unstable
+  </text>
+  
+  <!-- Learning considerations -->
+  <rect x="780" y="870" width="540" height="140" rx="10" fill="#fff" stroke="#ad1457" stroke-width="2" />
+  <text x="1050" y="895" font-family="Arial" font-size="15" font-weight="bold" text-anchor="middle" fill="#880e4f">
+    Key Learning Decisions
+  </text>
+  
+  <text x="800" y="920" font-family="Arial" font-size="12" font-weight="bold" fill="#ad1457">
+    Exploration Strategy:
+  </text>
+  <text x="810" y="938" font-family="Arial" font-size="11" fill="#424242">
+    • ε-greedy: Random action with probability ε
+  </text>
+  <text x="810" y="954" font-family="Arial" font-size="11" fill="#424242">
+    • Softmax: Probability proportional to Q-values
+  </text>
+  
+  <text x="800" y="980" font-family="Arial" font-size="12" font-weight="bold" fill="#ad1457">
+    Learning Rate (α):
+  </text>
+  <text x="810" y="998" font-family="Arial" font-size="11" fill="#424242">
+    Balance between learning speed and stability (Robbins-Munro conditions)
+  </text>
+  
+  <rect x="780" y="1025" width="540" height="160" rx="10" fill="#fff8e1" stroke="#f57c00" stroke-width="2" />
+  <text x="1050" y="1050" font-family="Arial" font-size="15" font-weight="bold" text-anchor="middle" fill="#e65100">
+    🎯 On-Policy vs Off-Policy
+  </text>
+  
+  <text x="800" y="1075" font-family="Arial" font-size="12" font-weight="bold" fill="#ef6c00">
+    On-Policy (e.g., SARSA, TD):
+  </text>
+  <text x="810" y="1093" font-family="Arial" font-size="11" fill="#424242">
+    Learn about policy you're following → More stable, safer
+  </text>
+  <text x="810" y="1109" font-family="Arial" font-size="11" fill="#424242">
+    "Learn basketball by playing your own game"
+  </text>
+  
+  <text x="800" y="1135" font-family="Arial" font-size="12" font-weight="bold" fill="#ef6c00">
+    Off-Policy (e.g., Q-Learning):
+  </text>
+  <text x="810" y="1153" font-family="Arial" font-size="11" fill="#424242">
+    Learn optimal policy while behaving differently → More flexible
+  </text>
+  <text x="810" y="1169" font-family="Arial" font-size="11" fill="#424242">
+    "Learn basketball by watching LeBron while you play randomly"
+  </text>
+  
+  <!-- ============ SCALING UP SECTION ============ -->
+  <rect x="50" y="830" width="600" height="250" rx="15" fill="#f3e5f5" stroke="#7b1fa2" stroke-width="4" />
+  <text x="350" y="865" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#4a148c">
+    Scaling Up: Too Many States?
+  </text>
+  <text x="350" y="890" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
+    📊 When tables are too big → Use approximation
+  </text>
+  
+  <!-- Function Approximation -->
+  <rect x="80" y="910" width="540" height="155" rx="10" fill="#fff" stroke="#8e24aa" stroke-width="2" />
+  <text x="350" y="935" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#6a1b9a">
+    Function Approximation
+  </text>
+  
+  <text x="100" y="960" font-family="Arial" font-size="12" fill="#424242">
+    <tspan font-weight="bold">Instead of:</tspan> Storing V(s) for every state in a table
+  </text>
+  <text x="100" y="980" font-family="Arial" font-size="12" fill="#424242">
+    <tspan font-weight="bold">Use:</tspan> Parameterized function V(s; w) ≈ V(s)
+  </text>
+  <text x="100" y="1000" font-family="Arial" font-size="12" fill="#424242">
+    <tspan font-weight="bold">Examples:</tspan> Linear functions, Neural networks (Deep RL)
+  </text>
+  
+  <text x="350" y="1025" font-family="Arial" font-size="11" font-style="italic" text-anchor="middle" fill="#7b1fa2">
+    "Draw a best-fit line through the points instead of memorizing every point"
+  </text>
+  
+  <text x="350" y="1050" font-family="Arial" font-size="11" font-weight="bold" text-anchor="middle" fill="#6a1b9a">
+    ✓ Handles huge state spaces | ✓ Generalizes to unseen states | ~ Introduces approximation error
+  </text>
+  
+  <!-- ============ DANGER ZONE ============ -->
+  <rect x="50" y="1240" width="1300" height="280" rx="15" fill="#ffebee" stroke="#c62828" stroke-width="5" />
+  <text x="700" y="1280" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle" fill="#b71c1c">
+    ⚠️ THE DEADLY TRIAD: When Things Go Wrong ⚠️
+  </text>
+  <text x="700" y="1310" font-family="Arial" font-size="14" text-anchor="middle" fill="#333">
+    Combining these three ingredients can cause instability and divergence
+  </text>
+  
+  <!-- Three dangers -->
+  <rect x="90" y="1335" width="360" height="160" rx="10" fill="#fff" stroke="#d32f2f" stroke-width="3" />
+  <text x="270" y="1365" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#c62828">
+    1️⃣ Function Approximation
+  </text>
+  <text x="110" y="1390" font-family="Arial" font-size="12" fill="#424242">
+    Using parameterized functions instead
+  </text>
+  <text x="110" y="1408" font-family="Arial" font-size="12" fill="#424242">
+    of exact tables
+  </text>
+  <text x="110" y="1430" font-family="Arial" font-size="11" font-style="italic" fill="#666">
+    Why dangerous: Can't represent V* exactly
+  </text>
+  <text x="110" y="1448" font-family="Arial" font-size="11" font-style="italic" fill="#666">
+    → Approximation errors accumulate
+  </text>
+  <text x="110" y="1475" font-family="Arial" font-size="11" font-weight="bold" fill="#d32f2f">
+    Example: Neural network value function
+  </text>
+  
+  <rect x="490" y="1335" width="360" height="160" rx="10" fill="#fff" stroke="#d32f2f" stroke-width="3" />
+  <text x="670" y="1365" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#c62828">
+    2️⃣ Bootstrapping
+  </text>
+  <text x="510" y="1390" font-family="Arial" font-size="12" fill="#424242">
+    Updating estimates using other
+  </text>
+  <text x="510" y="1408" font-family="Arial" font-size="12" fill="#424242">
+    estimates (not actual returns)
+  </text>
+  <text x="510" y="1430" font-family="Arial" font-size="11" font-style="italic" fill="#666">
+    Why dangerous: Errors in V(s') affect V(s)
+  </text>
+  <text x="510" y="1448" font-family="Arial" font-size="11" font-style="italic" fill="#666">
+    → Error propagation can spiral
+  </text>
+  <text x="510" y="1475" font-family="Arial" font-size="11" font-weight="bold" fill="#d32f2f">
+    Example: TD learning, Q-learning
+  </text>
+  
+  <rect x="890" y="1335" width="360" height="160" rx="10" fill="#fff" stroke="#d32f2f" stroke-width="3" />
+  <text x="1070" y="1365" font-family="Arial" font-size="16" font-weight="bold" text-anchor="middle" fill="#c62828">
+    3️⃣ Off-Policy Learning
+  </text>
+  <text x="910" y="1390" font-family="Arial" font-size="12" fill="#424242">
+    Learning about one policy while
+  </text>
+  <text x="910" y="1408" font-family="Arial" font-size="12" fill="#424242">
+    following a different one
+  </text>
+  <text x="910" y="1430" font-family="Arial" font-size="11" font-style="italic" fill="#666">
+    Why dangerous: Update distribution doesn't
+  </text>
+  <text x="910" y="1448" font-family="Arial" font-size="11" font-style="italic" fill="#666">
+    match experience distribution
+  </text>
+  <text x="910" y="1475" font-family="Arial" font-size="11" font-weight="bold" fill="#d32f2f">
+    Example: Q-learning with exploration
+  </text>
+  
+  <!-- Bottom warning -->
+  <text x="700" y="1535" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#b71c1c">
+    💥 All 3 Together = High Risk of Divergence! (e.g., Q-learning + Neural Nets + Off-policy)
+  </text>
+  <text x="700" y="1560" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">
+    Solutions: Experience Replay, Target Networks, Importance Sampling, Better Algorithms (PPO, SAC, etc.)
+  </text>
+  
+  <!-- ============ FOOTER ============ -->
+  <rect x="50" y="1545" width="1300" height="2" fill="#adb5bd" />
+  <text x="700" y="1580" font-family="Arial" font-size="11" text-anchor="middle" fill="#666">
+    💡 The RL Journey: Define Problem → Choose Approach (Model-based or Model-free) → Select Algorithm → Scale Up → Watch for Pitfalls
+  </text>
+</svg>

@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/blog_styles.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/rl_interactive.css">
 
     <!--==================== Code Formatting ================-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
@@ -381,6 +382,17 @@
                 </div>
             </div>
         </section>
+
+        <!-- Interactive RL Modal -->
+        <div class="rl-modal" id="rl-modal">
+            <div class="rl-modal-content">
+                <i class="uil uil-times rl-modal-close" id="rl-modal-close"></i>
+                <h3 class="rl-modal-title" id="rl-modal-title">Definition</h3>
+                <div class="rl-modal-description" id="rl-modal-description">
+                    Detailed explanation goes here.
+                </div>
+            </div>
+        </div>
     </main>
 
     <!--==================== FOOTER ====================-->
@@ -437,47 +449,58 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
     <script>
-        // RL Diagram hover interaction handler
+        // RL Diagram Interaction Handler
         function initRLDiagram() {
-            const textEl = document.getElementById('rl-description-text');
-            if (!textEl) return;
-
             const descriptions = {
-                'agent': 'Agent = the learner. Example: a robot trying to navigate a maze.',
-                'environment': 'Environment = the world. Example: the maze with walls, goal, and rewards.',
-                'state': 's = where you are. Example: position (x=2, y=3) in the maze.',
-                'action': 'a = what you do. Example: move left, move right, move up, move down.',
-                'reward': 'r = immediate feedback. Example: -1 for each step, +10 for reaching goal.',
-                'policy': 'π = your strategy. Example: "always go right unless there is a wall, then go down".',
-                'gamma': 'γ = how much you care about future. Example: γ=0.9 means +10 in 2 steps is worth 0.9×0.9×10 = 8.1 now.',
-                'return': 'G = total discounted reward. Example: path A→B→C→D with rewards -1,-1,-1,+10 gives G = -1 + 0.9(-1) + 0.81(-1) + 0.729(+10) = 4.58.',
-                'value': 'V(s) = expected G from state s. Example: V(A) = 4.58 means starting at A, you expect total reward of 4.58.',
-                'vpi': 'V_π = expected G following policy π. Example: good policy V_π(A)=4.58, bad policy V_π(A)=-20.',
-                'vstar': 'V* = best possible expected G. Example: V*(A) = 4.58 if you act optimally from A.',
-                'vhat': 'V̂_π = our estimate of V_π from samples. Example: ran 3 episodes from A, got G=4.2, 4.8, 4.7. V̂(A) = average = 4.57.',
-                'qvalue': 'Q(s,a) = expected G after taking action a. Example: Q(C, down)=8 (good), Q(C, right)=-1 (bad, hits wall).',
-                'qstar': 'Q* = best Q value. Example: Q*(C, down)=8. Optimal policy = pick action with highest Q*.',
-                'qhat': 'Q̂ = our estimate of Q from samples. Example: tried (C,down) 5 times, got 7.8, 8.1, 8.0, 7.9, 8.2. Q̂ = 8.0.',
-                'bellman': "V(s) = r + γV(s'). Example: V(B) = -1 + 0.9 × V(C) = -1 + 0.9 × 8 = 6.2.",
-                'bellmanopt': "V*(s) = max_a [r + γV*(s')]. Example: at C, max of [go down=8, go right=-1] = 8. Pick best action.",
-                'mc': 'Monte Carlo: run full episode, then update. Example: episode A→B→C→D gave G=4.58, so update V̂(A) toward 4.58.',
-                'td': "TD: update every step using estimate. Example: at A, moved to B, got -1. Update V̂(A) using -1 + 0.9×V̂(B).",
-                'qlearn': 'Q-Learning: TD for Q, learns Q* directly. Example: at C, went down, got -1, reached D. Update Q̂(C,down) using -1 + 0.9 × max Q̂(D,a).'
+                'agent': 'Agent = the learner. Like a robot trying to navigate a maze, the agent takes actions to maximize its future rewards.',
+                'environment': 'Environment = the world. This includes everything outside the agent - the walls of a maze, the rules of physics, and the goal location.',
+                'state': 's = where you are. A state is a complete description of the current situation at time t. Example: robot position (x, y) and battery level.',
+                'action': 'a = what you do. These are the choices available to the agent. Example: move North, South, East, or West.',
+                'reward': 'r = immediate feedback. A scalar value received from the environment after an action. Example: -1 for each step, +10 for finding the exit.',
+                'transitions': 'P(s\'|s,a) = the "physics" of the world. The probability that taking action a in state s will lead to next state s\'.',
+                'policy': 'π = your strategy. A mapping from states to actions. A high-quality policy tells the agent exactly what to do in every situation to win.',
+                'gamma': 'γ = the discount factor. A value between 0 and 1 that determines the present value of future rewards. It models the agent\'s "patience".',
+                'return': 'G = total discounted reward. The sum of all future rewards the agent expects to receive, adjusted by the discount factor γ.',
+                'value': 'V(s) = the State-Value. It estimates "how good" it is to be in a particular state under a specific policy.',
+                'qvalue': 'Q(s,a) = the Action-Value. It estimates "how good" it is to take a specific action in a specific state.',
+                'bellman': 'The Bellman Equation is the heart of RL. It states that the value of your current state is the immediate reward plus the value of the next state.',
+                'planning': 'Model-Based Planning (Dynamic Programming) happens when we already know the "rules" (P and R) and can compute the best strategy mathematically.',
+                'learning': 'Model-Free Learning happens when we don\'t know the rules. The agent must explore and learn from trial-and-error experience.',
+                'mc': 'Monte Carlo methods learn from complete "episodes". The agent plays an entire game, then looks back to see which moves were good or bad.',
+                'td': 'Temporal Difference (TD) learning updates estimates after every single step. It "bootstraps" by using its current guess of the next state\'s value.',
+                'qlearn': 'Q-Learning is a popular TD algorithm that learns the optimal Action-Value (Q*) directly, even if it follows a random exploration policy.',
+                'deadly-triad': 'The Deadly Triad is a combination of Function Approximation, Bootstrapping, and Off-policy training that can cause learning to become unstable.'
             };
-            const defaultText = 'Hover over any box to see definition + example';
+
+            const modal = document.getElementById('rl-modal');
+            const modalTitle = document.getElementById('rl-modal-title');
+            const modalDesc = document.getElementById('rl-modal-description');
+            const modalClose = document.getElementById('rl-modal-close');
 
             document.querySelectorAll('.rl-node').forEach(node => {
-                node.addEventListener('mouseenter', () => {
+                node.addEventListener('click', () => {
                     const id = node.getAttribute('data-id');
+                    const title = node.querySelector('.rl-node-title')?.innerText || id;
+
                     if (descriptions[id]) {
-                        textEl.textContent = descriptions[id];
-                        textEl.classList.add('active');
+                        modalTitle.innerText = title;
+                        modalDesc.innerText = descriptions[id];
+                        modal.classList.add('active-modal');
                     }
                 });
-                node.addEventListener('mouseleave', () => {
-                    textEl.textContent = defaultText;
-                    textEl.classList.remove('active');
+            });
+
+            if (modalClose) {
+                modalClose.addEventListener('click', () => {
+                    modal.classList.remove('active-modal');
                 });
+            }
+
+            // Close on click outside
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active-modal');
+                }
             });
         }
 
