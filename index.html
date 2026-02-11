@@ -616,23 +616,28 @@
                 <div class="portfolio__content">
                     <img src="./assets/img/lunar_demo-ezgif.com-optimize.gif" alt="AeroNexus MCL"
                         class="portfolio__img">
-                    <h3 class="portfolio__title">NASA's Lunar Autonomy Challenge: Perception & Localization</h3>
-
-                    <!-- Details to be shown in modal -->
+                    <h3 class="portfolio__title">NASA's Lunar Autonomy Challenge: Perception Stack</h3>
+                        <!-- Skill Tags Section -->
                     <div class="portfolio__details" style="display: none;">
-                        <p class="portfolio__description">Developed SLAM and localization pipelines for autonomous 
-                            lunar navigation using point cloud data processing. Implemented sensor fusion techniques 
-                            and GPS-denied localization methods to enable robust navigation in challenging lunar 
-                            terrain environments.</p>
-
-                        <p class="portfolio__description">Built hands-on expertise in perception algorithms, 
-                            autonomous systems architecture, and real-world robotics challenges through 
-                            self-directed learning based on NASA's lunar exploration requirements.</p>
-                        
-                        <p class="portfolio__status">Status: Ongoing, Feb 2025 - Present (self-directed learning)</p>
+                        <div class="portfolio__badges"
+                            style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <span class="skill-tag">Open3D</span>
+                            <span class="skill-tag">SLAM</span>
+                            <span class="skill-tag">Sensor Fusion</span>
+                        </div>
+                        <!-- Details to be shown in modal -->
+                        <p class="portfolio__description">
+                            Converts stereo-vision data into detailed 3D terrain maps and elevation grids. 
+                            Identifies rocks and surface craters to enable autonomous obstacle avoidance.
+                        </p>
+                        <p class="portfolio__description">
+                            Uses sensor fusion to combine wheel movement and IMU data for precise rover localization. 
+                            Maintains high positioning accuracy in challenging, GPS-denied environments.
+                        </p>
+                        <!-- Tweak: Frame 'self-directed' as 'Technical Research & R&D' for more professional weight -->
+                        <p class="portfolio__status"><b>Status:</b> Ongoing, Feb 2025 - Present</p>
                     </div>
                 </div>
-
                 <!-- Project: SatTrack -->
                 <div class="portfolio__content">
                     <img src="./assets/img/sattrack_demo.gif" alt="Satellite Tracking" class="portfolio__img">
@@ -643,7 +648,6 @@
                         <div class="portfolio__badges"
                             style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
                             <span class="skill-tag">Vue 3</span>
-                            <span class="skill-tag">Python</span>
                             <span class="skill-tag">SGP4</span>
                             <span class="skill-tag">Leaflet</span>
                         </div>
@@ -651,7 +655,7 @@
                             and SGP4 models. Integrates real-time NAVCEN alerts for constellation health monitoring.</p>
                         <p class="portfolio__description">Features live, past, and future trajectory prediction for
                             low-earth orbit (LEO) and geostationary (GEO) assets.</p>
-                        <p class="portfolio__status">Status: Completed, Jan 2026 - Feb 2026</p>
+                        <p class="portfolio__status"><b>Status:</b> Completed, Jan 2026 - Feb 2026</p>
                         <a href="https://sattrack.live/"
                             class="button button--flex button--small portfolio__button">
                             View Live App <i class="uil uil-arrow-right button__icon"></i>
@@ -677,7 +681,7 @@
                             sim-to-real transferability.</p>
                         <p class="portfolio__status">Achieved 21% improvement in tracking accuracy across variable
                             terrain physics compared to standard EKF controllers.</p>
-                        <p class="portfolio__status">Status: Ongoing, Jan 2025 - May 2026 (M.S. Thesis)</p>
+                        <p class="portfolio__status"><b>Status:</b> Ongoing, Jan 2025 - May 2026 (M.S. Thesis)</p>
                         <a href="./assets/post.html?file=posts%2Frobust-navigation.md"
                             class="button button--flex button--small portfolio__button">
                             Technical Writeup <i class="uil uil-arrow-right button__icon"></i>
@@ -706,7 +710,7 @@
                         <p class="portfolio__status">Achieved 84.9% reduction in angular drift for accurate
                             long-endurance
                             navigation in GPS-denied environments.</p>
-                        <p class="portfolio__status">Status: Completed, May 2024 - Aug 2024</p>
+                        <p class="portfolio__status"><b>Status:</b> Completed, May 2024 - Aug 2024</p>
                         <a href="./assets/post.html?file=posts%2Fagc-mote.md"
                             class="button button--flex button--small portfolio__button">
                             Read Technical Blog <i class="uil uil-arrow-right button__icon"></i>
@@ -730,7 +734,7 @@
                             training
                             examples using vision models (Depth Pro, SAM2), reducing manual labeling and making
                             advanced ML accessible to teams without large-scale infrastructure.</p>
-                        <p class="portfolio__status">Status: Completed, Jan 2025 - Apr 2025</p>
+                        <p class="portfolio__status"><b>Status:</b> Completed, Jan 2025 - Apr 2025</p>
                         <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
                             <a href="https://github.com/mcity/mcity_data_engine"
                                 class="button button--flex button--small portfolio__button">
@@ -761,7 +765,7 @@
                             Lincoln MKZ platform.</p>
                         <p class="portfolio__status">Maintained &lt;3% cross-track error under active attack by
                             intelligently weighting IMU and onboard odometry metrics.</p>
-                        <p class="portfolio__status">Status: Completed, Sep 2023 - Jun 2024</p>
+                        <p class="portfolio__status"><b>Status:</b> Completed, Sep 2023 - Jun 2024</p>
                         <a href="https://ieeexplore.ieee.org/document/10679455"
                             class="button button--flex button--small portfolio__button">
                             View PDF <i class="uil uil-arrow-right button__icon"></i>
@@ -785,7 +789,7 @@
                             lateral/longitudinal control systems for Texas A&M's SAE AutoDrive team. Implemented and
                             benchmarked Compound Feedforward-Feedback and Stanley controllers, achieving 71% reduction
                             in radial error through parameter optimization.</p>
-                        <p class="portfolio__status">Status: Completed, Sep 2023 - Jun 2024 (2nd Place)</p>
+                        <p class="portfolio__status"><b>Status:</b> Completed, Sep 2023 - Jun 2024 (2nd Place)</p>
                         <a href="assets/pdf/Concept_Design_Report_2023.pdf"
                             class="button button--flex button--small portfolio__button">
                             Project Report <i class="uil uil-arrow-right button__icon"></i>
