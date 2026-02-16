@@ -35,22 +35,6 @@
 </head>
 
 <body>
-    <script>
-        async function fetchIPData() {
-            const response = await fetch('https://api.ipgeolocation.io/ipgeo?apiKey=525279ca588846b69660c35ee3210ccd');
-            const data = await response.json();
-
-            gtag('event', 'geolocation', {
-                'event_category': 'IP Geolocation',
-                'event_label': data.ip,
-                'country': data.country_name,
-                'state': data.state_prov,
-                'city': data.city
-            });
-        }
-
-        fetchIPData();
-    </script>
     <!--==================== PARALLAX BACKGROUND ====================-->
     <div class="parallax-bg">
         <!-- Layer 1: Furthest (Hidden) -->
