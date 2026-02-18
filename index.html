@@ -597,11 +597,10 @@
 
             <div class="portfolio__container container">
 
-                <div class="portfolio__content">
+                <!-- <div class="portfolio__content">
                     <img src="./assets/img/lunar_demo-ezgif.com-optimize.gif" alt="AeroNexus MCL"
                         class="portfolio__img">
                     <h3 class="portfolio__title">NASA's Lunar Autonomy Challenge: Perception Stack</h3>
-                        <!-- Skill Tags Section -->
                     <div class="portfolio__details" style="display: none;">
                         <div class="portfolio__badges"
                             style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -609,7 +608,6 @@
                             <span class="skill-tag">SLAM</span>
                             <span class="skill-tag">Sensor Fusion</span>
                         </div>
-                        <!-- Details to be shown in modal -->
                         <p class="portfolio__description">
                             Converts stereo-vision data into detailed 3D terrain maps and elevation grids. 
                             Identifies rocks and surface craters to enable autonomous obstacle avoidance.
@@ -618,8 +616,35 @@
                             Uses sensor fusion to combine wheel movement and IMU data for precise rover localization. 
                             Maintains high positioning accuracy in challenging, GPS-denied environments.
                         </p>
-                        <!-- Tweak: Frame 'self-directed' as 'Technical Research & R&D' for more professional weight -->
                         <p class="portfolio__status"><b>Status:</b> Ongoing, Feb 2025 - Present</p>
+                    </div>
+                </div> -->
+
+                <!-- Project: 6-DOF Missile Guidance -->
+                <div class="portfolio__content">
+                    <img src="./assets/img/intercept_demo.gif" alt="6-DOF Missile Guidance" class="portfolio__img">
+                    <h3 class="portfolio__title">6-DOF Missile Guidance via Deep Reinforcement Learning</h3>
+
+                    <div class="portfolio__details" style="display: none;">
+                        <div class="portfolio__badges"
+                            style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                            <span class="skill-tag">PyTorch</span>
+                            <span class="skill-tag">JSBSim</span>
+                            <span class="skill-tag">Stable Baselines3</span>
+                            <span class="skill-tag">PPO</span>
+                        </div>
+                        <p class="portfolio__description">
+                            Trained a model-free RL agent to guide a 6-DOF missile to intercept maneuvering
+                            fighter aircraft using high-fidelity JSBSim flight dynamics. The agent learns
+                            real-time fin deflection commands from raw navigation observables, replacing
+                            classical proportional navigation with an adaptive learned policy.
+                        </p>
+                        <p class="portfolio__description">
+                            Implemented adaptive curriculum that automatically scales the hit radius from
+                            3km down to 10m based on agent performance, enabling precision terminal guidance
+                            across 7 engagement scenarios including BVR air-to-air and ballistic missiles.
+                        </p>
+                        <p class="portfolio__status"><b>Status:</b> Ongoing, Feb 2026 - Present</p>
                     </div>
                 </div>
                 <!-- Project: SatTrack -->
