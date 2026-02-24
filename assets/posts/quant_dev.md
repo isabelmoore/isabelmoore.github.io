@@ -70,4 +70,4 @@ If you are on an AV or systems engineering team, look one layer down at how quan
 
 If you are an engineer in either field curious about the other, the transition is more accessible than it looks from the outside. The domain expertise is the hard, specialized part. The infrastructure skills transfer directly because they were never domain specific to begin with.
 
-In the future, I plan to build and open source a full telemetry platform that implements this shared stack. In the meantime, if you see the same overlap I do, feel free start exploring. Good infrastructure is good infrastructure.
+In the future, I plan to build and open source a full telemetry platform that implements this shared stack. In the meantime, if you see the same overlap I do, feel free to start exploring. Good infrastructure is good infrastructure.
