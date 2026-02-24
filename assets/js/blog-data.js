@@ -13,7 +13,7 @@ const blogPosts = [
         "date": "2026-02-24",
         "readTime": "8 min read",
         "file": "posts/quant_dev.md",
-        "description": "Most people think autonomous system engineering and quant dev are completely different world. False. Infrastructure is shockingly similar and what we can learn.",
+        "description": "Most people think autonomous system engineering and quant dev are completely different world. False. Infrastructure is shockingly similar and here is what we can learn.",
         "tags": ["Distributed Systems", "C++", "Infrastructure"]
     },
     {
