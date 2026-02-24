@@ -4,7 +4,7 @@ I want to be upfront. This is something I have found through research, not somet
 
 ## What the AV Workflow Actually Looks Like
 
-Here is how most AV and robotics teams actually operate. You run a simulation in CARLA or Gazebo, or you collect real sensor data and record it into rosbags. If you are doing RL, those rosbags feed into a PyTorch or TensorFlow training loop. Once the model is trained, or if you are working on something like an EKF corrector, you spin up a tmux session with multiple panes running simultaneously: one pane plays the simulation or rosbag data, another runs the node (your model, your EKF, whatever the algorithm is), and a third pane runs RViz so you can watch the output in 3D. Your metrics are cross track error, yaw drift, mission completion rate. Your monitoring is the terminal. Your storage is CSV files and Jupyter notebooks.
+Here is how most AV and robotics teams actually operate. In a well developed team, you typically have a virtual simulator (CARLA, Gazebo, JSBSim, or your own Python model). You run your simulation, or you collect real data. If you are doing RL, this data is fed into a PyTorch or TensorFlow training loop. Once the model is trained, or if you are working on something like an EKF corrector, you run your evaluation, spinning up a tmux session with multiple panes running simultaneously: one pane plays the simulation or rosbag data, another runs the node (your model, your EKF, whatever the algorithm is), and a potential third pane runs RViz so you can watch the output in 3D. Your monitoring is the terminal. Your storage is CSV, DB, or log files.
 
 ![AV Pipeline](/assets/img/av-pipeline.svg)
 
@@ -70,4 +70,4 @@ If you are on an AV or systems engineering team, look one layer down at how quan
 
 If you are an engineer in either field curious about the other, the transition is more accessible than it looks from the outside. The domain expertise is the hard, specialized part. The infrastructure skills transfer directly because they were never domain specific to begin with.
 
-In the future, I plan to build and open source a full telemetry platform that implements this shared stack. Once school wraps up, that work will be public. In the meantime, if you see the same overlap I do, start exploring. The tools do not care whether the data is LIDAR point clouds or options prices. Good infrastructure is good infrastructure.
+In the future, I plan to build and open source a full telemetry platform that implements this shared stack. In the meantime, if you see the same overlap I do, feel free start exploring. Good infrastructure is good infrastructure.
