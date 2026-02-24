@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="940" height="400" viewBox="0 0 940 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="940" height="400" rx="12" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="165" y="28" fill="#999" font-size="10" font-family="monospace" text-anchor="middle" letter-spacing="1.5">DATA GENERATION</text>
+  <rect x="22" y="42" width="135" height="72" rx="8" fill="#fff5f0" stroke="#d4644a" stroke-width="1.5"/>
+  <text x="90" y="68" fill="#d4644a" font-size="13" font-weight="600" font-family="system-ui" text-anchor="middle">CARLA</text>
+  <text x="90" y="86" fill="#888" font-size="10" font-family="monospace" text-anchor="middle">Gazebo · Unity</text>
+  <text x="90" y="102" fill="#aaa" font-size="9" font-family="monospace" text-anchor="middle">simulation</text>
+  <line x1="157" y1="78" x2="192" y2="78" stroke="#d4644a" stroke-width="2" stroke-opacity="0.5"/>
+  <polygon points="190,74 197,78 190,82" fill="#d4644a" fill-opacity="0.6"/>
+  <rect x="197" y="42" width="135" height="72" rx="8" fill="#fff5f0" stroke="#d4644a" stroke-width="1.5"/>
+  <text x="265" y="68" fill="#d4644a" font-size="13" font-weight="600" font-family="system-ui" text-anchor="middle">Rosbags</text>
+  <text x="265" y="86" fill="#888" font-size="10" font-family="monospace" text-anchor="middle">record · replay</text>
+  <text x="265" y="102" fill="#aaa" font-size="9" font-family="monospace" text-anchor="middle">sensor streams</text>
+  <text x="265" y="145" fill="#999" font-size="10" font-family="monospace" text-anchor="middle" letter-spacing="1.5">TRAIN (IF RL)</text>
+  <rect x="197" y="155" width="135" height="60" rx="8" fill="#faf5ff" stroke="#9b6dc6" stroke-width="1"/>
+  <text x="265" y="180" fill="#9b6dc6" font-size="12" font-weight="600" font-family="system-ui" text-anchor="middle">PyTorch · TF</text>
+  <text x="265" y="198" fill="#888" font-size="10" font-family="monospace" text-anchor="middle">PPO · SAC · MAML</text>
+  <line x1="265" y1="114" x2="265" y2="155" stroke="#9b6dc6" stroke-width="1.5" stroke-opacity="0.4"/>
+  <polygon points="261,153 265,160 269,153" fill="#9b6dc6" fill-opacity="0.5"/>
+  <line x1="332" y1="185" x2="370" y2="185" stroke="#9b6dc6" stroke-width="1.5" stroke-opacity="0.3"/>
+  <line x1="370" y1="185" x2="370" y2="78" stroke="#d4644a" stroke-width="1.5" stroke-opacity="0.3"/>
+  <line x1="332" y1="78" x2="400" y2="78" stroke="#d4644a" stroke-width="2" stroke-opacity="0.5"/>
+  <polygon points="398,74 405,78 398,82" fill="#d4644a" fill-opacity="0.6"/>
+  <text x="640" y="28" fill="#999" font-size="10" font-family="monospace" text-anchor="middle" letter-spacing="1.5">RUNTIME</text>
+  <rect x="405" y="38" width="515" height="200" rx="10" fill="#fafafa" stroke="#d4644a" stroke-width="2" stroke-opacity="0.5" stroke-dasharray="6,4"/>
+  <rect x="415" y="44" width="60" height="20" rx="4" fill="#d4644a" fill-opacity="0.1"/>
+  <text x="445" y="58" fill="#d4644a" font-size="10" font-weight="600" font-family="monospace" text-anchor="middle">tmux</text>
+  <rect x="420" y="72" width="155" height="75" rx="6" fill="#ffffff" stroke="#d4644a" stroke-width="1" stroke-opacity="0.4"/>
+  <rect x="420" y="72" width="155" height="18" rx="6" fill="#d4644a" fill-opacity="0.08"/>
+  <text x="428" y="84" fill="#999" font-size="8" font-family="monospace">PANE 1</text>
+  <text x="498" y="108" fill="#d4644a" font-size="12" font-weight="600" font-family="system-ui" text-anchor="middle">Simulation</text>
+  <text x="498" y="124" fill="#888" font-size="10" font-family="monospace" text-anchor="middle">ros2 bag play</text>
+  <text x="498" y="140" fill="#aaa" font-size="9" font-family="monospace" text-anchor="middle">or live CARLA</text>
+  <rect x="585" y="72" width="155" height="75" rx="6" fill="#ffffff" stroke="#d4644a" stroke-width="1" stroke-opacity="0.4"/>
+  <rect x="585" y="72" width="155" height="18" rx="6" fill="#d4644a" fill-opacity="0.08"/>
+  <text x="593" y="84" fill="#999" font-size="8" font-family="monospace">PANE 2</text>
+  <text x="663" y="108" fill="#d4644a" font-size="12" font-weight="600" font-family="system-ui" text-anchor="middle">rosrun</text>
+  <text x="663" y="124" fill="#888" font-size="10" font-family="monospace" text-anchor="middle">EKF · model eval</text>
+  <text x="663" y="140" fill="#aaa" font-size="9" font-family="monospace" text-anchor="middle">algorithm node</text>
+  <rect x="750" y="72" width="155" height="75" rx="6" fill="#ffffff" stroke="#d4644a" stroke-width="1" stroke-opacity="0.4"/>
+  <rect x="750" y="72" width="155" height="18" rx="6" fill="#d4644a" fill-opacity="0.08"/>
+  <text x="758" y="84" fill="#999" font-size="8" font-family="monospace">PANE 3</text>
+  <text x="828" y="108" fill="#d4644a" font-size="12" font-weight="600" font-family="system-ui" text-anchor="middle">RViz</text>
+  <text x="828" y="124" fill="#888" font-size="10" font-family="monospace" text-anchor="middle">3D visualization</text>
+  <text x="828" y="140" fill="#aaa" font-size="9" font-family="monospace" text-anchor="middle">sensor overlay</text>
+  <rect x="420" y="158" width="490" height="38" rx="6" fill="#ffffff" stroke="#d4644a" stroke-width="1" stroke-opacity="0.25"/>
+  <rect x="420" y="158" width="490" height="16" rx="6" fill="#d4644a" fill-opacity="0.05"/>
+  <text x="428" y="170" fill="#999" font-size="8" font-family="monospace">OUTPUT</text>
+  <text x="665" y="188" fill="#888" font-size="10" font-family="monospace" text-anchor="middle">cross track error · yaw drift · path visualization · mission completion</text>
+  <text x="620" y="268" fill="#999" font-size="10" font-family="monospace" text-anchor="middle" letter-spacing="1.5">MONITORING</text>
+  <line x1="665" y1="238" x2="665" y2="278" stroke="#d4644a" stroke-width="1.5" stroke-opacity="0.3"/>
+  <polygon points="661,276 665,283 669,276" fill="#d4644a" fill-opacity="0.4"/>
+  <rect x="420" y="278" width="490" height="42" rx="6" fill="#fff5f0" stroke="#d4644a" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="665" y="304" fill="#999" font-size="11" font-family="monospace" text-anchor="middle" letter-spacing="1">terminal window · print statements · CSV exports · Jupyter notebooks</text>
+  <rect x="22" y="345" width="898" height="36" rx="6" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="470" y="368" fill="#aaa" font-size="10" font-family="monospace" text-anchor="middle" letter-spacing="2">PYTHON · ROS 2 · TMUX · LINUX · CSV · JUPYTER</text>
+</svg>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="940" height="440" viewBox="0 0 940 440" xmlns="http://www.w3.org/2000/svg">
+  <rect width="940" height="440" rx="12" fill="#ffffff" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="470" y="28" fill="#999" font-size="10" font-family="monospace" text-anchor="middle" letter-spacing="1.5">PRODUCTION PIPELINE</text>
+  <rect x="22" y="42" width="120" height="80" rx="8" fill="#e8f0fe" stroke="#3b7dd8" stroke-width="1.5"/>
+  <text x="82" y="66" fill="#3b7dd8" font-size="11" font-weight="600" font-family="system-ui" text-anchor="middle">Data</text>
+  <text x="82" y="80" fill="#3b7dd8" font-size="11" font-weight="600" font-family="system-ui" text-anchor="middle">Collection</text>
+  <text x="82" y="98" fill="#888" font-size="9" font-family="monospace" text-anchor="middle">market feeds</text>
+  <text x="82" y="112" fill="#aaa" font-size="8" font-family="monospace" text-anchor="middle">FIX protocol</text>
+  <line x1="142" y1="82" x2="162" y2="82" stroke="#3b7dd8" stroke-width="2" stroke-opacity="0.4"/>
+  <polygon points="160,78 167,82 160,86" fill="#3b7dd8" fill-opacity="0.5"/>
+  <rect x="167" y="42" width="120" height="80" rx="8" fill="#e8f0fe" stroke="#3b7dd8" stroke-width="1.5"/>
+  <text x="227" y="66" fill="#3b7dd8" font-size="11" font-weight="600" font-family="system-ui" text-anchor="middle">Data</text>
+  <text x="227" y="80" fill="#3b7dd8" font-size="11" font-weight="600" font-family="system-ui" text-anchor="middle">Cleaning</text>
+  <text x="227" y="98" fill="#888" font-size="9" font-family="monospace" text-anchor="middle">merge · normalize</text>
+  <text x="227" y="112" fill="#aaa" font-size="8" font-family="monospace" text-anchor="middle">Kafka streams</text>
+  <line x1="287" y1="82" x2="307" y2="82" stroke="#3b7dd8" stroke-width="2" stroke-opacity="0.4"/>
+  <polygon points="305,78 312,82 305,86" fill="#3b7dd8" fill-opacity="0.5"/>
+  <rect x="312" y="42" width="120" height="80" rx="8" fill="#e8f0fe" stroke="#3b7dd8" stroke-width="1.5"/>
+  <text x="372" y="66" fill="#3b7dd8" font-size="11" font-weight="600" font-family="system-ui" text-anchor="middle">Feature</text>
+  <text x="372" y="80" fill="#3b7dd8" font-size="11" font-weight="600" font-family="system-ui" text-anchor="middle">Engineering</text>
+  <text x="372" y="98" fill="#888" font-size="9" font-family="monospace" text-anchor="middle">labels · signals</text>
+  <text x="372" y="112" fill="#aaa" font-size="8" font-family="monospace" text-anchor="middle">feature stores</text>
+  <line x1="432" y1="82" x2="452" y2="82" stroke="#3b7dd8" stroke-width="2" stroke-opacity="0.4"/>
+  <polygon points="450,78 457,82 450,86" fill="#3b7dd8" fill-opacity="0.5"/>
+  <rect x="457" y="42" width="120" height="80" rx="8" fill="#e8f0fe" stroke="#3b7dd8" stroke-width="1.5"/>
+  <text x="517" y="66" fill="#3b7dd8" font-size="11" font-weight="600" font-family="system-ui" text-anchor="middle">ML</text>
+  <text x="517" y="80" fill="#3b7dd8" font-size="11" font-weight="600" font-family="system-ui" text-anchor="middle">Training</text>
+  <text x="517" y="98" fill="#888" font-size="9" font-family="monospace" text-anchor="middle">models · backtest</text>
+  <text x="517" y="112" fill="#aaa" font-size="8" font-family="monospace" text-anchor="middle">Python → C++</text>
+  <line x1="577" y1="82" x2="597" y2="82" stroke="#3b7dd8" stroke-width="2" stroke-opacity="0.4"/>
+  <polygon points="595,78 602,82 595,86" fill="#3b7dd8" fill-opacity="0.5"/>
+  <rect x="602" y="42" width="120" height="80" rx="8" fill="#e8f0fe" stroke="#3b7dd8" stroke-width="1.5"/>
+  <text x="662" y="66" fill="#3b7dd8" font-size="11" font-weight="600" font-family="system-ui" text-anchor="middle">Portfolio &amp;</text>
+  <text x="662" y="80" fill="#3b7dd8" font-size="11" font-weight="600" font-family="system-ui" text-anchor="middle">Strategy</text>
+  <text x="662" y="98" fill="#888" font-size="9" font-family="monospace" text-anchor="middle">risk engine</text>
+  <text x="662" y="112" fill="#aaa" font-size="8" font-family="monospace" text-anchor="middle">C++ critical path</text>
+  <line x1="722" y1="82" x2="742" y2="82" stroke="#3b7dd8" stroke-width="2" stroke-opacity="0.4"/>
+  <polygon points="740,78 747,82 740,86" fill="#3b7dd8" fill-opacity="0.5"/>
+  <rect x="747" y="42" width="170" height="80" rx="8" fill="#e8f0fe" stroke="#3b7dd8" stroke-width="1.5"/>
+  <text x="832" y="66" fill="#3b7dd8" font-size="11" font-weight="600" font-family="system-ui" text-anchor="middle">Execute Orders</text>
+  <text x="832" y="80" fill="#3b7dd8" font-size="11" font-weight="600" font-family="system-ui" text-anchor="middle">&amp; Monitor</text>
+  <text x="832" y="98" fill="#888" font-size="9" font-family="monospace" text-anchor="middle">order client · broker</text>
+  <text x="832" y="112" fill="#aaa" font-size="8" font-family="monospace" text-anchor="middle">gRPC · Protobuf</text>
+  <text x="470" y="155" fill="#999" font-size="10" font-family="monospace" text-anchor="middle" letter-spacing="1.5">DATA LAYER</text>
+  <line x1="82" y1="122" x2="82" y2="165" stroke="#3b7dd8" stroke-width="1.5" stroke-opacity="0.3"/>
+  <line x1="227" y1="122" x2="227" y2="165" stroke="#3b7dd8" stroke-width="1.5" stroke-opacity="0.3"/>
+  <line x1="372" y1="122" x2="372" y2="165" stroke="#3b7dd8" stroke-width="1.5" stroke-opacity="0.3"/>
+  <line x1="517" y1="122" x2="517" y2="165" stroke="#3b7dd8" stroke-width="1.5" stroke-opacity="0.3"/>
+  <line x1="662" y1="122" x2="662" y2="165" stroke="#3b7dd8" stroke-width="1.5" stroke-opacity="0.3"/>
+  <line x1="832" y1="122" x2="832" y2="165" stroke="#3b7dd8" stroke-width="1.5" stroke-opacity="0.3"/>
+  <rect x="22" y="165" width="120" height="50" rx="6" fill="#fef3e0" stroke="#e8a735" stroke-width="1"/>
+  <text x="82" y="186" fill="#c48a20" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Raw Data</text>
+  <text x="82" y="202" fill="#999" font-size="9" font-family="monospace" text-anchor="middle">tick data</text>
+  <rect x="167" y="165" width="120" height="50" rx="6" fill="#fef3e0" stroke="#e8a735" stroke-width="1"/>
+  <text x="227" y="186" fill="#c48a20" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Clean Data</text>
+  <text x="227" y="202" fill="#999" font-size="9" font-family="monospace" text-anchor="middle">KDB+/Q</text>
+  <rect x="312" y="165" width="120" height="50" rx="6" fill="#fef3e0" stroke="#e8a735" stroke-width="1"/>
+  <text x="372" y="186" fill="#c48a20" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Features</text>
+  <text x="372" y="202" fill="#999" font-size="9" font-family="monospace" text-anchor="middle">feature store</text>
+  <rect x="457" y="165" width="120" height="50" rx="6" fill="#fef3e0" stroke="#e8a735" stroke-width="1"/>
+  <text x="517" y="186" fill="#c48a20" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Models</text>
+  <text x="517" y="202" fill="#999" font-size="9" font-family="monospace" text-anchor="middle">MLflow</text>
+  <rect x="602" y="165" width="120" height="50" rx="6" fill="#fef3e0" stroke="#e8a735" stroke-width="1"/>
+  <text x="662" y="186" fill="#c48a20" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Orders</text>
+  <text x="662" y="202" fill="#999" font-size="9" font-family="monospace" text-anchor="middle">PostgreSQL</text>
+  <rect x="747" y="165" width="170" height="50" rx="6" fill="#fef3e0" stroke="#e8a735" stroke-width="1"/>
+  <text x="832" y="186" fill="#c48a20" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Real Time Monitor</text>
+  <text x="832" y="202" fill="#999" font-size="9" font-family="monospace" text-anchor="middle">Grafana · Prometheus</text>
+  <text x="400" y="248" fill="#999" font-size="10" font-family="monospace" text-anchor="middle" letter-spacing="1.5">ANALYTICS &amp; EXPLORATION</text>
+  <line x1="227" y1="215" x2="227" y2="258" stroke="#e8a735" stroke-width="1.5" stroke-opacity="0.3"/>
+  <line x1="372" y1="215" x2="372" y2="258" stroke="#e8a735" stroke-width="1.5" stroke-opacity="0.3"/>
+  <line x1="517" y1="215" x2="517" y2="258" stroke="#e8a735" stroke-width="1.5" stroke-opacity="0.3"/>
+  <line x1="662" y1="215" x2="662" y2="258" stroke="#e8a735" stroke-width="1.5" stroke-opacity="0.3"/>
+  <rect x="100" y="258" width="130" height="45" rx="6" fill="#fce4ec" stroke="#d4644a" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="165" y="278" fill="#d4644a" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Distribution</text>
+  <text x="165" y="293" fill="#d4644a" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Shift Detection</text>
+  <rect x="245" y="258" width="130" height="45" rx="6" fill="#fce4ec" stroke="#d4644a" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="310" y="278" fill="#d4644a" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Feature Importance</text>
+  <text x="310" y="293" fill="#d4644a" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Evaluation</text>
+  <rect x="390" y="258" width="130" height="45" rx="6" fill="#fce4ec" stroke="#d4644a" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="455" y="278" fill="#d4644a" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Model Performance</text>
+  <text x="455" y="293" fill="#d4644a" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Evaluation</text>
+  <rect x="535" y="258" width="130" height="45" rx="6" fill="#fce4ec" stroke="#d4644a" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="600" y="278" fill="#d4644a" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Strategy</text>
+  <text x="600" y="293" fill="#d4644a" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Backtesting</text>
+  <rect x="680" y="258" width="130" height="45" rx="6" fill="#fce4ec" stroke="#d4644a" stroke-width="1" stroke-opacity="0.6"/>
+  <text x="745" y="278" fill="#d4644a" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Transaction Cost</text>
+  <text x="745" y="293" fill="#d4644a" font-size="10" font-weight="600" font-family="system-ui" text-anchor="middle">Analysis</text>
+  <rect x="22" y="325" width="16" height="16" rx="3" fill="#e8f0fe" stroke="#3b7dd8" stroke-width="1"/>
+  <text x="46" y="337" fill="#666" font-size="10" font-family="system-ui">Production Pipeline</text>
+  <rect x="180" y="325" width="16" height="16" rx="3" fill="#fef3e0" stroke="#e8a735" stroke-width="1"/>
+  <text x="204" y="337" fill="#666" font-size="10" font-family="system-ui">Data Layer</text>
+  <rect x="300" y="325" width="16" height="16" rx="3" fill="#fce4ec" stroke="#d4644a" stroke-width="1"/>
+  <text x="324" y="337" fill="#666" font-size="10" font-family="system-ui">Analytics &amp; Exploration</text>
+  <rect x="22" y="365" width="898" height="55" rx="6" fill="#f5f5f5" stroke="#e0e0e0" stroke-width="1"/>
+  <text x="470" y="386" fill="#999" font-size="10" font-family="monospace" text-anchor="middle" letter-spacing="2">C++ · GRPC · PROTOBUF · KAFKA · DOCKER · KUBERNETES</text>
+  <text x="470" y="406" fill="#aaa" font-size="10" font-family="monospace" text-anchor="middle" letter-spacing="2">KDB+/Q · POSTGRESQL · CASSANDRA · GRAFANA · PROMETHEUS · ELK</text>
+</svg>
