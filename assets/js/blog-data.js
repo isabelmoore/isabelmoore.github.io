@@ -14,7 +14,7 @@ const blogPosts = [
         "readTime": "8 min read",
         "file": "posts/quant_dev.md",
         "description": "Most people think autonomous system engineering and quant dev are completely different world. False. Infrastructure is shockingly similar and what we can learn.",
-        "tags": ["Distributed Systems", "C++", "Infrastructure", "Career"]
+        "tags": ["Distributed Systems", "C++", "Infrastructure"]
     },
     {
         "title": "Drift Correction using Kalman Filtering and Monte Carlo Localization",
