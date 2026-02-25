@@ -255,13 +255,14 @@ if (portfolioModal) {
             clearTimeout(scrollTimeout);
             scrollTimeout = setTimeout(() => {
                 portfolioModalContent.classList.remove('is-scrolling');
-            }, 1500); // 1.5 second delay before disappearing
+            }, 1000); // 1 second delay before disappearing
         });
     }
 
     if (portfolioModalClose) {
         portfolioModalClose.addEventListener('click', () => {
             portfolioModal.classList.remove('active-portfolio-modal');
+            document.body.style.overflow = 'auto'; // Re-enable body scroll
         });
     }
 
@@ -284,6 +285,7 @@ if (portfolioModal) {
             setTimeout(() => { silentScroll = false; }, 50);
 
             portfolioModal.classList.add('active-portfolio-modal');
+            document.body.style.overflow = 'hidden'; // Lock body scroll
         });
     });
 
@@ -291,6 +293,7 @@ if (portfolioModal) {
     portfolioModal.addEventListener('click', (e) => {
         if (e.target === portfolioModal) {
             portfolioModal.classList.remove('active-portfolio-modal');
+            document.body.style.overflow = 'auto'; // Re-enable body scroll
         }
     });
 }
