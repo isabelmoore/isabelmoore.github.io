@@ -9,7 +9,7 @@ const blogPosts = [
     //     "tags": ["Reinforcement Learning", "AI Foundations", "Machine Learning"]
     // },
     {
-        "title": "The Tech Stack Overlap Between Autonomous Systems and Quantitative Development",
+        "title": "Tech Stack Overlap Between Autonomous Systems and Quantitative Development",
         "date": "2026-02-24",
         "readTime": "8 min read",
         "file": "posts/quant_dev.md",

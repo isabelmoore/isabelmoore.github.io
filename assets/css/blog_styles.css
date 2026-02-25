@@ -118,9 +118,14 @@
 .blog__main-title {
     text-align: left;
     margin-top: 0;
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     font-size: 3rem;
     color: var(--title-color);
+}
+
+.blog__main-subtitle {
+    text-align: left;
+    margin-bottom: 2rem;
 }
 
 .blog__container {

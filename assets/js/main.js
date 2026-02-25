@@ -160,6 +160,16 @@ function scrollHeader() {
 
 window.addEventListener("scroll", scrollHeader);
 
+/*==================== GLOBAL SCROLLBAR VISIBILITY ====================*/
+let globalScrollTimeout;
+window.addEventListener('scroll', () => {
+    document.body.classList.add('is-scrolling');
+    clearTimeout(globalScrollTimeout);
+    globalScrollTimeout = setTimeout(() => {
+        document.body.classList.remove('is-scrolling');
+    }, 1500);
+});
+
 /*==================== SHOW SCROLL UP ====================*/
 function scrollUp() {
     const scrollUp = document.getElementById("scroll-up");
@@ -234,6 +244,27 @@ const portfolioModalClose = document.querySelector('.portfolio__modal-close');
 const portfolioItems = document.querySelectorAll('.portfolio__content');
 
 if (portfolioModal) {
+    // Handle scrollbar visibility on scroll
+    let scrollTimeout;
+    let silentScroll = false;
+
+    if (portfolioModalContent) {
+        portfolioModalContent.addEventListener('scroll', () => {
+            if (silentScroll) return;
+            portfolioModalContent.classList.add('is-scrolling');
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                portfolioModalContent.classList.remove('is-scrolling');
+            }, 1500); // 1.5 second delay before disappearing
+        });
+    }
+
+    if (portfolioModalClose) {
+        portfolioModalClose.addEventListener('click', () => {
+            portfolioModal.classList.remove('active-portfolio-modal');
+        });
+    }
+
     portfolioItems.forEach((item) => {
         item.addEventListener('click', () => {
             const img = item.querySelector('.portfolio__img');
@@ -244,22 +275,24 @@ if (portfolioModal) {
             if (title) portfolioModalTitle.innerText = title.innerText;
             if (details) portfolioModalBody.innerHTML = details.innerHTML;
 
+            // Ensure scrollbar is hidden on open
+            silentScroll = true;
+            if (portfolioModalContent) {
+                portfolioModalContent.scrollTop = 0;
+                portfolioModalContent.classList.remove('is-scrolling');
+            }
+            setTimeout(() => { silentScroll = false; }, 50);
+
             portfolioModal.classList.add('active-portfolio-modal');
         });
     });
-
-    if (portfolioModalClose) {
-        portfolioModalClose.addEventListener('click', () => {
-            portfolioModal.classList.remove('active-portfolio-modal');
-        });
-    }
 
     // Close on click outside
     portfolioModal.addEventListener('click', (e) => {
         if (e.target === portfolioModal) {
             portfolioModal.classList.remove('active-portfolio-modal');
         }
-    })
+    });
 }
 
 /*==================== EXPERTISE ACCORDION ====================*/

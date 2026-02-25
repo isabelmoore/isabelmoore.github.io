@@ -92,7 +92,7 @@ body.dark-theme .portfolio__content:hover {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(255, 255, 255, 0.1);
   z-index: var(--z-modal);
   display: flex;
   justify-content: center;
@@ -101,15 +101,14 @@ body.dark-theme .portfolio__content:hover {
   opacity: 0;
   visibility: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
   /* Adds a subtle blur to background */
 }
 
 .portfolio__modal-content {
-  background-color: hsla(var(--hue-color), 60%, 99%, 0.9);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 3.5rem 1.5rem 1.5rem 1.5rem;
   border-radius: 1rem;
   width: 90%;
@@ -122,6 +121,27 @@ body.dark-theme .portfolio__content:hover {
   transform: scale(0.9) translateY(20px);
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+}
+
+/* Custom Scrollbar for Modal to match global scroller */
+.portfolio__modal-content::-webkit-scrollbar {
+  width: .4rem;
+}
+
+.portfolio__modal-content::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.portfolio__modal-content::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: .5rem;
+  transition: background-color 1s ease-in-out;
+}
+
+.portfolio__modal-content.is-scrolling::-webkit-scrollbar-thumb,
+.portfolio__modal-content:hover::-webkit-scrollbar-thumb {
+  background-color: var(--scroll-thumb-color);
 }
 
 .portfolio__modal-close {
@@ -245,5 +265,4 @@ body.dark-theme .portfolio__content:hover {
 /* Dark Theme Modal Glass */
 body.dark-theme .portfolio__modal-content {
   background-color: hsla(var(--hue-color), 28%, 12%, 0.9);
-  border: 1px solid rgba(255, 255, 255, 0.1);
 }
